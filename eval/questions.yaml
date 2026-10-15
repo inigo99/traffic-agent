@@ -1,0 +1,162 @@
+# Conjunto de evaluación de trafico-agent. Es el contrato: cualquier cambio de prompt o modelo
+# se evalúa contra este fichero antes del merge.
+#
+# Campos (validados en tests/test_questions.py):
+#   id             F.. factual | S.. situación "¿es multa?" | T.. trampa
+#   tipo           factual | situacion | trampa
+#   pregunta       texto tal cual lo escribiría un usuario
+#   comportamiento responder | aclarar | rechazar | corregir | avisar
+#   citas          [{norma, id_bloque, apartado}] artículos que la respuesta debe citar (gold de recuperación)
+#   claves         textos que deben aparecer en la respuesta (comprobación automática barata)
+#   sancion        solo situaciones con comportamiento=responder: {codigo, gravedad, importe_eur,
+#                  pronto_pago_eur, puntos}. Sale de la tabla ARCI (o del Anexo IV para velocidad;
+#                  codigo null si el tramo lo decide el Anexo IV)
+#   falta          solo comportamiento=aclarar: datos que el agente debe pedir
+#   motivo         solo trampas: ordenanza | penal | premisa_falsa | competencia
+#   revisar        true si el gold necesita confirmación humana antes de usarlo como métrica
+#
+# Corpus: BOE consolidado a 26-06-2026 (con artículos del RGC vigentes desde 01-10-2026) y ARCI de 12-11-2025.
+
+- id: F01
+  tipo: factual
+  pregunta: ¿Qué distancia lateral tengo que dejar al adelantar a un ciclista?
+  comportamiento: responder
+  citas: [{norma: CIR, id_bloque: a85, apartado: "4"}]
+  claves: ["1,5 metros"]
+
+- id: F02
+  tipo: factual
+  pregunta: ¿Cuál es la tasa máxima de alcohol para un conductor normal?
+  comportamiento: responder
+  citas: [{norma: CIR, id_bloque: a20, apartado: null}]
+  claves: ["0,5 gramos", "0,25 miligramos"]
+
+- id: F03
+  tipo: factual
+  pregunta: Conduzco un autobús de 50 plazas, ¿qué tasa de alcohol tengo permitida?
+  comportamiento: responder
+  citas: [{norma: CIR, id_bloque: a20, apartado: null}]
+  claves: ["0,3 gramos", "0,15 miligramos"]
+
+- id: F04
+  tipo: factual
+  pregunta: ¿A qué velocidad máxima puede ir un turismo por autovía?
+  comportamiento: responder
+  citas: [{norma: CIR, id_bloque: a48, apartado: "1"}]
+  claves: ["120"]
+
+- id: F05
+  tipo: factual
+  pregunta: ¿Cuál es el límite genérico en una calle de ciudad con un solo carril por sentido?
+  comportamiento: responder
+  citas: [{norma: CIR, id_bloque: a50, apartado: "1"}]
+  claves: ["30 km/h"]
+
+- id: F06
+  tipo: factual
+  pregunta: ¿Cuántos puntos quitan por conducir con el móvil en la mano?
+  comportamiento: responder
+  citas: [{norma: LSV, id_bloque: anii, apartado: null}]
+  claves: ["6"]
+
+- id: F07
+  tipo: factual
+  pregunta: ¿Es obligatorio el cinturón también en ciudad o solo en carretera?
+  comportamiento: responder
+  citas: [{norma: CIR, id_bloque: a117, apartado: "1"}]
+  claves: ["urbanas"]
+
+- id: F08
+  tipo: factual
+  pregunta: ¿Cuántos puntos se pierden por saltarse un semáforo en rojo?
+  comportamiento: responder
+  citas: [{norma: LSV, id_bloque: anii, apartado: null}]
+  claves: ["4"]
+
+- id: S01
+  tipo: situacion
+  pregunta: Me han hecho un control y he dado 0,30 mg/l en aire espirado. Tengo el carné desde hace diez años y conducía mi coche. ¿Qué me cae?
+  comportamiento: responder
+  citas: [{norma: CIR, id_bloque: a20, apartado: null}, {norma: LSV, id_bloque: anii, apartado: null}]
+  sancion: {codigo: CIR 020 1 5E, gravedad: muy_grave, importe_eur: 500, pronto_pago_eur: 250, puntos: 4}
+
+- id: S02
+  tipo: situacion
+  pregunta: Un agente me ha parado por ir hablando con el móvil en la mano mientras conducía. ¿Es multa?
+  comportamiento: responder
+  citas: [{norma: LSV, id_bloque: anii, apartado: null}]
+  sancion: {codigo: LSV 076 - 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 6}
+
+- id: S03
+  tipo: situacion
+  pregunta: Iba conduciendo sin el cinturón puesto y me han denunciado. ¿Cuánto es?
+  comportamiento: responder
+  citas: [{norma: CIR, id_bloque: a117, apartado: "1"}, {norma: LSV, id_bloque: anii, apartado: null}]
+  sancion: {codigo: CIR 117 1 5E, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 4}
+
+- id: S04
+  tipo: situacion
+  pregunta: He pasado un semáforo en rojo fijo con el coche en un cruce. ¿Qué multa es?
+  comportamiento: responder
+  # Tras el RD 465/2025, el significado de la luz roja está en el Anexo I, apdo. 4 del RGC
+  citas: [{norma: CIR, id_bloque: a143, apartado: "1"}, {norma: CIR, id_bloque: A4, apartado: null}, {norma: LSV, id_bloque: anii, apartado: null}]
+  sancion: {codigo: CIR 143 1-B 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 4}
+
+- id: S05
+  tipo: situacion
+  pregunta: Un radar me ha cazado a 71 km/h en una calle de ciudad limitada a 50. ¿Qué me cae?
+  comportamiento: responder
+  citas: [{norma: CIR, id_bloque: a50, apartado: "1"}, {norma: LSV, id_bloque: aniv, apartado: null}]
+  sancion: {codigo: CIR 050 1 5I, gravedad: grave, importe_eur: 300, pronto_pago_eur: 150, puntos: 2}
+
+- id: S06
+  tipo: situacion
+  pregunta: Iba a 140 km/h por una autovía limitada a 120 y me ha saltado el radar. ¿Me quitan puntos?
+  comportamiento: responder
+  citas: [{norma: CIR, id_bloque: a48, apartado: "1"}, {norma: LSV, id_bloque: aniv, apartado: null}]
+  sancion: {codigo: null, gravedad: grave, importe_eur: 100, pronto_pago_eur: 50, puntos: 0}
+
+- id: S07
+  tipo: situacion
+  pregunta: Dejé el coche en doble fila y me fui diez minutos a hacer un recado. ¿Es multa?
+  comportamiento: responder
+  citas: [{norma: CIR, id_bloque: a91, apartado: "2"}]
+  sancion: {codigo: CIR 091 2 5H, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S08
+  tipo: situacion
+  pregunta: Me ha saltado un radar a 90 km/h. ¿Cuánto me va a costar?
+  comportamiento: aclarar
+  falta: [limite_velocidad, tipo_via]
+
+- id: T01
+  tipo: trampa
+  pregunta: ¿Cuánto es la multa por aparcar en la zona azul de Pamplona sin sacar ticket?
+  comportamiento: rechazar
+  motivo: ordenanza
+  claves: ["ordenanza"]
+
+- id: T02
+  tipo: trampa
+  pregunta: Me han parado con 0,70 mg/l en aire espirado. ¿Cuánto me va a costar la multa?
+  comportamiento: avisar
+  motivo: penal
+  citas: [{norma: CIR, id_bloque: a20, apartado: null}]
+  claves: ["delito"]
+
+- id: T03
+  tipo: trampa
+  pregunta: Como el móvil en la mano ya quita 8 puntos, si tenía 12, ¿con cuántos me quedo?
+  comportamiento: corregir
+  motivo: premisa_falsa
+  citas: [{norma: LSV, id_bloque: anii, apartado: null}]
+  claves: ["6"]
+
+- id: T04
+  tipo: trampa
+  pregunta: Me ha multado la Policía Foral por exceso de velocidad en una carretera de Navarra. ¿Las sanciones son las mismas que en el resto de España?
+  comportamiento: avisar
+  motivo: competencia
+  citas: [{norma: LSV, id_bloque: aniv, apartado: null}]
+  claves: ["Navarra"]
+  revisar: true  # confirmar qué autoridad tramita y si hay especialidades forales

@@ -3,5 +3,6 @@
 - eval/questions.yaml es el contrato: cualquier cambio de prompt/modelo se evalúa antes del merge.
 - Aviso legal visible en UI y en la respuesta del MCP.
 - Corpus v1: solo RGC (CIR) y LSV. Las filas ARCI de otras normas no se cargan.
-- `data/trafico.db` se genera (no se versiona): `uv run python -m trafico_agent.ingest.arci` y `uv run python -m trafico_agent.ingest.boe` (este necesita acceso a www.boe.es).
+- `data/trafico.db` se genera (no se versiona), en este orden: `uv run python -m trafico_agent.ingest.arci`, `... .ingest.boe` (necesita acceso a www.boe.es) y `... .ingest.postproceso` (cruce sanciones↔artículos y `fragmentos`).
+- La clave de un artículo es `(id_norma, id_bloque)`: el número no es único (RGC art. 151–158 duplicados, articulado propio del Anexo II).
 - Tests sin red: la ingesta del BOE se prueba con `tests/fixtures/boe/`.

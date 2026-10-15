@@ -51,13 +51,20 @@ def get(url, accept):
         return r.read()
 
 
+def _plano(el):
+    return " ".join("".join(el.itertext()).split())
+
+
 def _textos(el):
-    """Párrafos del bloque sin las notas editoriales (<blockquote>)."""
+    """Párrafos del bloque sin las notas editoriales (<blockquote>). Una fila de tabla = una línea."""
     for child in el:
         if child.tag == "blockquote":
             continue
-        if child.tag == "p":
-            if t := " ".join("".join(child.itertext()).split()):
+        if child.tag == "tr":
+            if any(celdas := _celdas(child)):
+                yield " | ".join(celdas)
+        elif child.tag == "p" or len(child) == 0:
+            if t := _plano(child):
                 yield t
         else:
             yield from _textos(child)
@@ -181,7 +188,8 @@ def parse_velocidades(version_el):
 
 
 def _celdas(tr):
-    return [" ".join(_textos(td)) for td in tr.findall("td")]
+    """Texto de cada celda; hay tablas con <p> dentro de la celda y otras con el texto directo."""
+    return [" ".join(_textos(td)) or _plano(td) for td in tr if td.tag in ("td", "th")]
 
 
 def _insert(db, tabla, filas):
