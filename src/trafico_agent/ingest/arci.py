@@ -3,7 +3,6 @@
 import re
 import sqlite3
 import sys
-from pathlib import Path
 
 import pdfplumber
 
@@ -91,8 +90,8 @@ def parse(pdf_path):
 
 def build(pdf_path, db_path):
     rows = list(parse(pdf_path))
-    Path(db_path).unlink(missing_ok=True)
     with sqlite3.connect(db_path) as db:
+        db.execute("DROP TABLE IF EXISTS sanciones")
         db.execute(SCHEMA)
         cols = ",".join(rows[0])
         db.executemany(

@@ -1,0 +1,7 @@
+- Toda afirmación normativa lleva cita (id BOE + artículo). Sin cita, no se responde.
+- Importes y puntos salen solo de la tabla ARCI (y de los tramos del Anexo IV de la LSV para velocidad); el LLM nunca los genera.
+- eval/questions.yaml es el contrato: cualquier cambio de prompt/modelo se evalúa antes del merge.
+- Aviso legal visible en UI y en la respuesta del MCP.
+- Corpus v1: solo RGC (CIR) y LSV. Las filas ARCI de otras normas no se cargan.
+- `data/trafico.db` se genera (no se versiona): `uv run python -m trafico_agent.ingest.arci` y `uv run python -m trafico_agent.ingest.boe` (este necesita acceso a www.boe.es).
+- Tests sin red: la ingesta del BOE se prueba con `tests/fixtures/boe/`.

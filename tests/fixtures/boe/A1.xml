@@ -1,0 +1,2 @@
+<!-- Apartado numerado dentro de un anexo (como los bloques A1..A6 del Anexo I del RGC). -->
+<response><status><code>200</code><text>ok</text></status><data><bloque id="A1" tipo="precepto" titulo="1"><version id_norma="BOE-A-2015-11722" fecha_publicacion="20151031" fecha_vigencia="20160131"><p class="parrafo">1. Texto del apartado primero del anexo.</p></version></bloque></data></response>

@@ -1,0 +1,9 @@
+<!-- Recortado del bloque real a14 (LSV): dos versiones, nota de vigencia y nota a pie. -->
+<response><status><code>200</code><text>ok</text></status><data><bloque id="a14" tipo="precepto" titulo="Artículo 14"><version id_norma="BOE-A-2015-11722" fecha_publicacion="20151031" fecha_vigencia="20160131"><p class="articulo">Artículo 14. Bebidas alcohólicas y drogas.</p>
+<p class="parrafo">1. No puede circular por las vías objeto de esta ley el conductor de cualquier vehículo con tasas de alcohol superiores a las que reglamentariamente se determine.</p>
+</version><version id_norma="BOE-A-2021-21006" fecha_publicacion="20211221" fecha_vigencia="20220321"><p class="articulo">Artículo 14. Bebidas alcohólicas y drogas.</p>
+<p class="parrafo">1. No puede circular por las vías objeto de esta Ley el conductor de cualquier vehículo con tasas de alcohol superiores a las que reglamentariamente se determine. En ningún caso el conductor menor de edad podrá circular por las vías con una tasa de alcohol en sangre superior a 0 gramos por litro o de alcohol en aire espirado superior a 0 miligramos por litro.</p>
+<blockquote caduca="20220321" class="soloTexto"><p class="parrafo">Téngase en cuenta que esta actualización del apartado 1 entra en vigor el 21 de marzo de 2022.</p><p class="cita_con_pleca">Redacción anterior:</p></blockquote>
+<p class="parrafo">2. El conductor de un vehículo está obligado a someterse a las pruebas para la detección de alcohol o de la presencia de drogas en el organismo.</p>
+<blockquote><p class="nota_pie">Se modifica el apartado 1, con efectos de 21 de marzo de 2022, por el art. único.7 de la Ley 18/2021, de 20 de diciembre.</p></blockquote>
+</version></bloque></data></response>
