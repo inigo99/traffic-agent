@@ -5,4 +5,5 @@
 - Corpus v1: solo RGC (CIR) y LSV. Las filas ARCI de otras normas no se cargan.
 - `data/trafico.db` se genera (no se versiona), en este orden: `uv run python -m trafico_agent.ingest.arci`, `... .ingest.boe` (necesita acceso a www.boe.es) y `... .ingest.postproceso` (cruce sanciones↔artículos y `fragmentos`).
 - La clave de un artículo es `(id_norma, id_bloque)`: el número no es único (RGC art. 151–158 duplicados, articulado propio del Anexo II).
+- Recuperación (`index.py`): BM25 sin extras; vectores y reranker con `uv sync --extra ml` y `uv run python -m trafico_agent.index` (genera `data/embeddings.npy`). Métricas: `uv run python eval/run_retrieval.py` → `eval/results/retrieval.json`.
 - Tests sin red: la ingesta del BOE se prueba con `tests/fixtures/boe/`.

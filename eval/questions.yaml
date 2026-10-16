@@ -6,13 +6,17 @@
 #   tipo           factual | situacion | trampa
 #   pregunta       texto tal cual lo escribiría un usuario
 #   comportamiento responder | aclarar | rechazar | corregir | avisar
-#   citas          [{norma, id_bloque, apartado}] artículos que la respuesta debe citar (gold de recuperación)
+#   citas          artículos que la respuesta debe citar (gold de recuperación). Cada elemento es
+#                  una cita {norma, id_bloque, apartado} o una lista de citas equivalentes (basta una:
+#                  p. ej. el artículo del RGC o su precepto equivalente en la LSV)
 #   claves         textos que deben aparecer en la respuesta (comprobación automática barata)
-#   sancion        solo situaciones con comportamiento=responder: {codigo, gravedad, importe_eur,
+#   sancion        situaciones con comportamiento=responder o avisar: {codigo, gravedad, importe_eur,
 #                  pronto_pago_eur, puntos}. Sale de la tabla ARCI (o del Anexo IV para velocidad;
 #                  codigo null si el tramo lo decide el Anexo IV)
 #   falta          solo comportamiento=aclarar: datos que el agente debe pedir
-#   motivo         solo trampas: ordenanza | penal | premisa_falsa | competencia
+#   motivo         trampas: ordenanza | penal | premisa_falsa | competencia | fuera_ambito;
+#                  situaciones con comportamiento=avisar: arci_desfasada (la ARCI cita un apartado que
+#                  ya no existe en el texto vigente: se da la sanción y se avisa)
 #   revisar        true si el gold necesita confirmación humana antes de usarlo como métrica
 #
 # Corpus: BOE consolidado a 26-06-2026 (con artículos del RGC vigentes desde 01-10-2026) y ARCI de 12-11-2025.
@@ -63,7 +67,7 @@
   tipo: factual
   pregunta: ¿Es obligatorio el cinturón también en ciudad o solo en carretera?
   comportamiento: responder
-  citas: [{norma: CIR, id_bloque: a117, apartado: "1"}]
+  citas: [[{norma: CIR, id_bloque: a117, apartado: "1"}, {norma: LSV, id_bloque: a47, apartado: null}]]
   claves: ["urbanas"]
 
 - id: F08
@@ -72,6 +76,432 @@
   comportamiento: responder
   citas: [{norma: LSV, id_bloque: anii, apartado: null}]
   claves: ["4"]
+
+- id: F09
+  tipo: factual
+  pregunta: ¿Desde qué edad puede ir un niño de pasajero en una moto?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a12, apartado: '1'}
+  claves: [doce años]
+
+- id: F10
+  tipo: factual
+  pregunta: ¿Puede ir mi hijo de 8 años conmigo en la moto?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a12, apartado: '2'}
+  claves: [siete años]
+
+- id: F11
+  tipo: factual
+  pregunta: ¿Puedo conducir escuchando música con auriculares?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a18, apartado: '2'}
+    - {norma: LSV, id_bloque: a13, apartado: '3'}
+  claves: [auriculares]
+
+- id: F12
+  tipo: factual
+  pregunta: ¿Quién está obligado a hacer la prueba de alcoholemia?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a21, apartado: null}
+    - {norma: LSV, id_bloque: a14, apartado: '2'}
+  claves: [obligados]
+
+- id: F13
+  tipo: factual
+  pregunta: ¿Puedo ir en bici por el arcén de una autovía?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a38, apartado: '1'}
+  claves: [mayores de 14 años]
+
+- id: F14
+  tipo: factual
+  pregunta: ¿Cuál es la velocidad mínima en una autopista?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a49, apartado: '1'}
+  claves: [60 kilómetros por hora]
+
+- id: F15
+  tipo: factual
+  pregunta: ¿Qué distancia tiene que dejar un camión con el de delante en carretera?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a54, apartado: '2'}
+  claves: [50 metros]
+
+- id: F16
+  tipo: factual
+  pregunta: En un cruce sin ninguna señal, ¿quién tiene preferencia?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a57, apartado: '1'}
+  claves: [derecha]
+
+- id: F17
+  tipo: factual
+  pregunta: ¿Qué tengo que hacer cuando oigo una ambulancia con la sirena detrás de mí?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a69, apartado: null}
+  claves: [medidas adecuadas]
+
+- id: F18
+  tipo: factual
+  pregunta: ¿Dónde está prohibido dar la vuelta con el coche?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a79, apartado: '1'}
+    - {norma: LSV, id_bloque: a31, apartado: '2'}
+  claves: [pasos a nivel, túneles]
+
+- id: F19
+  tipo: factual
+  pregunta: ¿Se puede adelantar por la derecha alguna vez?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a82, apartado: '2'}
+  claves: [por la derecha]
+
+- id: F20
+  tipo: factual
+  pregunta: ¿Está prohibido adelantar en una curva?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a87, apartado: '1'}
+    - {norma: LSV, id_bloque: a37, apartado: null}
+  claves: [curvas]
+
+- id: F21
+  tipo: factual
+  pregunta: ¿Las motos tienen que llevar la luz encendida de día?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a104, apartado: null}
+  claves: [motocicletas]
+
+- id: F22
+  tipo: factual
+  pregunta: ¿Cuándo hay que poner las luces antiniebla?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a106, apartado: '1'}
+  claves: [niebla]
+
+- id: F23
+  tipo: factual
+  pregunta: ¿Cuándo se puede tocar el claxon?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a110, apartado: '1'}
+  claves: [Excepcionalmente]
+
+- id: F24
+  tipo: factual
+  pregunta: ¿Tengo que apagar el motor mientras echo gasolina?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a115, apartado: '1'}
+    - {norma: LSV, id_bloque: a46, apartado: null}
+  claves: [combustible]
+
+- id: F25
+  tipo: factual
+  pregunta: ¿Hasta qué altura tienen que ir los niños en silla homologada?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a117, apartado: '1'}
+  claves: [135 centímetros]
+
+- id: F26
+  tipo: factual
+  pregunta: ¿Es obligatorio el casco en bici dentro de la ciudad?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a118, apartado: '1'}
+  claves: [vías interurbanas]
+
+- id: F27
+  tipo: factual
+  pregunta: ¿Me puedo quitar el cinturón para aparcar?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a119, apartado: '1'}
+  claves: [marcha atrás]
+
+- id: F28
+  tipo: factual
+  pregunta: ¿Qué obligación tengo si veo un accidente en la carretera?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a129, apartado: '1'}
+    - {norma: LSV, id_bloque: a51, apartado: '1'}
+  claves: [auxiliar]
+
+- id: F29
+  tipo: factual
+  pregunta: Se me ha averiado el coche en la carretera, ¿qué tengo que colocar?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a130, apartado: '4'}
+  claves: [preseñalización]
+
+- id: F30
+  tipo: factual
+  pregunta: ¿Pueden ir las bicis por la acera?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a1-6, apartado: '2'}
+  claves: [aceras]
+
+- id: F31
+  tipo: factual
+  pregunta: ¿Quién decide por qué calles pueden ir los patinetes eléctricos?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a1-8, apartado: '1'}
+  claves: [Autoridad municipal]
+
+- id: F32
+  tipo: factual
+  pregunta: ¿Quién regula el aparcamiento dentro de la ciudad?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a1-9, apartado: '1'}
+  claves: [ordenanzas municipales]
+
+- id: F33
+  tipo: factual
+  pregunta: ¿Quién puede restringir la entrada de coches en las zonas de bajas emisiones?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a1-10, apartado: null}
+  claves: [zonas de bajas emisiones]
+
+- id: F34
+  tipo: factual
+  pregunta: ¿Con cuántos puntos empieza un conductor?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a63, apartado: '1'}
+  claves: [doce puntos]
+
+- id: F35
+  tipo: factual
+  pregunta: ¿Cuántos puntos tiene un conductor novel?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a63, apartado: '2'}
+  claves: [ocho puntos, tres años]
+
+- id: F36
+  tipo: factual
+  pregunta: ¿Cuánto tiempo sin multas hay que estar para recuperar los puntos?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a65, apartado: '1'}
+  claves: [dos años]
+
+- id: F37
+  tipo: factual
+  pregunta: ¿Cuándo prescribe una infracción leve?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a112, apartado: '1'}
+  claves: [tres meses]
+
+- id: F38
+  tipo: factual
+  pregunta: ¿Y cuándo prescribe una infracción grave?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a112, apartado: '1'}
+  claves: [seis meses]
+
+- id: F39
+  tipo: factual
+  pregunta: ¿Cuántos días tengo para pagar la multa con descuento?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a94, apartado: null}
+  claves: [veinte días naturales]
+
+- id: F40
+  tipo: factual
+  pregunta: Si pago la multa con el descuento, ¿puedo recurrirla después?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a94, apartado: null}
+  claves: [renuncia a formular alegaciones]
+
+- id: F41
+  tipo: factual
+  pregunta: ¿Cuántos puntos me pueden quitar como máximo en un solo día?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a64, apartado: '4'}
+  claves: [ocho puntos]
+
+- id: F42
+  tipo: factual
+  pregunta: ¿Qué tasa de alcohol puede llevar un conductor menor de edad?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a14, apartado: '1'}
+  claves: [0 gramos por litro]
+
+- id: F43
+  tipo: factual
+  pregunta: ¿Cuánto es una multa grave?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a80, apartado: '1'}
+  claves: [200 euros]
+
+- id: F44
+  tipo: factual
+  pregunta: ¿Cuánto es una multa muy grave?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a80, apartado: '1'}
+  claves: [500 euros]
+
+- id: F45
+  tipo: factual
+  pregunta: ¿Hasta cuánto puede ser una multa leve?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a80, apartado: '1'}
+  claves: [100 euros]
+
+- id: F46
+  tipo: factual
+  pregunta: ¿Pueden los agentes inmovilizarme el coche?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a104, apartado: null}
+  claves: [inmovilización]
+
+- id: F47
+  tipo: factual
+  pregunta: ¿Cuándo se puede llevar la grúa mi coche?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a105, apartado: '1'}
+  claves: [retirada del vehículo]
+
+- id: F48
+  tipo: factual
+  pregunta: ¿Qué plazo tengo para presentar alegaciones a una multa?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a95, apartado: '1'}
+  claves: [veinte días naturales]
+
+- id: F49
+  tipo: factual
+  pregunta: ¿Por dónde tiene que ir un peatón?
+  comportamiento: responder
+  citas:
+  - - {norma: LSV, id_bloque: a49, apartado: '1'}
+    - {norma: CIR, id_bloque: a121, apartado: null}
+  claves: [zona peatonal]
+
+- id: F50
+  tipo: factual
+  pregunta: ¿Cuándo tienen preferencia los peatones sobre los coches?
+  comportamiento: responder
+  citas:
+  - - {norma: LSV, id_bloque: a25, apartado: '1'}
+    - {norma: CIR, id_bloque: a65, apartado: '1'}
+  claves: [pasos para peatones]
+
+- id: F51
+  tipo: factual
+  pregunta: ¿El dueño del coche tiene que decir quién conducía cuando le llega una multa?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a11, apartado: '1'}
+  claves: [identificación del conductor]
+
+- id: F52
+  tipo: factual
+  pregunta: Si pierdo todos los puntos, ¿qué tengo que hacer para recuperar el carné?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a71, apartado: '2'}
+  claves: [curso de sensibilización]
+
+- id: F53
+  tipo: factual
+  pregunta: ¿Cuál es el límite de velocidad de un turismo en una carretera convencional?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a48, apartado: '1'}
+  claves: [Convencional | 90]
+
+- id: F54
+  tipo: factual
+  pregunta: ¿A qué velocidad se puede ir en una calle con plataforma única de calzada y acera?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a50, apartado: '1'}
+  claves: [20 km/h]
+
+- id: F55
+  tipo: factual
+  pregunta: ¿Puedo usar el navegador del móvil con la mano mientras conduzco?
+  comportamiento: responder
+  citas:
+  - - {norma: LSV, id_bloque: a13, apartado: '3'}
+    - {norma: CIR, id_bloque: a18, apartado: '2'}
+  claves: [navegadores]
+
+- id: F56
+  tipo: factual
+  pregunta: ¿Pueden los niños ir en el asiento delantero?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a117, apartado: '3'}
+  claves: [asientos traseros]
+
+- id: F57
+  tipo: factual
+  pregunta: ¿Por dónde tienen que ir los ciclistas en una carretera?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a36, apartado: '1'}
+  claves: [arcén de su derecha]
+
+- id: F58
+  tipo: factual
+  pregunta: ¿Cuál es la velocidad mínima en una carretera convencional?
+  comportamiento: responder
+  citas:
+  - {norma: CIR, id_bloque: a49, apartado: '1'}
+  claves: [mitad de la genérica]
+
+- id: F59
+  tipo: factual
+  pregunta: ¿Qué distancia tengo que dejar con el coche de delante?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a54, apartado: '1'}
+    - {norma: LSV, id_bloque: a22, apartado: '2'}
+  claves: [detenerse]
+
+- id: F60
+  tipo: factual
+  pregunta: ¿Cuántos puntos quita conducir habiendo tomado drogas?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: anii, apartado: '2'}
+  claves: [drogas en el organismo. | 6]
 
 - id: S01
   tipo: situacion
@@ -91,7 +521,7 @@
   tipo: situacion
   pregunta: Iba conduciendo sin el cinturón puesto y me han denunciado. ¿Cuánto es?
   comportamiento: responder
-  citas: [{norma: CIR, id_bloque: a117, apartado: "1"}, {norma: LSV, id_bloque: anii, apartado: null}]
+  citas: [[{norma: CIR, id_bloque: a117, apartado: "1"}, {norma: LSV, id_bloque: a47, apartado: null}], {norma: LSV, id_bloque: anii, apartado: null}]
   sancion: {codigo: CIR 117 1 5E, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 4}
 
 - id: S04
@@ -120,7 +550,7 @@
   tipo: situacion
   pregunta: Dejé el coche en doble fila y me fui diez minutos a hacer un recado. ¿Es multa?
   comportamiento: responder
-  citas: [{norma: CIR, id_bloque: a91, apartado: "2"}]
+  citas: [[{norma: CIR, id_bloque: a91, apartado: "2"}, {norma: CIR, id_bloque: a94, apartado: "2"}, {norma: LSV, id_bloque: a40, apartado: null}]]
   sancion: {codigo: CIR 091 2 5H, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
 
 - id: S08
@@ -128,6 +558,468 @@
   pregunta: Me ha saltado un radar a 90 km/h. ¿Cuánto me va a costar?
   comportamiento: aclarar
   falta: [limite_velocidad, tipo_via]
+
+- id: S09
+  tipo: situacion
+  pregunta: Iba por una carretera y no paré para dejar pasar un rebaño de ovejas que cruzaba. ¿Me pueden multar?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a66, apartado: null}
+    - {norma: LSV, id_bloque: a25, apartado: null}
+  sancion: {codigo: CIR 066 1 5B, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S10
+  tipo: situacion
+  pregunta: Me bajé del coche en marcha, casi parado, en un atasco. Un agente me ha denunciado. ¿Qué multa es?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a114, apartado: null}
+    - {norma: LSV, id_bloque: a45, apartado: null}
+  sancion: {codigo: CIR 114 2 5B, gravedad: leve, importe_eur: 80, pronto_pago_eur: 40, puntos: 0}
+
+- id: S11
+  tipo: situacion
+  pregunta: Iba muy despacio por la carretera sin motivo y la fila de coches detrás no podía pasar. ¿Es sancionable?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a49, apartado: null}
+    - {norma: LSV, id_bloque: a21, apartado: null}
+  sancion: {codigo: CIR 049 1 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S12
+  tipo: situacion
+  pregunta: Frené de golpe en la autovía sin avisar a los de detrás. ¿Me pueden poner multa por eso?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a53, apartado: null}
+    - {norma: LSV, id_bloque: a22, apartado: null}
+  sancion: {codigo: CIR 053 1 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S13
+  tipo: situacion
+  pregunta: Me deslumbró un coche de frente y seguí a la misma velocidad sin ver nada. ¿Es infracción?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a102, apartado: null}
+    - {norma: LSV, id_bloque: a10, apartado: null}
+  sancion: {codigo: CIR 102 3 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S14
+  tipo: situacion
+  pregunta: Me mudé hace un año y no cambié la dirección del carné en Tráfico. ¿Me pueden multar?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a60, apartado: null}
+  sancion: {codigo: LSV 060 1 5A, gravedad: leve, importe_eur: 80, pronto_pago_eur: 40, puntos: 0}
+
+- id: S15
+  tipo: situacion
+  pregunta: Adelanté a una furgoneta justo encima de un paso de cebra sin frenar. ¿Cuánto es la multa?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a87, apartado: null}
+    - {norma: LSV, id_bloque: a37, apartado: null}
+  sancion: {codigo: CIR 087 1-B 5G, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S16
+  tipo: situacion
+  pregunta: En un atasco con todos los carriles llenos me cambié de carril para adelantar. ¿Es multa?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a83, apartado: null}
+    - {norma: LSV, id_bloque: a33, apartado: null}
+  sancion: {codigo: CIR 083 2 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S17
+  tipo: situacion
+  pregunta: Pasé entre unos conos que cerraban un carril por obras. ¿Qué multa me puede caer?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a142, apartado: null}
+    - {norma: LSV, id_bloque: a53, apartado: null}
+  sancion: {codigo: CIR 142 4 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S18
+  tipo: situacion
+  pregunta: Fui marcha atrás unos 30 metros por una calle para coger un hueco. ¿Es infracción?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a80, apartado: null}
+    - {norma: LSV, id_bloque: a32, apartado: null}
+  sancion: {codigo: CIR 080 2 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S19
+  tipo: situacion
+  pregunta: Iba de noche con todas las luces apagadas, ni las de posición. ¿Cuánto es la multa?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a99, apartado: null}
+    - {norma: LSV, id_bloque: a43, apartado: null}
+  sancion: {codigo: CIR 099 1 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S20
+  tipo: situacion
+  pregunta: Dejé el coche aparcado con las largas encendidas. ¿Me pueden multar por eso?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a100, apartado: null}
+    - {norma: LSV, id_bloque: a43, apartado: null}
+  sancion: {codigo: CIR 100 2 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S21
+  tipo: situacion
+  pregunta: Llevaba un caballo del ronzal andando por el arcén de la autovía. ¿Es multa?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a128, apartado: null}
+    - {norma: LSV, id_bloque: a50, apartado: null}
+  sancion: {codigo: CIR 128 - 5C, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S22
+  tipo: situacion
+  pregunta: Le he puesto a mi coche unas lunas tintadas que no están homologadas. ¿Me pueden sancionar?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a19, apartado: null}
+    - {norma: LSV, id_bloque: a13, apartado: null}
+  sancion: {codigo: CIR 019 2 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S23
+  tipo: situacion
+  pregunta: Giré a la izquierda desde el carril de la derecha sin colocarme antes. ¿Qué me cae?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a75, apartado: null}
+    - {norma: LSV, id_bloque: a30, apartado: null}
+  sancion: {codigo: CIR 075 1 5B, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S24
+  tipo: situacion
+  pregunta: Un coche me estaba adelantando, se arrepintió y no le dejé volver a su carril. ¿Es infracción?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a86, apartado: null}
+    - {norma: LSV, id_bloque: a36, apartado: null}
+  sancion: {codigo: CIR 086 2 5D, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S25
+  tipo: situacion
+  pregunta: En un puente estrecho señalizado no cedí el paso al coche que venía de frente. ¿Cuánto es?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a61, apartado: null}
+    - {norma: LSV, id_bloque: a24, apartado: null}
+  sancion: {codigo: CIR 061 1 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S26
+  tipo: situacion
+  pregunta: Los agentes habían cortado un sentido por una operación salida y yo me lo salté. ¿Qué multa es?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a39, apartado: null}
+    - {norma: LSV, id_bloque: a18, apartado: null}
+  sancion: {codigo: CIR 039 4 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 4}
+
+- id: S27
+  tipo: situacion
+  pregunta: Crucé la calle andando a mitad de manzana, teniendo un paso de cebra al lado. ¿Me pueden multar?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a124, apartado: null}
+    - {norma: LSV, id_bloque: a49, apartado: null}
+  sancion: {codigo: CIR 124 1 5A, gravedad: leve, importe_eur: 80, pronto_pago_eur: 40, puntos: 0}
+
+- id: S28
+  tipo: situacion
+  pregunta: Llevaba a mi hijo de paquete en la bici sin casco y nos han parado. ¿Es multa?
+  comportamiento: responder
+  citas:
+  - {norma: LSV, id_bloque: a47, apartado: null}
+  sancion: {codigo: LSV 047 - 5B, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S29
+  tipo: situacion
+  pregunta: Me metí por error en una carretera de doble sentido y fui un rato por el carril contrario. ¿Qué me cae?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a29, apartado: null}
+    - {norma: LSV, id_bloque: a15, apartado: null}
+  sancion: {codigo: CIR 029 2 5A, gravedad: muy_grave, importe_eur: 500, pronto_pago_eur: 250, puntos: 6}
+
+- id: S30
+  tipo: situacion
+  pregunta: Iba andando por la carretera teniendo una acera al lado. ¿Me pueden multar como peatón?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a121, apartado: null}
+    - {norma: LSV, id_bloque: a49, apartado: null}
+  sancion: {codigo: CIR 121 1 5B, gravedad: leve, importe_eur: 80, pronto_pago_eur: 40, puntos: 0}
+
+- id: S31
+  tipo: situacion
+  pregunta: Íbamos dos en la moto y mi amigo iba sentado delante de mí. ¿Es multa?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a12, apartado: null}
+    - {norma: LSV, id_bloque: a13, apartado: null}
+  sancion: {codigo: CIR 012 2 5A, gravedad: leve, importe_eur: 80, pronto_pago_eur: 40, puntos: 0}
+
+- id: S32
+  tipo: situacion
+  pregunta: Aparqué junto a un bordillo pintado de amarillo discontinuo. ¿Cuánto es la multa?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a147, apartado: null}
+    - {norma: LSV, id_bloque: a53, apartado: null}
+  sancion: {codigo: CIR 147 2-F 5F, gravedad: leve, importe_eur: 80, pronto_pago_eur: 40, puntos: 0}
+
+- id: S33
+  tipo: situacion
+  pregunta: Tengo las cortas mal reguladas y deslumbran a los que vienen de frente. ¿Me pueden multar?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a101, apartado: null}
+    - {norma: LSV, id_bloque: a43, apartado: null}
+  sancion: {codigo: CIR 101 3 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S34
+  tipo: situacion
+  pregunta: En un semáforo con flecha verde a la derecha giré a la izquierda. ¿Es multa?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a143, apartado: null}
+    - {norma: LSV, id_bloque: a53, apartado: null}
+  sancion: {codigo: CIR 143 1-B 5B, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S35
+  tipo: situacion
+  pregunta: Hice ráfagas a los coches de frente para avisarles de un control de la Guardia Civil. ¿Es sancionable?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a18, apartado: null}
+    - {norma: LSV, id_bloque: a13, apartado: null}
+  sancion: {codigo: CIR 018 3 5B, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S36
+  tipo: situacion
+  pregunta: Aparqué en una curva sin visibilidad y me han multado. ¿Cuánto es?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a94, apartado: null}
+    - {norma: LSV, id_bloque: a40, apartado: null}
+  sancion: {codigo: CIR 094 2-F 5B, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S37
+  tipo: situacion
+  pregunta: Con mi camión de 7 toneladas fui por el arcén de la nacional para adelantar la cola. ¿Qué multa es?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a31, apartado: null}
+    - {norma: LSV, id_bloque: a16, apartado: null}
+  sancion: {codigo: CIR 031 1 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S38
+  tipo: situacion
+  pregunta: Se me paró el coche en la autovía y no puse los warnings. ¿Me pueden multar?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a109, apartado: null}
+    - {norma: LSV, id_bloque: a44, apartado: null}
+  sancion: {codigo: CIR 109 2 5G, gravedad: leve, importe_eur: 80, pronto_pago_eur: 40, puntos: 0}
+
+- id: S39
+  tipo: situacion
+  pregunta: Adelanté y tardé mucho en volver a mi carril, el de detrás tuvo que frenar. ¿Es multa?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a85, apartado: null}
+    - {norma: LSV, id_bloque: a35, apartado: null}
+  sancion: {codigo: CIR 085 3 5C, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S40
+  tipo: situacion
+  pregunta: Iba en bici de noche por una carretera sin chaleco reflectante. ¿Cuánto me cae?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a98, apartado: null}
+    - {norma: LSV, id_bloque: a43, apartado: null}
+  sancion: {codigo: CIR 098 3 5A, gravedad: leve, importe_eur: 80, pronto_pago_eur: 40, puntos: 0}
+
+- id: S41
+  tipo: situacion
+  pregunta: Tiré una botella de cristal por la ventanilla en la autovía. ¿Qué multa es?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a6, apartado: null}
+    - {norma: LSV, id_bloque: a12, apartado: null}
+  sancion: {codigo: CIR 006 1 5H, gravedad: muy_grave, importe_eur: 500, pronto_pago_eur: 250, puntos: 0}
+
+- id: S42
+  tipo: situacion
+  pregunta: No paré en un paso de cebra y casi atropello a una señora. ¿Qué me cae?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a65, apartado: null}
+    - {norma: LSV, id_bloque: a25, apartado: null}
+  sancion: {codigo: CIR 065 - 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 4}
+
+- id: S43
+  tipo: situacion
+  pregunta: Con el semáforo cambiando me quedé parado encima del paso de peatones bloqueándolo. ¿Es multa?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a59, apartado: null}
+    - {norma: LSV, id_bloque: a26, apartado: null}
+  sancion: {codigo: CIR 059 1 5B, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S44
+  tipo: situacion
+  pregunta: Soy camionero y he descansado menos de la mitad de lo que marca la ley. ¿Qué sanción tiene?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a120, apartado: null}
+    - {norma: LSV, id_bloque: a48, apartado: null}
+  sancion: {codigo: CIR 120 1 5B, gravedad: muy_grave, importe_eur: 500, pronto_pago_eur: 250, puntos: 6}
+
+- id: S45
+  tipo: situacion
+  pregunta: Llevo en el coche un detector de radares. ¿Me pueden multar aunque no lo use?
+  comportamiento: responder
+  citas:
+  - - {norma: LSV, id_bloque: a13, apartado: null}
+    - {norma: LSV, id_bloque: a67, apartado: null}
+  sancion: {codigo: LSV 013 6 5C, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 3}
+
+- id: S46
+  tipo: situacion
+  pregunta: Pasé por el carril de telepeaje sin llevar el dispositivo. ¿Cuánto es la multa?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a132, apartado: null}
+    - {norma: LSV, id_bloque: a53, apartado: null}
+  sancion: {codigo: CIR 132 1 5D, gravedad: leve, importe_eur: 100, pronto_pago_eur: null, puntos: 0}
+
+- id: S47
+  tipo: situacion
+  pregunta: En una avenida de dos carriles por sentido iba cambiando de carril todo el rato sin motivo. ¿Es infracción?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a33, apartado: null}
+    - {norma: LSV, id_bloque: a16, apartado: null}
+  sancion: {codigo: CIR 033 - 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S48
+  tipo: situacion
+  pregunta: No dejé pasar a un ciclista que cruzaba por un paso para bicis. ¿Me pueden multar?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a64, apartado: null}
+    - {norma: LSV, id_bloque: a25, apartado: null}
+  sancion: {codigo: CIR 064 - 5C, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S49
+  tipo: situacion
+  pregunta: Con un camión de más de 3.500 kg iba por el carril central de la autovía de tres carriles. ¿Es multa?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a32, apartado: null}
+    - {norma: LSV, id_bloque: a16, apartado: null}
+  sancion: {codigo: CIR 032 - 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S50
+  tipo: situacion
+  pregunta: Descargué los muebles de la mudanza en mitad de la calle pudiendo meter la furgoneta en el vado. ¿Es sancionable?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a16, apartado: null}
+    - {norma: LSV, id_bloque: a12, apartado: null}
+  sancion: {codigo: CIR 016 - 5A, gravedad: leve, importe_eur: 80, pronto_pago_eur: 40, puntos: 0}
+
+- id: S51
+  tipo: situacion
+  pregunta: Aparqué en una plaza reservada para motos con mi coche. ¿Qué multa es?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a146, apartado: null}
+    - {norma: LSV, id_bloque: a53, apartado: null}
+  sancion: {codigo: CIR 146 2-A 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S52
+  tipo: situacion
+  pregunta: Hice un cambio de sentido en una curva sin visibilidad. ¿Cuánto es la multa?
+  comportamiento: responder
+  citas:
+  - - {norma: CIR, id_bloque: a79, apartado: null}
+    - {norma: LSV, id_bloque: a31, apartado: null}
+  sancion: {codigo: CIR 079 1 5A, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 3}
+
+- id: S53
+  tipo: situacion
+  pregunta: Iba con el patinete eléctrico por la acera bastante rápido y me han multado. ¿Qué me cae?
+  comportamiento: avisar
+  motivo: arci_desfasada
+  citas:
+  - - {norma: CIR, id_bloque: a121, apartado: null}
+    - {norma: LSV, id_bloque: a49, apartado: null}
+  sancion: {codigo: CIR 121 4 5B, gravedad: leve, importe_eur: 80, pronto_pago_eur: 40, puntos: 0}
+
+- id: S54
+  tipo: situacion
+  pregunta: Me han multado por ir en bici por la acera. ¿Cuánto es?
+  comportamiento: avisar
+  motivo: arci_desfasada
+  citas:
+  - - {norma: CIR, id_bloque: a121, apartado: null}
+    - {norma: LSV, id_bloque: a25, apartado: null}
+  sancion: {codigo: CIR 121 5 5B, gravedad: leve, importe_eur: 100, pronto_pago_eur: 50, puntos: 0}
+
+- id: S55
+  tipo: situacion
+  pregunta: Estaba cruzando y no me aparté cuando venía una ambulancia con la sirena. ¿Me pueden multar como peatón?
+  comportamiento: avisar
+  motivo: arci_desfasada
+  citas:
+  - - {norma: CIR, id_bloque: a122, apartado: null}
+    - {norma: LSV, id_bloque: a49, apartado: null}
+  sancion: {codigo: CIR 122 7 5A, gravedad: leve, importe_eur: 80, pronto_pago_eur: 40, puntos: 0}
+
+- id: S56
+  tipo: situacion
+  pregunta: Paré un momento en la esquina de un paso de cebra, tapando la visibilidad a los que cruzaban. ¿Qué multa es?
+  comportamiento: avisar
+  motivo: arci_desfasada
+  citas:
+  - - {norma: CIR, id_bloque: a94, apartado: null}
+    - {norma: LSV, id_bloque: a40, apartado: null}
+  sancion: {codigo: CIR 094 1-L 5U, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+
+- id: S57
+  tipo: situacion
+  pregunta: Llevaba un remolque enganchado a la moto que no cumplía las condiciones. ¿Es multa?
+  comportamiento: avisar
+  motivo: arci_desfasada
+  citas:
+  - - {norma: CIR, id_bloque: a12, apartado: null}
+    - {norma: LSV, id_bloque: a13, apartado: null}
+  sancion: {codigo: CIR 012 4 5A, gravedad: leve, importe_eur: 80, pronto_pago_eur: 40, puntos: 0}
+
+- id: S58
+  tipo: situacion
+  pregunta: Me han pillado a 100 km/h. ¿Cuántos puntos me quitan?
+  comportamiento: aclarar
+  falta: [limite_velocidad, tipo_via]
+
+- id: S59
+  tipo: situacion
+  pregunta: He dado positivo en un control de alcoholemia. ¿Qué me va a caer?
+  comportamiento: aclarar
+  falta: [tasa, tipo_conductor]
+
+- id: S60
+  tipo: situacion
+  pregunta: Me han parado por no llevar casco. ¿Cuánto es la multa?
+  comportamiento: aclarar
+  falta: [vehiculo, tipo_via]
 
 - id: T01
   tipo: trampa
@@ -160,3 +1052,195 @@
   citas: [{norma: LSV, id_bloque: aniv, apartado: null}]
   claves: ["Navarra"]
   revisar: true  # confirmar qué autoridad tramita y si hay especialidades forales
+
+- id: T05
+  tipo: trampa
+  pregunta: ¿Cuánto es la multa de la ORA en Madrid si me paso del tiempo?
+  comportamiento: rechazar
+  motivo: ordenanza
+  claves: [ordenanza]
+
+- id: T06
+  tipo: trampa
+  pregunta: ¿Puedo entrar con mi diésel de 2010 en la zona de bajas emisiones de Barcelona?
+  comportamiento: rechazar
+  motivo: ordenanza
+  claves: [ordenanza]
+
+- id: T07
+  tipo: trampa
+  pregunta: ¿Cuánto cobra la grúa municipal de Bilbao por llevarse el coche?
+  comportamiento: rechazar
+  motivo: ordenanza
+  claves: [ordenanza]
+
+- id: T08
+  tipo: trampa
+  pregunta: ¿En Valencia puedo ir con el patinete eléctrico por el carril bici?
+  comportamiento: rechazar
+  motivo: ordenanza
+  citas:
+  - {norma: CIR, id_bloque: a1-8, apartado: '1'}
+  claves: [ordenanza]
+
+- id: T09
+  tipo: trampa
+  pregunta: ¿Cuál es el horario de carga y descarga en el centro de Sevilla?
+  comportamiento: rechazar
+  motivo: ordenanza
+  claves: [ordenanza]
+
+- id: T10
+  tipo: trampa
+  pregunta: ¿Cuánto es la multa por aparcar en una plaza de residentes en Pamplona?
+  comportamiento: rechazar
+  motivo: ordenanza
+  claves: [ordenanza]
+
+- id: T11
+  tipo: trampa
+  pregunta: Atropellé a un ciclista y me fui sin parar. ¿Qué multa me puede caer?
+  comportamiento: avisar
+  motivo: penal
+  citas:
+  - - {norma: CIR, id_bloque: a129, apartado: '1'}
+    - {norma: LSV, id_bloque: a51, apartado: null}
+  claves: [delito]
+
+- id: T12
+  tipo: trampa
+  pregunta: Me negué a soplar en un control de alcoholemia. ¿Cuánto es la multa?
+  comportamiento: avisar
+  motivo: penal
+  citas:
+  - - {norma: CIR, id_bloque: a21, apartado: null}
+    - {norma: LSV, id_bloque: a14, apartado: null}
+  claves: [delito]
+
+- id: T13
+  tipo: trampa
+  pregunta: Me han cazado a 200 km/h en una autovía limitada a 120. ¿Cuántos puntos me quitan?
+  comportamiento: avisar
+  motivo: penal
+  citas:
+  - {norma: LSV, id_bloque: aniv, apartado: null}
+  claves: [delito]
+
+- id: T14
+  tipo: trampa
+  pregunta: Conducía sin haberme sacado nunca el carné. ¿Cuánto es la multa?
+  comportamiento: avisar
+  motivo: penal
+  citas:
+  - {norma: LSV, id_bloque: a61, apartado: '1'}
+  claves: [delito]
+
+- id: T15
+  tipo: trampa
+  pregunta: Hice una carrera con un amigo por la autovía a toda velocidad. ¿Qué me cae?
+  comportamiento: avisar
+  motivo: penal
+  citas:
+  - {norma: LSV, id_bloque: anii, apartado: null}
+  claves: [delito]
+
+- id: T16
+  tipo: trampa
+  pregunta: Conduje con el carné retirado por haber perdido todos los puntos. ¿Es solo una multa?
+  comportamiento: avisar
+  motivo: penal
+  citas:
+  - {norma: LSV, id_bloque: a71, apartado: null}
+  claves: [delito]
+
+- id: T17
+  tipo: trampa
+  pregunta: Como en ciudad el límite es siempre 50, ¿puedo ir a 50 por una calle de un solo carril?
+  comportamiento: corregir
+  motivo: premisa_falsa
+  citas:
+  - {norma: CIR, id_bloque: a50, apartado: '1'}
+  claves: [30 km/h]
+
+- id: T18
+  tipo: trampa
+  pregunta: Como el cinturón atrás no es obligatorio, ¿me pueden multar si mi hijo va sin él?
+  comportamiento: corregir
+  motivo: premisa_falsa
+  citas:
+  - {norma: CIR, id_bloque: a117, apartado: '1'}
+  claves: [ocupantes]
+
+- id: T19
+  tipo: trampa
+  pregunta: Si pago la multa en los primeros 30 días me hacen el descuento, ¿verdad?
+  comportamiento: corregir
+  motivo: premisa_falsa
+  citas:
+  - {norma: LSV, id_bloque: a94, apartado: null}
+  claves: [veinte días]
+
+- id: T20
+  tipo: trampa
+  pregunta: Los noveles empiezan con 6 puntos; si me quitan 4, ¿con cuántos me quedo?
+  comportamiento: corregir
+  motivo: premisa_falsa
+  citas:
+  - {norma: LSV, id_bloque: a63, apartado: '2'}
+  claves: [ocho puntos]
+
+- id: T21
+  tipo: trampa
+  pregunta: Como en autovía se puede ir a 130 con un turismo, ¿cuánto me cae por ir a 135?
+  comportamiento: corregir
+  motivo: premisa_falsa
+  citas:
+  - {norma: CIR, id_bloque: a48, apartado: '1'}
+  claves: ['120']
+
+- id: T22
+  tipo: trampa
+  pregunta: Como las multas leves son de 200 euros, ¿cuánto pago con el descuento?
+  comportamiento: corregir
+  motivo: premisa_falsa
+  citas:
+  - {norma: LSV, id_bloque: a80, apartado: '1'}
+  claves: [100 euros]
+
+- id: T23
+  tipo: trampa
+  pregunta: Me han dicho que con 17 años en ciclomotor puedo llevar hasta 0,15 de alcohol. ¿Es así?
+  comportamiento: corregir
+  motivo: premisa_falsa
+  citas:
+  - {norma: LSV, id_bloque: a14, apartado: '1'}
+  claves: [0 miligramos]
+
+- {id: T24, tipo: trampa, pregunta: '¿Cuánto cuesta renovar el carné de conducir?', comportamiento: rechazar, motivo: fuera_ambito}
+
+- {id: T25, tipo: trampa, pregunta: '¿Cada cuánto tengo que pasar la ITV con un coche de 8 años?', comportamiento: rechazar, motivo: fuera_ambito}
+
+- {id: T26, tipo: trampa, pregunta: Redáctame un recurso contra mi multa de velocidad., comportamiento: rechazar, motivo: fuera_ambito}
+
+- {id: T27, tipo: trampa, pregunta: '¿Qué seguro mínimo tengo que tener para circular con el coche?', comportamiento: rechazar, motivo: fuera_ambito}
+
+- {id: T28, tipo: trampa, pregunta: '¿Cuántos puntos tengo ahora mismo en el carné?', comportamiento: rechazar, motivo: fuera_ambito}
+
+- id: T29
+  tipo: trampa
+  pregunta: Me ha multado la Policía Municipal de Pamplona en una calle de la ciudad. ¿Quién me sanciona, la DGT?
+  comportamiento: avisar
+  motivo: competencia
+  citas:
+  - {norma: LSV, id_bloque: a84, apartado: '4'}
+  claves: [Alcaldes]
+
+- id: T30
+  tipo: trampa
+  pregunta: Me ha multado un Mosso d'Esquadra en una carretera de Cataluña. ¿Las cuantías son las de la DGT?
+  comportamiento: avisar
+  motivo: competencia
+  citas:
+  - {norma: LSV, id_bloque: a84, apartado: null}
+  claves: [Cataluña]
+  revisar: true

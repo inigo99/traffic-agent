@@ -1,0 +1,31 @@
+﻿id;tipo;pregunta;comportamiento esperado;motivo / falta;citas;claves;sancion (ARCI);ok;comentario
+F10;factual;¿Puede ir mi hijo de 8 años conmigo en la moto?;responder;;CIR art. 12.2;siete años;;sí;Correcto, la edad mínima excepcional es de siete años.
+F12;factual;¿Quién está obligado a hacer la prueba de alcoholemia?;responder;;CIR art. 21 o LSV art. 14.2;obligados;;sí;Correcto, conductores y peatones implicados.
+F17;factual;¿Qué tengo que hacer cuando oigo una ambulancia con la sirena detrás de mí?;responder;;CIR art. 69;medidas adecuadas;;sí;Correcto, se debe facilitar el paso.
+F22;factual;¿Cuándo hay que poner las luces antiniebla?;responder;;CIR art. 106.1;niebla;;sí;Correcto, en condiciones de baja visibilidad.
+F25;factual;¿Hasta qué altura tienen que ir los niños en silla homologada?;responder;;CIR art. 117.1;135 centímetros;;sí;Correcto.
+F27;factual;¿Me puedo quitar el cinturón para aparcar?;responder;;CIR art. 119.1;marcha atrás;;sí;Correcto, existe exención en marcha atrás.
+F33;factual;¿Quién puede restringir la entrada de coches en las zonas de bajas emisiones?;responder;;CIR art. 157 (nuevo Título VI, zonas urbanas);zonas de bajas emisiones;;sí;Correcto.
+F34;factual;¿Con cuántos puntos empieza un conductor?;responder;;LSV art. 63.1;doce puntos;;no;Falso, los conductores noveles empiezan con 8 puntos.
+F43;factual;¿Cuánto es una multa grave?;responder;;LSV art. 80.1;200 euros;;sí;Correcto.
+F48;factual;¿Qué plazo tengo para presentar alegaciones a una multa?;responder;;LSV art. 95.1;veinte días naturales;;sí;Correcto.
+F50;factual;¿Cuándo tienen preferencia los peatones sobre los coches?;responder;;LSV art. 25.1 o CIR art. 65.1;pasos para peatones;;sí;Correcto.
+F58;factual;¿Cuál es la velocidad mínima en una carretera convencional?;responder;;CIR art. 49.1;mitad de la genérica;;sí;Correcto.
+S09;situacion;Iba por una carretera y no paré para dejar pasar un rebaño de ovejas que cruzaba. ¿Me pueden multar?;responder;;CIR art. 66 o LSV art. 25;;CIR 066 1 5B · grave · 200 € (100 €) · 0 pts;sí;Correcto.
+S10;situacion;Me bajé del coche en marcha, casi parado, en un atasco. Un agente me ha denunciado. ¿Qué multa es?;responder;;CIR art. 114 o LSV art. 45;;CIR 114 2 5B · leve · 80 € (40 €) · 0 pts;sí;Correcto.
+S13;situacion;Me deslumbró un coche de frente y seguí a la misma velocidad sin ver nada. ¿Es infracción?;responder;;CIR art. 102 o LSV art. 10;;CIR 102 3 5A · grave · 200 € (100 €) · 0 pts;sí;Correcto.
+S14;situacion;Me mudé hace un año y no cambié la dirección del carné en Tráfico. ¿Me pueden multar?;responder;;LSV art. 60;;LSV 060 1 5A · leve · 80 € (40 €) · 0 pts;sí;Correcto.
+S19;situacion;Iba de noche con todas las luces apagadas, ni las de posición. ¿Cuánto es la multa?;responder;;CIR art. 99 o LSV art. 43;;CIR 099 1 5A · grave · 200 € (100 €) · 0 pts;sí;Correcto.
+S24;situacion;Un coche me estaba adelantando, se arrepintió y no le dejé volver a su carril. ¿Es infracción?;responder;;CIR art. 86 o LSV art. 36;;CIR 086 2 5D · grave · 200 € (100 €) · 0 pts;sí;Correcto.
+S31;situacion;Íbamos dos en la moto y mi amigo iba sentado delante de mí. ¿Es multa?;responder;;CIR art. 12 o LSV art. 13;;CIR 012 2 5A · leve · 80 € (40 €) · 0 pts;sí;Correcto.
+S34;situacion;En un semáforo con flecha verde a la derecha giré a la izquierda. ¿Es multa?;responder;;CIR art. 143 o LSV art. 53;;CIR 143 1-B 5B · grave · 200 € (100 €) · 0 pts;no;Girar a la izquierda saltándose la prioridad del semáforo resta 4 puntos.
+S38;situacion;Se me paró el coche en la autovía y no puse los warnings. ¿Me pueden multar?;responder;;CIR art. 109 o LSV art. 44;;CIR 109 2 5G · leve · 80 € (40 €) · 0 pts;sí;Correcto.
+S42;situacion;No paré en un paso de cebra y casi atropello a una señora. ¿Qué me cae?;responder;;CIR art. 65 o LSV art. 25;;CIR 065 - 5A · grave · 200 € (100 €) · 4 pts;sí;Correcto.
+S47;situacion;En una avenida de dos carriles por sentido iba cambiando de carril todo el rato sin motivo. ¿Es infracción?;responder;;CIR art. 33 o LSV art. 16;;CIR 033 - 5A · grave · 200 € (100 €) · 0 pts;sí;Correcto.
+S57;situacion;Llevaba un remolque enganchado a la moto que no cumplía las condiciones. ¿Es multa?;avisar;arci_desfasada;CIR art. 12 o LSV art. 13;;CIR 012 4 5A · leve · 80 € (40 €) · 0 pts;sí;Correcto.
+T05;trampa;¿Cuánto es la multa de la ORA en Madrid si me paso del tiempo?;rechazar;ordenanza;;ordenanza;;sí;Correcto, se regula por ordenanza municipal.
+T07;trampa;¿Cuánto cobra la grúa municipal de Bilbao por llevarse el coche?;rechazar;ordenanza;;ordenanza;;sí;Correcto, se regula por ordenanza municipal.
+T12;trampa;Me negué a soplar en un control de alcoholemia. ¿Cuánto es la multa?;avisar;penal;CIR art. 21 o LSV art. 14;delito;;sí;Correcto, constituye un delito penal.
+T17;trampa;Como en ciudad el límite es siempre 50, ¿puedo ir a 50 por una calle de un solo carril?;corregir;premisa_falsa;CIR art. 50.1;30 km/h;;sí;Correcto, en vías de un carril es 30 km/h.
+T22;trampa;Como las multas leves son de 200 euros, ¿cuánto pago con el descuento?;corregir;premisa_falsa;LSV art. 80.1;100 euros;;sí;Correcto, las leves ascienden hasta 100 €.
+T23;trampa;Me han dicho que con 17 años en ciclomotor puedo llevar hasta 0,15 de alcohol. ¿Es así?;corregir;premisa_falsa;LSV art. 14.1;0 miligramos;;sí;Correcto, la tasa es 0,0 para menores.
