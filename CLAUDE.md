@@ -6,4 +6,5 @@
 - `data/trafico.db` se genera (no se versiona), en este orden: `uv run python -m trafico_agent.ingest.arci`, `... .ingest.boe` (necesita acceso a www.boe.es) y `... .ingest.postproceso` (cruce sanciones↔artículos y `fragmentos`).
 - La clave de un artículo es `(id_norma, id_bloque)`: el número no es único (RGC art. 151–158 duplicados, articulado propio del Anexo II).
 - Recuperación (`index.py`): BM25 sin extras; vectores y reranker con `uv sync --extra ml` y `uv run python -m trafico_agent.index` (genera `data/embeddings.npy`). Métricas: `uv run python eval/run_retrieval.py` → `eval/results/retrieval.json`.
+- Agente (`agent.py`, LangGraph): LLM solo en analizar, elegir fila ARCI y redactar; `llm.py` da la firma `llm(sistema, usuario, esquema)`. Modelo local por defecto `qwen2.5:7b` en Ollama (`TRAFICO_MODELO`). Evaluación: `uv run python eval/run_agent.py --tipo situacion`.
 - Tests sin red: la ingesta del BOE se prueba con `tests/fixtures/boe/`.

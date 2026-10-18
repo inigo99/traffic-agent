@@ -126,15 +126,42 @@ def _vector_consulta(consulta):
 
 
 def generar_embeddings(db_path):
-    """Vectores normalizados de todos los fragmentos -> data/embeddings.npy (mismo orden que `id`)."""
+    """Vectores de fragmentos -> data/embeddings.npy y de hechos ARCI -> data/embeddings_sanciones.npz."""
     idx = Indice(db_path, emb_path="/nonexistent")
-    textos = [_texto_indexado(f) for f in idx.frags]
-    emb = _modelo_emb().encode(
-        textos, normalize_embeddings=True, batch_size=8, show_progress_bar=True
-    )
     out = Path(db_path).with_name("embeddings.npy")
-    np.save(out, emb.astype(np.float32))
-    print(f"{len(textos)} vectores {emb.shape[1]}d -> {out}")
+    if out.exists() and len(np.load(out)) == len(idx.frags):
+        print(f"{out} ya cuadra con los fragmentos: no se regenera (bórralo para forzarlo)")
+    else:
+        textos = [_texto_indexado(f) for f in idx.frags]
+        emb = _modelo_emb().encode(
+            textos, normalize_embeddings=True, batch_size=8, show_progress_bar=True
+        )
+        np.save(out, emb.astype(np.float32))
+        print(f"{len(textos)} vectores {emb.shape[1]}d -> {out}")
+    db = sqlite3.connect(db_path)
+    filas = db.execute("SELECT codigo, hecho_denunciado FROM sanciones ORDER BY codigo").fetchall()
+    emb = _modelo_emb().encode(
+        [h for _, h in filas], normalize_embeddings=True, batch_size=8, show_progress_bar=True
+    )
+    out = Path(db_path).with_name("embeddings_sanciones.npz")
+    np.savez(out, codigos=np.array([c for c, _ in filas]), emb=emb.astype(np.float32))
+    print(f"{len(filas)} hechos ARCI -> {out}")
+
+
+def hechos_parecidos(db_path, consulta, k):
+    """Códigos ARCI cuyo hecho denunciado se parece más a la consulta (vectores), o [] si no hay."""
+    ruta = Path(db_path).with_name("embeddings_sanciones.npz")
+    if not ruta.exists():
+        return []
+    datos = _cargar_npz(str(ruta))
+    orden = np.argsort(-(datos["emb"] @ _vector_consulta(consulta)))[:k]
+    return [str(datos["codigos"][i]) for i in orden]
+
+
+@cache
+def _cargar_npz(ruta):
+    with np.load(ruta) as d:
+        return {"codigos": d["codigos"], "emb": d["emb"]}
 
 
 if __name__ == "__main__":

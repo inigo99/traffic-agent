@@ -1,0 +1,991 @@
+{
+ "resumen": {
+  "n": 60,
+  "comportamiento": "0/60 (0%)",
+  "sancion": "0/56 (0%)",
+  "codigo": "0/55 (0%)",
+  "cita": "0/56 (0%)",
+  "segundos_media": 2.0
+ },
+ "preguntas": [
+  {
+   "id": "S01",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S02",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S03",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S04",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S05",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S06",
+   "comportamiento": null,
+   "segundos": 2.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S07",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S08",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S09",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S10",
+   "comportamiento": null,
+   "segundos": 2.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S11",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S12",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S13",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S14",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S15",
+   "comportamiento": null,
+   "segundos": 2.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S16",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S17",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S18",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S19",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S20",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S21",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S22",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S23",
+   "comportamiento": null,
+   "segundos": 2.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S24",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S25",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S26",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S27",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S28",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S29",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S30",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S31",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S32",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S33",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S34",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S35",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S36",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S37",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S38",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S39",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S40",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S41",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S42",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S43",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S44",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S45",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S46",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S47",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S48",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S49",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S50",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S51",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S52",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S53",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S54",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S55",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S56",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S57",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S58",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S59",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  },
+  {
+   "id": "S60",
+   "comportamiento": null,
+   "segundos": 2.0,
+   "ok_comportamiento": false,
+   "respuesta": "ConnectionError('Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download')"
+  }
+ ]
+}
