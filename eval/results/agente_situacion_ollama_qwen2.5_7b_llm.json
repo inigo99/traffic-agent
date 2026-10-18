@@ -6,13 +6,13 @@
   "codigo": "28/54 (52%)",
   "candidato": "43/54 (80%)",
   "cita": "41/56 (73%)",
-  "segundos_media": 5.9
+  "segundos_media": 6.1
  },
  "preguntas": [
   {
    "id": "S01",
    "comportamiento": "responder",
-   "segundos": 66.4,
+   "segundos": 72.9,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -30,7 +30,7 @@
   {
    "id": "S02",
    "comportamiento": "responder",
-   "segundos": 4.7,
+   "segundos": 4.8,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -48,7 +48,7 @@
   {
    "id": "S03",
    "comportamiento": "responder",
-   "segundos": 4.5,
+   "segundos": 4.4,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -66,7 +66,7 @@
   {
    "id": "S04",
    "comportamiento": "responder",
-   "segundos": 5.0,
+   "segundos": 4.9,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -84,7 +84,7 @@
   {
    "id": "S05",
    "comportamiento": "responder",
-   "segundos": 3.2,
+   "segundos": 3.1,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -100,7 +100,7 @@
   {
    "id": "S06",
    "comportamiento": "responder",
-   "segundos": 4.5,
+   "segundos": 4.3,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -116,7 +116,7 @@
   {
    "id": "S07",
    "comportamiento": "responder",
-   "segundos": 5.6,
+   "segundos": 5.4,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -141,7 +141,7 @@
   {
    "id": "S09",
    "comportamiento": "responder",
-   "segundos": 3.8,
+   "segundos": 3.7,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -159,7 +159,7 @@
   {
    "id": "S10",
    "comportamiento": "responder",
-   "segundos": 4.4,
+   "segundos": 4.3,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -195,7 +195,7 @@
   {
    "id": "S12",
    "comportamiento": "responder",
-   "segundos": 7.5,
+   "segundos": 7.3,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -231,7 +231,7 @@
   {
    "id": "S14",
    "comportamiento": "responder",
-   "segundos": 4.1,
+   "segundos": 4.0,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -249,7 +249,7 @@
   {
    "id": "S15",
    "comportamiento": "responder",
-   "segundos": 4.4,
+   "segundos": 4.3,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -267,7 +267,7 @@
   {
    "id": "S16",
    "comportamiento": "responder",
-   "segundos": 5.3,
+   "segundos": 5.2,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -285,7 +285,7 @@
   {
    "id": "S17",
    "comportamiento": "responder",
-   "segundos": 5.5,
+   "segundos": 5.4,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -303,7 +303,7 @@
   {
    "id": "S18",
    "comportamiento": "responder",
-   "segundos": 4.6,
+   "segundos": 4.5,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -321,7 +321,7 @@
   {
    "id": "S19",
    "comportamiento": "responder",
-   "segundos": 4.6,
+   "segundos": 4.4,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -429,7 +429,7 @@
   {
    "id": "S25",
    "comportamiento": "responder",
-   "segundos": 5.1,
+   "segundos": 5.3,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -519,7 +519,7 @@
   {
    "id": "S30",
    "comportamiento": "responder",
-   "segundos": 5.4,
+   "segundos": 5.3,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -537,7 +537,7 @@
   {
    "id": "S31",
    "comportamiento": "responder",
-   "segundos": 4.9,
+   "segundos": 5.1,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -555,7 +555,7 @@
   {
    "id": "S32",
    "comportamiento": "responder",
-   "segundos": 4.9,
+   "segundos": 5.1,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -573,7 +573,7 @@
   {
    "id": "S33",
    "comportamiento": "responder",
-   "segundos": 5.5,
+   "segundos": 6.0,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -591,7 +591,7 @@
   {
    "id": "S34",
    "comportamiento": "responder",
-   "segundos": 4.9,
+   "segundos": 5.2,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -609,7 +609,7 @@
   {
    "id": "S35",
    "comportamiento": "responder",
-   "segundos": 4.4,
+   "segundos": 4.6,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -627,7 +627,7 @@
   {
    "id": "S36",
    "comportamiento": "responder",
-   "segundos": 4.9,
+   "segundos": 5.4,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -645,7 +645,7 @@
   {
    "id": "S37",
    "comportamiento": "responder",
-   "segundos": 5.5,
+   "segundos": 6.2,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -663,7 +663,7 @@
   {
    "id": "S38",
    "comportamiento": "responder",
-   "segundos": 5.8,
+   "segundos": 5.7,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -681,7 +681,7 @@
   {
    "id": "S39",
    "comportamiento": "responder",
-   "segundos": 8.6,
+   "segundos": 9.0,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -699,7 +699,7 @@
   {
    "id": "S40",
    "comportamiento": "responder",
-   "segundos": 5.1,
+   "segundos": 5.5,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -717,7 +717,7 @@
   {
    "id": "S41",
    "comportamiento": "responder",
-   "segundos": 6.4,
+   "segundos": 6.8,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -753,7 +753,7 @@
   {
    "id": "S43",
    "comportamiento": "responder",
-   "segundos": 4.8,
+   "segundos": 5.0,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -771,7 +771,7 @@
   {
    "id": "S44",
    "comportamiento": "responder",
-   "segundos": 5.5,
+   "segundos": 5.7,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -789,7 +789,7 @@
   {
    "id": "S45",
    "comportamiento": "responder",
-   "segundos": 5.3,
+   "segundos": 5.5,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -807,7 +807,7 @@
   {
    "id": "S46",
    "comportamiento": "responder",
-   "segundos": 4.0,
+   "segundos": 3.9,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -825,7 +825,7 @@
   {
    "id": "S47",
    "comportamiento": "responder",
-   "segundos": 6.0,
+   "segundos": 7.2,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -843,7 +843,7 @@
   {
    "id": "S48",
    "comportamiento": "responder",
-   "segundos": 6.7,
+   "segundos": 7.0,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -861,7 +861,7 @@
   {
    "id": "S49",
    "comportamiento": "responder",
-   "segundos": 6.0,
+   "segundos": 6.3,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -879,7 +879,7 @@
   {
    "id": "S50",
    "comportamiento": "responder",
-   "segundos": 4.9,
+   "segundos": 4.6,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -897,7 +897,7 @@
   {
    "id": "S51",
    "comportamiento": "responder",
-   "segundos": 3.3,
+   "segundos": 3.5,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -915,7 +915,7 @@
   {
    "id": "S52",
    "comportamiento": "responder",
-   "segundos": 4.4,
+   "segundos": 5.2,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -933,7 +933,7 @@
   {
    "id": "S53",
    "comportamiento": "avisar",
-   "segundos": 5.9,
+   "segundos": 6.3,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -951,7 +951,7 @@
   {
    "id": "S54",
    "comportamiento": "avisar",
-   "segundos": 6.3,
+   "segundos": 4.7,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -969,7 +969,7 @@
   {
    "id": "S55",
    "comportamiento": "responder",
-   "segundos": 4.6,
+   "segundos": 4.9,
    "ok_comportamiento": false,
    "ok_cita": false,
    "obtenido": {
@@ -987,7 +987,7 @@
   {
    "id": "S56",
    "comportamiento": "responder",
-   "segundos": 5.2,
+   "segundos": 5.4,
    "ok_comportamiento": false,
    "ok_cita": true,
    "obtenido": {
@@ -1005,7 +1005,7 @@
   {
    "id": "S57",
    "comportamiento": "avisar",
-   "segundos": 4.9,
+   "segundos": 4.7,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -1030,14 +1030,14 @@
   {
    "id": "S59",
    "comportamiento": "aclarar",
-   "segundos": 1.8,
+   "segundos": 1.9,
    "ok_comportamiento": true,
    "respuesta": "Para decirte qué sanción corresponde necesito un dato más: ¿qué tasa dio el control (en aire espirado, mg/l, o en sangre, g/l)?"
   },
   {
    "id": "S60",
    "comportamiento": "aclarar",
-   "segundos": 1.6,
+   "segundos": 1.7,
    "ok_comportamiento": true,
    "respuesta": "Para decirte qué sanción corresponde necesito un dato más: ¿en qué vehículo ibas (bicicleta, moto, ciclomotor, patinete…)?"
   }

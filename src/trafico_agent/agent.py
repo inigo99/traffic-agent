@@ -14,7 +14,7 @@ import re
 from typing import Literal, TypedDict
 
 from langgraph.graph import END, START, StateGraph
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, create_model
 
 from trafico_agent import tools
 from trafico_agent.index import tokenizar
@@ -78,8 +78,13 @@ class Analisis(BaseModel):
     hechos: Hechos = Hechos()
 
 
-class Eleccion(BaseModel):
-    codigo: str | None = Field(description="Código ARCI elegido, o null si ninguno encaja")
+def _esquema_eleccion(codigos):
+    """Enum de códigos: la salida JSON de Ollama solo deja elegir uno de la lista (qwen 1.5b/3b
+    devolvían códigos inexistentes o mal copiados)."""
+    return create_model(
+        "Eleccion",
+        codigo=(Literal[tuple(codigos)] | None, Field(description="Código elegido, o null")),
+    )
 
 
 class Estado(TypedDict, total=False):
@@ -239,7 +244,8 @@ def sancion(estado, llm):
     if ELECCION == "vector":  # la más parecida, sin LLM (para comparar en la evaluación)
         codigo = candidatos[0]["codigo"]
     else:
-        codigo = llm(SISTEMA_ELECCION, usuario, Eleccion).codigo
+        esquema = _esquema_eleccion([c["codigo"] for c in candidatos])
+        codigo = llm(SISTEMA_ELECCION, usuario, esquema).codigo
     elegida = next((c for c in candidatos if c["codigo"] == codigo), None)
     return {"sancion": elegida, "candidatos": [c["codigo"] for c in candidatos]}
 
@@ -282,11 +288,15 @@ def redactar(estado, llm):
     if not usados:  # un reintento; si sigue sin citar, no se responde
         texto = llm(SISTEMA_REDACCION + "\nOBLIGATORIO: incluye al menos una cita [n].", usuario)
         usados = _citas(texto, len(frags))
-    if not usados:
+    if not usados and not (s and _precepto(s)):
         texto, s = (
             "No he encontrado en la normativa un artículo que responda a esto con seguridad.",
             None,
         )
+    elif (
+        not usados
+    ):  # el texto del LLM no cita, pero la sanción trae su artículo (modelos pequeños)
+        texto = "La situación que describes corresponde a la infracción indicada abajo."
     orden = sorted(usados)
     texto = re.sub(r"\[(\d+)\]", lambda m: _renumerar(m, orden), _sin_cifras(texto))
     texto = re.sub(r"^(?:\s*\[\d+\])+\s*(?:\d+\.\s+)?", "", texto)  # citas sueltas al inicio

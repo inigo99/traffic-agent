@@ -3,7 +3,7 @@ from pathlib import Path
 import pytest
 
 from trafico_agent import agent, tools
-from trafico_agent.agent import Analisis, Eleccion, Hechos
+from trafico_agent.agent import Analisis, Hechos
 
 DB = Path(__file__).parents[1] / "data" / "trafico.db"
 pytestmark = pytest.mark.skipif(not DB.exists(), reason="falta data/trafico.db")
@@ -29,8 +29,8 @@ def llm_falso(analisis, codigo=None, texto="El cinturón es obligatorio [1]."):
     def llamar(sistema, usuario, esquema=None):
         if esquema is Analisis:
             return analisis
-        if esquema is Eleccion:
-            return Eleccion(codigo=codigo)
+        if esquema is not None and esquema.__name__ == "Eleccion":
+            return esquema.model_construct(codigo=codigo)  # sin validar: simula un código inventado
         return texto(usuario) if callable(texto) else texto
 
     return llamar
@@ -172,3 +172,18 @@ def test_tema_y_vehiculo_no_salen_del_llm():
     r = agent.analizar({"pregunta": "Me han parado por no llevar casco"}, lambda *_: a)
     assert r["analisis"].tema == "casco"
     assert r["faltan"] == ["vehiculo"]
+
+
+def test_eleccion_limitada_a_los_candidatos():
+    esquema = agent._esquema_eleccion(["CIR 117 1 5E", "CIR 117 1 5F"])
+    assert esquema.model_json_schema()["properties"]["codigo"]["anyOf"][0]["enum"] == [
+        "CIR 117 1 5E",
+        "CIR 117 1 5F",
+    ]
+
+
+def test_sin_citas_pero_con_sancion_responde_con_su_articulo():
+    r = agent.preguntar(
+        "iba sin cinturón", llm_falso(situacion(), codigo="CIR 117 1 5E", texto="Sin citas.")
+    )
+    assert r["sancion"]["codigo"] == "CIR 117 1 5E" and r["fuentes"][0]["id_bloque"] == "a117"

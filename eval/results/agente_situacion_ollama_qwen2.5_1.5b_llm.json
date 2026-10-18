@@ -1,0 +1,1045 @@
+{
+ "resumen": {
+  "n": 60,
+  "comportamiento": "54/60 (90%)",
+  "sancion": "35/56 (62%)",
+  "codigo": "14/54 (26%)",
+  "candidato": "43/54 (80%)",
+  "cita": "27/56 (48%)",
+  "segundos_media": 3.2
+ },
+ "preguntas": [
+  {
+   "id": "S01",
+   "comportamiento": "avisar",
+   "segundos": 33.0,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "No he encontrado en la normativa un artículo que responda a esto con seguridad.\n\nAtención: esta conducta puede constituir un delito contra la seguridad vial (Código Penal), además de una infracción administrativa. Consulta con un abogado.\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S02",
+   "comportamiento": "responder",
+   "segundos": 2.2,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "LSV 076 - 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 6
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 6 puntos. Fuente: guía ARCI de la DGT, LSV 076 - 5A.\n\nFuentes:\n[1] LSV Artículo 76. Infracciones graves. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a76\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S03",
+   "comportamiento": "responder",
+   "segundos": 2.6,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 145 2-C 5B",
+    "gravedad": "leve",
+    "importe_eur": 80.0,
+    "pronto_pago_eur": 40.0,
+    "puntos": 0
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción leve, multa de 80 € (40 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 145 2-C 5B.\n\nFuentes:\n[1] CIR Artículo 145. Señales de reglamentación. Objeto, clases y normas comunes. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a145\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S04",
+   "comportamiento": "responder",
+   "segundos": 2.3,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 143 1-B 5D",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 143 1-B 5D.\n\nFuentes:\n[1] CIR Artículo 143. Tipos de semáforos. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a143\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S05",
+   "comportamiento": "responder",
+   "segundos": 2.0,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": "grave",
+    "importe_eur": 300.0,
+    "pronto_pago_eur": 150.0,
+    "puntos": 2
+   },
+   "ok_sancion": true,
+   "respuesta": "Un radar me ha cazado a 71 km/h en una calle de ciudad limitada a 50 km/h. Según el fragmento [1], la infracción identificada es circular a 71 km/h con límite de 50 km/h. Según el fragmento [2], las velocidades máximas en vías fuera de poblado son de 70 km/h para vehículos de tres ruedas y cuadriciclos. Según el fragmento [3], las infracciones a las normas de este precepto tendrán la consideración de graves o muy graves, según corresponda por el exceso de velocidad, conforme se prevé en los artículos 76.a) y 77.a), ambos del texto refundido de la Ley sobre Tráfico, Circulación de Vehículos a Motor y Seguridad Vial.\n\nSanción: infracción grave, multa de 300 € (150 € con pronto pago), 2 puntos. Fuente: Anexo IV de la LSV.\n\nFuentes:\n[1] CIR Artículo 50. Límites de velocidad en vías urbanas y travesías. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a50\n[2] CIR Artículo 48. Velocidades máximas en vías fuera de poblado. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a48\n[3] CIR Artículo 49. Velocidades mínimas en poblado y fuera de poblado. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a49\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S06",
+   "comportamiento": "responder",
+   "segundos": 2.4,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "respuesta": "No he encontrado en la normativa un artículo que responda a esto con seguridad.\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S07",
+   "comportamiento": "responder",
+   "segundos": 2.8,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 094 2-G 5Z",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 094 2-G 5Z.\n\nFuentes:\n[1] CIR Artículo 94. Lugares prohibidos. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a94\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S08",
+   "comportamiento": "aclarar",
+   "segundos": 0.5,
+   "ok_comportamiento": true,
+   "respuesta": "Para decirte qué sanción corresponde necesito un dato más: ¿cuál era el límite de velocidad de la vía (o qué tipo de vía era)?"
+  },
+  {
+   "id": "S09",
+   "comportamiento": "responder",
+   "segundos": 3.2,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 126 1 5D",
+    "gravedad": "leve",
+    "importe_eur": 80.0,
+    "pronto_pago_eur": 40.0,
+    "puntos": 0
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción leve, multa de 80 € (40 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 126 1 5D.\n\nFuentes:\n[1] CIR Artículo 126. Normas generales. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a126\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S10",
+   "comportamiento": "responder",
+   "segundos": 3.7,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 088 1 5C",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 088 1 5C.\n\nFuentes:\n[1] CIR Artículo 88. Vehículos inmovilizados. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a88\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S11",
+   "comportamiento": "responder",
+   "segundos": 3.3,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 049 1 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 049 1 5A.\n\nFuentes:\n[1] CIR Artículo 49. Velocidades mínimas en poblado y fuera de poblado. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a49\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S12",
+   "comportamiento": "responder",
+   "segundos": 2.3,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 086 2 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 086 2 5A.\n\nFuentes:\n[1] CIR Artículo 86. Obligaciones de su conductor. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a86\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S13",
+   "comportamiento": "responder",
+   "segundos": 2.1,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 102 3 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 102 3 5A.\n\nFuentes:\n[1] CIR Artículo 102. Deslumbramiento. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a102\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S14",
+   "comportamiento": "responder",
+   "segundos": 2.7,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "LSV 076 - 5C",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 4
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 4 puntos. Fuente: guía ARCI de la DGT, LSV 076 - 5C.\n\nFuentes:\n[1] LSV Artículo 76. Infracciones graves. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a76\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S15",
+   "comportamiento": "avisar",
+   "segundos": 2.5,
+   "ok_comportamiento": false,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 087 1-B 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 087 1-B 5A.\n\nAtención: esta conducta puede constituir un delito contra la seguridad vial (Código Penal), además de una infracción administrativa. Consulta con un abogado.\n\nFuentes:\n[1] CIR Artículo 87. Prohibiciones. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a87\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S16",
+   "comportamiento": "responder",
+   "segundos": 2.4,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 084 1 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 084 1 5A.\n\nFuentes:\n[1] CIR Artículo 84. Obligaciones del que adelanta antes de iniciar la maniobra. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a84\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S17",
+   "comportamiento": "responder",
+   "segundos": 3.5,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "LSV 020 1 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, LSV 020 1 5A.\n\nFuentes:\n[1] LSV Artículo 20. Circulación en autopistas y autovías. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a20\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S18",
+   "comportamiento": "responder",
+   "segundos": 2.5,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 080 3 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 4
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 4 puntos. Fuente: guía ARCI de la DGT, CIR 080 3 5A.\n\nFuentes:\n[1] CIR Artículo 80. Normas generales. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a80\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S19",
+   "comportamiento": "responder",
+   "segundos": 2.4,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 105 2 5B",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 105 2 5B.\n\nFuentes:\n[1] CIR Artículo 105. Inmovilizaciones. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a105\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S20",
+   "comportamiento": "responder",
+   "segundos": 2.2,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 100 2 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 100 2 5A.\n\nFuentes:\n[1] CIR Artículo 100. Alumbrado de largo alcance o carretera. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a100\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S21",
+   "comportamiento": "responder",
+   "segundos": 2.6,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 128 - 5C",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 128 - 5C.\n\nFuentes:\n[1] CIR Artículo 128. Normas relativas a autopistas y autovías. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a128\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S22",
+   "comportamiento": "responder",
+   "segundos": 2.6,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 019 2 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 019 2 5A.\n\nFuentes:\n[1] CIR Artículo 19. Visibilidad en el vehículo. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a19\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S23",
+   "comportamiento": "responder",
+   "segundos": 2.6,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 074 1 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 074 1 5A.\n\nFuentes:\n[1] CIR Artículo 74. Normas generales. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a74\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S24",
+   "comportamiento": "responder",
+   "segundos": 2.0,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 086 2 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 086 2 5A.\n\nFuentes:\n[1] CIR Artículo 86. Obligaciones de su conductor. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a86\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S25",
+   "comportamiento": "responder",
+   "segundos": 2.9,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 061 1 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 061 1 5A.\n\nFuentes:\n[1] CIR Artículo 61. Paso de puentes u obras de paso señalizado. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a61\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S26",
+   "comportamiento": "responder",
+   "segundos": 3.5,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 082 2 5B",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 082 2 5B.\n\nFuentes:\n[1] CIR Artículo 82. Adelantamiento por la izquierda. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a82\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S27",
+   "comportamiento": "responder",
+   "segundos": 3.4,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 124 1 5B",
+    "gravedad": "leve",
+    "importe_eur": 80.0,
+    "pronto_pago_eur": 40.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción leve, multa de 80 € (40 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 124 1 5B.\n\nFuentes:\n[1] CIR Artículo 124. Pasos para peatones y cruce de calzadas. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a124\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S28",
+   "comportamiento": "responder",
+   "segundos": 2.7,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "LSV 047 - 5B",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, LSV 047 - 5B.\n\nFuentes:\n[1] LSV Artículo 47. Cinturón, casco y restantes elementos de seguridad. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a47\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S29",
+   "comportamiento": "responder",
+   "segundos": 2.3,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 041 1 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 041 1 5A.\n\nFuentes:\n[1] CIR Artículo 41. Carriles de utilización en sentido contrario al habitual. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a41\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S30",
+   "comportamiento": "responder",
+   "segundos": 2.6,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 125 1 5C",
+    "gravedad": "leve",
+    "importe_eur": 100.0,
+    "pronto_pago_eur": 50.0,
+    "puntos": 0
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción leve, multa de 100 € (50 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 125 1 5C.\n\nFuentes:\n[1] CIR Artículo 125. Normas relativas a circulación de peatones por autopistas y autovías. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a125\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S31",
+   "comportamiento": "responder",
+   "segundos": 4.0,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 012 2 5A",
+    "gravedad": "leve",
+    "importe_eur": 80.0,
+    "pronto_pago_eur": 40.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción leve, multa de 80 € (40 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 012 2 5A.\n\nFuentes:\n[1] CIR Artículo 12. Normas relativas a ciclomotores y motocicletas. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a12\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S32",
+   "comportamiento": "responder",
+   "segundos": 3.2,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 147 2-B 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 147 2-B 5A.\n\nFuentes:\n[1] CIR Artículo 147. Marcas viales. Objeto y clases. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a147\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S33",
+   "comportamiento": "responder",
+   "segundos": 3.4,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 101 3 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 101 3 5A.\n\nFuentes:\n[1] CIR Artículo 101. Alumbrado de corto alcance o de cruce. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a101\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S34",
+   "comportamiento": "responder",
+   "segundos": 3.2,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 143 1-B 5H",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 143 1-B 5H.\n\nFuentes:\n[1] CIR Artículo 143. Tipos de semáforos. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a143\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S35",
+   "comportamiento": "responder",
+   "segundos": 2.9,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "LSV 013 6 5D",
+    "gravedad": "leve",
+    "importe_eur": 100.0,
+    "pronto_pago_eur": 50.0,
+    "puntos": 0
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción leve, multa de 100 € (50 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, LSV 013 6 5D.\n\nFuentes:\n[1] LSV Artículo 13. Normas generales de conducción. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a13\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S36",
+   "comportamiento": "responder",
+   "segundos": 2.8,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 094 1-A 5D",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 094 1-A 5D.\n\nFuentes:\n[1] CIR Artículo 94. Lugares prohibidos. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a94\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S37",
+   "comportamiento": "responder",
+   "segundos": 2.9,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 145 2-C 5C",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "La infracción identificada es la de no obedecer la señal de prohibición de pasar a los vehículos cuya masa en carga sea superior a la indicada. Según el fragmento [1], el conductor debe advertir con suficiente antelación a los demás vehículos que se adelanta, asegurándose que en el carril que pretende utilizar para el adelantamiento existe espacio libre suficiente para evitar peligros o entorpecimientos.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 145 2-C 5C.\n\nFuentes:\n[1] CIR Artículo 84. Obligaciones del que adelanta antes de iniciar la maniobra. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a84\n[2] CIR Artículo 145. Señales de reglamentación. Objeto, clases y normas comunes. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a145\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S38",
+   "comportamiento": "responder",
+   "segundos": 3.1,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 094 1-A 5B",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 094 1-A 5B.\n\nFuentes:\n[1] CIR Artículo 94. Lugares prohibidos. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a94\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S39",
+   "comportamiento": "responder",
+   "segundos": 3.0,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 086 2 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 086 2 5A.\n\nFuentes:\n[1] CIR Artículo 86. Obligaciones de su conductor. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a86\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S40",
+   "comportamiento": "responder",
+   "segundos": 2.1,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 098 1 5C",
+    "gravedad": "leve",
+    "importe_eur": 80.0,
+    "pronto_pago_eur": 40.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción leve, multa de 80 € (40 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 098 1 5C.\n\nFuentes:\n[1] CIR Artículo 98. Normas generales. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a98\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S41",
+   "comportamiento": "responder",
+   "segundos": 2.9,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 020 1 5I",
+    "gravedad": "muy_grave",
+    "importe_eur": 1000.0,
+    "pronto_pago_eur": 500.0,
+    "puntos": 6
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción muy grave, multa de 1000 € (500 € con pronto pago), 6 puntos. Fuente: guía ARCI de la DGT, CIR 020 1 5I.\n\nFuentes:\n[1] CIR Artículo 20. Tasas de alcohol en sangre y aire espirado. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a20\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S42",
+   "comportamiento": "avisar",
+   "segundos": 2.8,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 094 1-B 5E",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "No paraste en un paso de cebra y casi atropello a una señora. Según el fragmento [1], no parar en un paso de cebra es una infracción grave. Por lo tanto, la respuesta a tu pregunta es que te caes por la infracción de [1] Artículo 76. Infracciones graves. Parar o estacionar en el carril bus, en carriles o vías ciclistas, en curvas, cambios de rasante, zonas de estacionamiento para uso exclusivo de personas con discapacidad, túneles, pasos inferiores, intersecciones o en cualquier otro lugar peligroso o en el que se obstaculice gravemente la circulación o constituya un riesgo, especialmente para los peatones.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 094 1-B 5E.\n\nAtención: esta conducta puede constituir un delito contra la seguridad vial (Código Penal), además de una infracción administrativa. Consulta con un abogado.\n\nFuentes:\n[1] LSV Artículo 76. Infracciones graves. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a76\n[2] CIR Artículo 94. Lugares prohibidos. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a94\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S43",
+   "comportamiento": "responder",
+   "segundos": 3.4,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 094 1-B 5F",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 094 1-B 5F.\n\nFuentes:\n[1] CIR Artículo 94. Lugares prohibidos. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a94\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S44",
+   "comportamiento": "responder",
+   "segundos": 3.0,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 020 1 5M",
+    "gravedad": "muy_grave",
+    "importe_eur": 1000.0,
+    "pronto_pago_eur": 500.0,
+    "puntos": 4
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción muy grave, multa de 1000 € (500 € con pronto pago), 4 puntos. Fuente: guía ARCI de la DGT, CIR 020 1 5M.\n\nFuentes:\n[1] CIR Artículo 20. Tasas de alcohol en sangre y aire espirado. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a20\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S45",
+   "comportamiento": "responder",
+   "segundos": 3.5,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "LSV 013 6 5C",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 3
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "No puedes ser multado por llevar un detector de radares en tu coche, ya que la normativa prohibe la instalación de inhibidores de radares o cinemómetros. La cita [n] de [1] dice: \"Se prohíbe instalar o llevar en los vehículos inhibidores de radares o cinemómetros o cualesquiera otros instrumentos encaminados a eludir o a interferir en el correcto funcionamiento de los sistemas de vigilancia del tráfico, así como emitir o hacer señales con dicha finalidad. Asimismo, se prohíbe llevar en el vehículo mecanismos de detección de radares o cinemómetros.\"\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 3 puntos. Fuente: guía ARCI de la DGT, LSV 013 6 5C.\n\nFuentes:\n[1] CIR Artículo 18. Otras obligaciones del conductor. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a18\n[2] LSV Artículo 13. Normas generales de conducción. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a13\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S46",
+   "comportamiento": "responder",
+   "segundos": 3.5,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "LSV 077 - 5B",
+    "gravedad": "muy_grave",
+    "importe_eur": 500.0,
+    "pronto_pago_eur": 250.0,
+    "puntos": 6
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La infracción que cometiste es la de participar o colaborar en la colocación o puesta en funcionamiento de elementos que alteren el normal funcionamiento del uso del tacógrafo o del limitador de velocidad.\n\nSanción: infracción muy grave, multa de 500 € (250 € con pronto pago), 6 puntos. Fuente: guía ARCI de la DGT, LSV 077 - 5B.\n\nFuentes:\n[1] LSV Artículo 80. Tipos. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a80\n[2] LSV Artículo 77. Infracciones muy graves. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a77\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S47",
+   "comportamiento": "responder",
+   "segundos": 3.2,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 033 - 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 033 - 5A.\n\nFuentes:\n[1] CIR Artículo 33. Utilización de los carriles, en poblado, en calzadas con más de un carril reservado para el mismo sentido de marcha. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a33\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S48",
+   "comportamiento": "responder",
+   "segundos": 3.3,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 064 - 5C",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 064 - 5C.\n\nFuentes:\n[1] CIR Artículo 64. Normas generales y prioridad de paso de ciclistas. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a64\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S49",
+   "comportamiento": "responder",
+   "segundos": 2.7,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 031 1 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 031 1 5A.\n\nFuentes:\n[1] CIR Artículo 31. Utilización de los carriles, fuera de poblado, en calzadas con más de un carril para el mismo sentido de marcha. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a31\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S50",
+   "comportamiento": "responder",
+   "segundos": 2.8,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 015 5 5A",
+    "gravedad": "leve",
+    "importe_eur": 80.0,
+    "pronto_pago_eur": 40.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción leve, multa de 80 € (40 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 015 5 5A.\n\nFuentes:\n[1] CIR Artículo 15. Dimensiones de la carga. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a15\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S51",
+   "comportamiento": "responder",
+   "segundos": 2.5,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 094 2-A 5T",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "La infracción identificada es la de estacionar en una plaza reservada para motos, lo que corresponde a la norma [1] del fragmento. Según el artículo 154 de la normativa, la prohibición de estacionamiento en las vías urbanas se aplica a los carriles y partes de las vías reservados exclusivamente para la circulación o para el servicio de determinados usuarios. Por lo tanto, estacionar en una plaza reservada para motos es una infracción.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 094 2-A 5T.\n\nFuentes:\n[1] CIR Artículo 156. Régimen de parada y estacionamiento. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a1-9\n[2] CIR Artículo 94. Lugares prohibidos. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a94\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S52",
+   "comportamiento": "responder",
+   "segundos": 2.6,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 074 1 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 074 1 5A.\n\nFuentes:\n[1] CIR Artículo 74. Normas generales. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a74\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S53",
+   "comportamiento": "avisar",
+   "segundos": 3.2,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 121 4 5C",
+    "gravedad": "leve",
+    "importe_eur": 80.0,
+    "pronto_pago_eur": 40.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La infracción identificada es circular sobre un patinete eléctrico por la acera bastante rápido. Según el fragmento [n] [1], la infracción tipificada es circular en una bicicleta sin hacer uso del alumbrado reglamentario. Sin embargo, el patinete eléctrico no se incluye en el anexo IV del Código de Tráfico Español, por lo que la infracción no se sanciona con multa económica.\n\nSanción: infracción leve, multa de 80 € (40 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 121 4 5C.\n\nLa guía de la DGT cita un apartado que ya no existe en el texto vigente del BOE: el importe y los puntos pueden haber cambiado.\n\nFuentes:\n[1] LSV Artículo 75. Infracciones leves. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a75\n[2] CIR Artículo 121. Normas generales. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a121\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S54",
+   "comportamiento": "responder",
+   "segundos": 2.5,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 101 1 5B",
+    "gravedad": "leve",
+    "importe_eur": 80.0,
+    "pronto_pago_eur": 40.0,
+    "puntos": 0
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción leve, multa de 80 € (40 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 101 1 5B.\n\nFuentes:\n[1] CIR Artículo 101. Alumbrado de corto alcance o de cruce. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a101\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S55",
+   "comportamiento": "avisar",
+   "segundos": 3.3,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "CIR 069 - 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 069 - 5A.\n\nAtención: esta conducta puede constituir un delito contra la seguridad vial (Código Penal), además de una infracción administrativa. Consulta con un abogado.\n\nFuentes:\n[1] CIR Artículo 69. Comportamiento de los demás conductores respecto de los vehículos prioritarios. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a69\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S56",
+   "comportamiento": "responder",
+   "segundos": 2.6,
+   "ok_comportamiento": false,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 094 1-F 5M",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 094 1-F 5M.\n\nFuentes:\n[1] CIR Artículo 94. Lugares prohibidos. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a94\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S57",
+   "comportamiento": "avisar",
+   "segundos": 2.3,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 012 4 5A",
+    "gravedad": "leve",
+    "importe_eur": 80.0,
+    "pronto_pago_eur": 40.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción leve, multa de 80 € (40 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 012 4 5A.\n\nLa guía de la DGT cita un apartado que ya no existe en el texto vigente del BOE: el importe y los puntos pueden haber cambiado.\n\nFuentes:\n[1] CIR Artículo 12. Normas relativas a ciclomotores y motocicletas. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a12\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S58",
+   "comportamiento": "aclarar",
+   "segundos": 0.6,
+   "ok_comportamiento": true,
+   "respuesta": "Para decirte qué sanción corresponde necesito un dato más: ¿cuál era el límite de velocidad de la vía (o qué tipo de vía era)?"
+  },
+  {
+   "id": "S59",
+   "comportamiento": "avisar",
+   "segundos": 4.5,
+   "ok_comportamiento": false,
+   "respuesta": "No he encontrado en la normativa un artículo que responda a esto con seguridad.\n\nAtención: esta conducta puede constituir un delito contra la seguridad vial (Código Penal), además de una infracción administrativa. Consulta con un abogado.\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S60",
+   "comportamiento": "aclarar",
+   "segundos": 0.9,
+   "ok_comportamiento": true,
+   "respuesta": "Para decirte qué sanción corresponde necesito un dato más: ¿en qué vehículo ibas (bicicleta, moto, ciclomotor, patinete…)?"
+  }
+ ]
+}
