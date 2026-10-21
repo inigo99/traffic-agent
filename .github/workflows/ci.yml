@@ -1,0 +1,36 @@
+# Lint y tests en cada push. Los tests que leen data/trafico.db necesitan la base generada:
+# se construye desde el PDF ARCI y la API del BOE (~5 min) y se guarda en caché hasta que
+# cambie data/versiones.json, el PDF o el código de ingesta.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: "3.12"
+      - run: uv sync
+      - name: Ruff
+        run: |
+          uv run ruff check .
+          uv run ruff format --check .
+      - name: Caché de data/trafico.db
+        id: db
+        uses: actions/cache@v4
+        with:
+          path: data/trafico.db
+          key: db-${{ hashFiles('data/versiones.json', 'data/arci.pdf', 'src/trafico_agent/ingest/**') }}
+      - name: Generar data/trafico.db
+        if: steps.db.outputs.cache-hit != 'true'
+        run: |
+          uv run python -m trafico_agent.ingest.arci
+          uv run python -m trafico_agent.ingest.boe
+          uv run python -m trafico_agent.ingest.postproceso
+      - name: Tests
+        run: uv run pytest -q -rs
