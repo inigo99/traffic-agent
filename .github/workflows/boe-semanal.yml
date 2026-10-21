@@ -1,0 +1,38 @@
+# Cada lunes comprueba si el BOE ha modificado la LSV o el RGC; si es así, abre un issue
+# con los bloques afectados (reindexar es manual: necesita bge-m3, ver CLAUDE.md).
+name: Cambios en el BOE
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Comparar con data/versiones.json
+        id: watch
+        env:
+          PYTHONPATH: src
+        run: |
+          set +e
+          python -m trafico_agent.watch > informe.md
+          echo "codigo=$?" >> "$GITHUB_OUTPUT"
+          cat informe.md
+      - name: Abrir issue si hay cambios
+        if: steps.watch.outputs.codigo == '3'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue create --title "Cambios en el BOE ($(date +%F))" --body-file informe.md
+      - name: Fallar si el BOE no respondió
+        if: steps.watch.outputs.codigo != '0' && steps.watch.outputs.codigo != '3'
+        run: exit 1
