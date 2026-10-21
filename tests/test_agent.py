@@ -187,3 +187,17 @@ def test_sin_citas_pero_con_sancion_responde_con_su_articulo():
         "iba sin cinturón", llm_falso(situacion(), codigo="CIR 117 1 5E", texto="Sin citas.")
     )
     assert r["sancion"]["codigo"] == "CIR 117 1 5E" and r["fuentes"][0]["id_bloque"] == "a117"
+
+
+def test_llm_cola_apunta_pendientes_y_lee_respuestas(tmp_path):
+    import json
+
+    from trafico_agent.llm import Pendiente, cola
+
+    llm = cola("x", tmp_path)
+    with pytest.raises(Pendiente):
+        llm("s", "u", Analisis)
+    fila = json.loads((tmp_path / "x.pendientes.jsonl").read_text(encoding="utf-8"))
+    respuesta = '{"intencion": "factual", "consulta": "c"}'
+    (tmp_path / "x.json").write_text(json.dumps({fila["clave"]: respuesta}), encoding="utf-8")
+    assert cola("x", tmp_path)("s", "u", Analisis).consulta == "c"

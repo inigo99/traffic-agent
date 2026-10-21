@@ -3,7 +3,10 @@
 Una función por proveedor; el agente solo conoce esta firma (así se cambia de modelo sin tocarlo).
 """
 
+import hashlib
+import json
 import os
+from pathlib import Path
 
 TIMEOUT_S = 180
 MAX_TOKENS = 1024  # corta la generación si el modelo se embucla
@@ -27,4 +30,45 @@ def ollama(modelo=None, host=None):
         return esquema.model_validate_json(texto) if esquema else texto
 
     llamar.nombre = f"ollama:{modelo}"
+    return llamar
+
+
+class Pendiente(Exception):
+    """La llamada no tiene respuesta todavía en el fichero de `cola`."""
+
+
+def cola(nombre, carpeta="eval/cola"):
+    """LLM sin API: lee las respuestas de `<carpeta>/<nombre>.json` y apunta en
+    `<carpeta>/<nombre>.pendientes.jsonl` las llamadas que aún no tienen (y lanza Pendiente).
+
+    Sirve para evaluar un modelo al que solo se llega a mano (p. ej. Haiku desde el chat):
+    se ejecuta la evaluación, se contestan las pendientes y se repite hasta que no quede ninguna.
+    """
+    carpeta = Path(carpeta)
+    carpeta.mkdir(parents=True, exist_ok=True)
+    respuestas_f = carpeta / f"{nombre}.json"
+    pendientes_f = carpeta / f"{nombre}.pendientes.jsonl"
+    respuestas = (
+        json.loads(respuestas_f.read_text(encoding="utf-8")) if respuestas_f.exists() else {}
+    )
+    pendientes_f.write_text("", encoding="utf-8")
+    vistos = set()
+
+    def llamar(sistema, usuario, esquema=None):
+        schema = esquema.model_json_schema() if esquema else None
+        clave = hashlib.sha1(
+            json.dumps([sistema, usuario, schema], ensure_ascii=False).encode()
+        ).hexdigest()[:16]
+        if clave not in respuestas:
+            if clave not in vistos:
+                vistos.add(clave)
+                fila = {"clave": clave, "sistema": sistema, "usuario": usuario, "esquema": schema}
+                with pendientes_f.open("a", encoding="utf-8") as f:
+                    f.write(json.dumps(fila, ensure_ascii=False) + "\n")
+            raise Pendiente(clave)
+        texto = respuestas[clave]
+        return esquema.model_validate_json(texto) if esquema else texto
+
+    llamar.nombre = f"cola:{nombre}"
+    llamar.pendientes = lambda: len(vistos)
     return llamar

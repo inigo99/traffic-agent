@@ -23,7 +23,7 @@ El LLM solo interviene en tres sitios: analizar la pregunta, elegir la fila ARCI
 | **qwen2.5:7b** | 58/60 (97 %) | 43/56 (77 %) | 28/54 | 43/54 | 41/56 (73 %) | 6,1 |
 | **qwen2.5:3b** | 56/60 (93 %) | 37/56 (66 %) | 16/54 | 36/54 | 39/56 (70 %) | 3,4 |
 | qwen2.5:1.5b | 54/60 (90 %) | 35/56 (62 %) | 14/54 | 43/54 | 27/56 (48 %) | 3,2 |
-| Claude Haiku | pendiente (sin clave de API) | | | | | |
+| **Claude Haiku** (a mano, ver abajo) | 57/60 (95 %) | 48/56 (86 %) | 37/54 | 41/54 | 47/56 (84 %) | — |
 
 "Sanción exacta" compara gravedad, importe, pronto pago y puntos. "Código" es más estricto: la ARCI tiene filas casi idénticas con códigos distintos y la misma cuantía.
 
@@ -39,6 +39,12 @@ Para los modelos pequeños, lo que más pesó: limitar la elección a los códig
 
 `eval/run_candidatos.py` mide la cobertura de candidatas sin LLM: 8 por vectores + artículos de top 5 → 47/54 con ~25 filas; ampliar a 12 + top 10 solo da 48/54 con ~40.
 
+### Haiku sin clave de API
+
+Se evaluó con `--modelo cola:haiku` (`llm.cola`): la evaluación apunta las llamadas sin respuesta en `eval/cola/haiku.pendientes.jsonl`, Claude Haiku las contesta desde el chat (subagentes, en lotes de ~13) y las respuestas quedan en `eval/cola/haiku.json`; se repite hasta 0 pendientes (4 vueltas: análisis, elección, redacción). Diferencias con la API: mismo prompt, pero sin JSON forzado por esquema y contestando varias llamadas por lote, y el tiempo no es comparable. Las respuestas quedan versionadas para reproducir el resultado.
+
+Haiku saca +9 puntos en sanción y +11 en cita sobre qwen2.5:7b, y acierta muchos más códigos exactos (37 frente a 28): el límite del 7b es la elección entre filas parecidas.
+
 ## Decisión
 
 - **Modelo de la demo: qwen2.5:3b.** Cita casi como el 7b (70 % frente a 73 %) con la mitad de tamaño; el 1.5b cita mucho peor.
@@ -46,6 +52,6 @@ Para los modelos pequeños, lo que más pesó: limitar la elección a los códig
 
 ## Pendiente
 
-- Evaluar Claude Haiku cuando haya clave de API.
+- Repetir Haiku por la API cuando haya clave (tiempo y coste reales).
 - Factuales y trampas con el agente (`--tipo factual`, `--tipo trampa`).
 - 3b: probar a buscar con la pregunta original en vez de la reformulada.

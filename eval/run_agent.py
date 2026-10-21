@@ -19,7 +19,7 @@ from pathlib import Path
 import yaml
 
 from trafico_agent.agent import ELECCION, construir
-from trafico_agent.llm import ollama
+from trafico_agent.llm import cola, ollama
 
 RAIZ = Path(__file__).parents[1]
 CAMPOS = ("gravedad", "importe_eur", "pronto_pago_eur", "puntos")
@@ -79,7 +79,11 @@ def main():
     args = p.parse_args()
     preguntas = yaml.safe_load((RAIZ / "eval" / "questions.yaml").read_text(encoding="utf-8"))
     preguntas = [q for q in preguntas if args.tipo == "todos" or q["tipo"] == args.tipo][: args.n]
-    llm = ollama(args.modelo)
+    # --modelo cola:haiku -> respuestas a mano desde eval/cola/haiku.json (ver llm.cola)
+    if args.modelo and args.modelo.startswith("cola:"):
+        llm = cola(args.modelo.split(":", 1)[1])
+    else:
+        llm = ollama(args.modelo)
     grafo = construir(llm)
     filas = []
     for i, q in enumerate(preguntas, 1):
@@ -105,6 +109,8 @@ def main():
         encoding="utf-8",
     )
     print(f"Detalle -> {out.relative_to(RAIZ)}")
+    if hasattr(llm, "pendientes"):
+        print(f"Llamadas pendientes de respuesta: {llm.pendientes()}")
 
 
 if __name__ == "__main__":
