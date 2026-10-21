@@ -38,8 +38,12 @@ def cambios(conocidas, actuales):
     return out
 
 
-def informe(dif):
-    lineas = [f"- **{n}** ({NORMAS[n]}): {', '.join(b)}" for n, b in dif.items()]
+def informe(dif, actuales):
+    lineas = [
+        f"- **{n}** ({NORMAS[n]}, última actualización {max(actuales[n].values())}): "
+        + ", ".join(b)
+        for n, b in dif.items()
+    ]
     return "Bloques modificados en el BOE desde la última indexación:\n\n" + "\n".join(lineas)
 
 
@@ -52,11 +56,15 @@ def main(argv=None, fetch=get):
         VERSIONES.write_text(json.dumps(actuales, indent=1, sort_keys=True), encoding="utf-8")
         if dif and conocidas:
             previo = CHANGELOG.read_text(encoding="utf-8") if CHANGELOG.exists() else "# Cambios\n"
-            entrada = f"\n## {date.today().isoformat()}: reindexado\n\n{informe(dif)}\n"
+            entrada = f"\n## {date.today().isoformat()}: reindexado\n\n{informe(dif, actuales)}\n"
             CHANGELOG.write_text(previo + entrada, encoding="utf-8")
         print(f"Guardado {VERSIONES.name}")
         return 0
-    print(informe(dif) if dif else "Sin cambios en el BOE.")
+    if not conocidas:  # primera vez: todo es "nuevo"; basta la fecha para saber si reindexar
+        for n, bloques in actuales.items():
+            print(f"{n}: última actualización {max(bloques.values())} (sin versiones guardadas)")
+        return HAY_CAMBIOS
+    print(informe(dif, actuales) if dif else "Sin cambios en el BOE.")
     return HAY_CAMBIOS if dif else 0
 
 
