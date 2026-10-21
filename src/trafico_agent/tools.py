@@ -8,6 +8,8 @@ import sqlite3
 from functools import cache
 
 DB = os.environ.get("TRAFICO_DB", "data/trafico.db")
+# bm25 = demo ligera (sin bge-m3): sin vectores tampoco para los hechos ARCI
+BUSQUEDA = os.environ.get("TRAFICO_BUSQUEDA")
 AVISO = (
     "Información orientativa basada en la normativa estatal publicada en el BOE y en la guía "
     "de infracciones de la DGT. No es asesoramiento jurídico."
@@ -36,7 +38,7 @@ def buscar_normativa(consulta, k=5, modo=None):
 
     Por defecto vectores; BM25 si no están generados (`data/embeddings.npy`) para que el MCP
     funcione sin el extra `ml`."""
-    modo = modo or ("vectores" if _indice().emb is not None else "bm25")
+    modo = modo or BUSQUEDA or ("vectores" if _indice().emb is not None else "bm25")
     return [
         {
             "norma": f["norma"],
@@ -103,6 +105,8 @@ def sanciones_de_articulos(bloques):
 
 def sanciones_parecidas(texto, k=12):
     """Filas ARCI cuyo hecho denunciado se parece más al texto (vectores de los hechos)."""
+    if BUSQUEDA == "bm25":
+        return []
     from trafico_agent.index import hechos_parecidos
 
     return [s for c in hechos_parecidos(DB, texto, k) if (s := consultar_sancion(c))]

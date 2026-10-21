@@ -1,14 +1,14 @@
 """Demo web: FastAPI + HTMX sobre el agente.
 
-uv run --extra ml --extra demo uvicorn trafico_agent.web:app        # http://localhost:8000
-TRAFICO_LLM=llamacpp ...                                            # como en HF Spaces
+uv run --extra ml --extra demo uvicorn trafico_agent.web:app        # local, con Ollama
+TRAFICO_LLM=api TRAFICO_BUSQUEDA=bm25 TRAFICO_API_KEY=... (igual)  # como en Render
 """
 
 import html
 import re
 import threading
 import time
-from functools import cache
+from functools import cache, lru_cache
 
 from fastapi import FastAPI, Form
 from fastapi.responses import HTMLResponse
@@ -31,8 +31,20 @@ app = FastAPI(title="trafico-agent")
 
 
 @cache
+def _llm():
+    return desde_entorno()
+
+
+@cache
 def _grafo():
-    return agent.construir(desde_entorno())
+    return agent.construir(_llm())
+
+
+@lru_cache(
+    maxsize=256
+)  # ponytail: los ejemplos se repiten; no gasta créditos de inferencia otra vez
+def _responder(pregunta):
+    return _grafo().invoke({"pregunta": pregunta})
 
 
 def _html_respuesta(texto):
@@ -47,7 +59,11 @@ def inicio():
         for e in EJEMPLOS
     )
     return PAGINA.format(
-        ejemplos=ejemplos, aviso=html.escape(tools.AVISO), repo=REPO, max=MAX_PREGUNTA
+        ejemplos=ejemplos,
+        aviso=html.escape(tools.AVISO),
+        repo=REPO,
+        max=MAX_PREGUNTA,
+        modelo=html.escape(getattr(_llm(), "nombre", "")),
     )
 
 
@@ -59,7 +75,7 @@ def preguntar(pregunta: str = Form(..., max_length=MAX_PREGUNTA)):
     with _turno:
         t0 = time.perf_counter()
         try:
-            r = _grafo().invoke({"pregunta": pregunta})
+            r = _responder(pregunta)
         except Exception:  # noqa: BLE001 — el usuario ve un mensaje, no la traza
             return (
                 '<p class="error">No he podido responder (fallo del modelo). Prueba otra vez.</p>'
@@ -112,9 +128,9 @@ button[type=submit] {{ margin-top:8px; padding:10px 18px; font:inherit; font-wei
   <button type="submit">Preguntar</button>
 </form>
 <div class="ejemplos">{ejemplos}</div>
-<p id="cargando" class="htmx-indicator">Buscando en la normativa… (en CPU tarda alrededor de un minuto)</p>
+<p id="cargando" class="htmx-indicator">Buscando en la normativa…</p>
 <div id="resultado" aria-live="polite"></div>
-<p class="pie">{aviso} Modelo pequeño en CPU: puede equivocarse; comprueba siempre el artículo citado. <a href="{repo}">Código y evaluación</a>.</p>
+<p class="pie">{aviso} Modelo: {modelo}. Puede equivocarse: comprueba siempre el artículo citado. <a href="{repo}">Código y evaluación</a>.</p>
 </main>
 <script>function usar(b){{ const t=document.getElementById('pregunta'); t.value=b.textContent; t.focus(); }}</script>
 </body></html>"""

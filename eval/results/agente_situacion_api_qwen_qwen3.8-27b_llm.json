@@ -1,0 +1,180 @@
+{
+ "resumen": {
+  "n": 10,
+  "comportamiento": "7/10 (70%)",
+  "sancion": "4/9 (44%)",
+  "codigo": "3/8 (38%)",
+  "candidato": "2/8 (25%)",
+  "cita": "4/9 (44%)",
+  "segundos_media": 6.3
+ },
+ "preguntas": [
+  {
+   "id": "S01",
+   "comportamiento": "responder",
+   "segundos": 2.4,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 020 1 5E",
+    "gravedad": "muy_grave",
+    "importe_eur": 500.0,
+    "pronto_pago_eur": 250.0,
+    "puntos": 4
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": false,
+   "respuesta": "Una tasa de 0,30 mg/l en aire espirado supera el límite para conductores en general (0,25 mg/l), fijado en el artículo 20 del Reglamento General de Circulación.\n\nSanción: infracción muy grave, multa de 500 € (250 € con pronto pago), 4 puntos. Fuente: guía ARCI de la DGT, CIR 020 1 5E.\n\nFuentes:\n[1] CIR Artículo 20. Tasas de alcohol en sangre y aire espirado. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a20\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S02",
+   "comportamiento": "responder",
+   "segundos": 0.9,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": "LSV 076 - 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 6
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "La normativa prohíbe expresamente la utilización de dispositivos de telefonía móvil durante la conducción, salvo que la comunicación se realice sin emplear las manos [2].\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 6 puntos. Fuente: guía ARCI de la DGT, LSV 076 - 5A.\n\nFuentes:\n[1] LSV Artículo 76. Infracciones graves. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a76\n[2] LSV Artículo 13. Normas generales de conducción. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a13\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S03",
+   "comportamiento": "responder",
+   "segundos": 0.8,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 117 1 5E",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 4
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "Los fragmentos proporcionados establecen la obligación de utilizar el cinturón de seguridad correctamente abrochado [1], pero no contienen la tabla de sanciones ni los importes específicos de la multa por esta infracción. Por lo tanto, no es posible indicar la cuantía económica de la denuncia con la información disponible.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 4 puntos. Fuente: guía ARCI de la DGT, CIR 117 1 5E.\n\nFuentes:\n[1] CIR Artículo 117. Cinturones de seguridad y sistemas de retención infantil homologados. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a117\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S04",
+   "comportamiento": "responder",
+   "segundos": 8.0,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "Esta conducta está tipificada en el Anexo II de la Ley sobre Seguridad Vial [1].\n\nFuentes:\n[1] LSV ANEXO II — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#anii\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S05",
+   "comportamiento": null,
+   "segundos": 2.4,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "1 validation error for Analisis\nintencion\n  Field required [type=missing, input_value={'intentacion': 'situacio..., 'tipo_via': 'urbana'}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing"
+  },
+  {
+   "id": "S06",
+   "comportamiento": "responder",
+   "segundos": 3.5,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": "grave",
+    "importe_eur": 100.0,
+    "pronto_pago_eur": 50.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "respuesta": "Circular a 140 km/h donde el límite es 120 km/h supera la velocidad máxima permitida; la sanción sale de la tabla de excesos de velocidad del Anexo IV de la Ley de Tráfico.\n\nSanción: infracción grave, multa de 100 € (50 € con pronto pago), 0 puntos. Fuente: Anexo IV de la LSV.\n\nFuentes:\n[1] LSV ANEXO IV — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#aniv\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S07",
+   "comportamiento": null,
+   "segundos": 2.3,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "1 validation error for Analisis\nintencion\n  Field required [type=missing, input_value={'intent': 'situacion', '...uracion': '10 minutos'}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing"
+  },
+  {
+   "id": "S08",
+   "comportamiento": "aclarar",
+   "segundos": 2.3,
+   "ok_comportamiento": true,
+   "respuesta": "Para decirte qué sanción corresponde necesito un dato más: ¿cuál era el límite de velocidad de la vía (o qué tipo de vía era)?"
+  },
+  {
+   "id": "S09",
+   "comportamiento": "responder",
+   "segundos": 37.6,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "No he encontrado en la normativa un artículo que responda a esto con seguridad.\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S10",
+   "comportamiento": null,
+   "segundos": 2.5,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "1 validation error for Analisis\nintencion\n  Field required [type=missing, input_value={'intent': 'situacion', '...o', 'denunciado': True}}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.14/v/missing"
+  }
+ ]
+}

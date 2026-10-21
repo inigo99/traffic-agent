@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 import pytest
@@ -285,3 +286,35 @@ def test_aviso_de_competencia_con_articulo_84():
     )
     assert r["comportamiento"] == "avisar" and "Alcaldes" in r["respuesta"]
     assert any(f["id_bloque"] == "a84" for f in r["fuentes"])
+
+
+def test_solo_json_quita_el_envoltorio():
+    from trafico_agent.llm import _solo_json
+
+    assert _solo_json('```json\n{"codigo": "CIR 117 1 5E"}\n```') == '{"codigo": "CIR 117 1 5E"}'
+
+
+def test_api_cae_a_json_object_y_reintenta_429(monkeypatch):
+    import httpx
+
+    from trafico_agent import llm as m
+
+    vistos = []
+
+    def responder(req):
+        cuerpo = json.loads(req.content)
+        vistos.append(cuerpo.get("response_format", {}).get("type"))
+        if len(vistos) == 1:
+            return httpx.Response(429, headers={"retry-after": "0"})
+        if cuerpo["response_format"]["type"] == "json_schema":
+            return httpx.Response(400, json={"error": "json_schema no soportado"})
+        texto = '```json\n{"intencion": "factual", "consulta": "c"}\n```'
+        return httpx.Response(200, json={"choices": [{"message": {"content": texto}}]})
+
+    real = httpx.Client
+    monkeypatch.setattr(
+        httpx, "Client", lambda **kw: real(transport=httpx.MockTransport(responder), **kw)
+    )
+    monkeypatch.setenv("TRAFICO_API_KEY", "x")
+    assert m.api("modelo")("s", "u", Analisis).consulta == "c"
+    assert vistos == ["json_schema", "json_schema", "json_object"]

@@ -10,6 +10,8 @@ class GrafoFalso:
 
 def test_pagina_y_pregunta(monkeypatch):
     monkeypatch.setattr(web, "_grafo", lambda: GrafoFalso())
+    monkeypatch.setattr(web, "_llm", lambda: None)
+    web._responder.cache_clear()
     c = TestClient(web.app)
     assert "¿Es multa?" in c.get("/").text
     r = c.post("/preguntar", data={"pregunta": "iba sin cinturón"}).text
@@ -18,5 +20,7 @@ def test_pagina_y_pregunta(monkeypatch):
 
 def test_pregunta_demasiado_larga_se_rechaza(monkeypatch):
     monkeypatch.setattr(web, "_grafo", lambda: GrafoFalso())
+    monkeypatch.setattr(web, "_llm", lambda: None)
+    web._responder.cache_clear()
     r = TestClient(web.app).post("/preguntar", data={"pregunta": "x" * 501})
     assert r.status_code == 422

@@ -6,6 +6,8 @@ Una función por proveedor; el agente solo conoce esta firma (así se cambia de 
 import hashlib
 import json
 import os
+import re
+import time
 from pathlib import Path
 
 from opentelemetry import trace
@@ -57,42 +59,82 @@ def ollama(modelo=None, host=None):
     return llamar
 
 
-def llamacpp(repo=None, fichero=None):
-    """qwen2.5:3b en GGUF dentro del propio proceso (demo en HF Spaces, CPU). Necesita
-    `llama-cpp-python` y `huggingface-hub` (se instalan en el Dockerfile del Space)."""
-    from llama_cpp import Llama
+def api(modelo=None):
+    """Modelo grande por una API compatible con OpenAI (demo ligera: la web no carga modelos).
+    Por defecto Groq (capa gratis); vale cualquier otra con TRAFICO_API_URL (p. ej. el router de
+    Hugging Face, https://router.huggingface.co/v1). Clave en TRAFICO_API_KEY."""
+    import httpx
 
-    repo = repo or os.environ.get("TRAFICO_GGUF_REPO", "Qwen/Qwen2.5-3B-Instruct-GGUF")
-    fichero = fichero or os.environ.get("TRAFICO_GGUF", "qwen2.5-3b-instruct-q4_k_m.gguf")
-    modelo = Llama.from_pretrained(
-        repo_id=repo, filename=fichero, n_ctx=8192, n_threads=os.cpu_count(), verbose=False
+    base = os.environ.get("TRAFICO_API_URL", "https://api.groq.com/openai/v1").rstrip("/")
+    modelo = modelo or os.environ.get("TRAFICO_API_MODELO", "openai/gpt-oss-120b")
+    http = httpx.Client(
+        timeout=TIMEOUT_S, headers={"Authorization": f"Bearer {os.environ['TRAFICO_API_KEY']}"}
     )
+    modo = {"json": "json_schema"}  # pasa a json_object si el modelo no acepta esquemas
+
+    def _cuerpo(sistema, usuario, esquema):
+        # más margen que en local: los modelos con razonamiento (qwen3, gpt-oss) gastan tokens pensando
+        cuerpo = {"model": modelo, "temperature": 0, "max_tokens": 4096}
+        if esquema and modo["json"] == "json_schema":
+            cuerpo["response_format"] = {
+                "type": "json_schema",
+                "json_schema": {"name": esquema.__name__, "schema": esquema.model_json_schema()},
+            }
+        elif esquema:
+            cuerpo["response_format"] = {"type": "json_object"}
+            sistema += "\nResponde solo con un JSON que cumpla este esquema:\n" + json.dumps(
+                esquema.model_json_schema(), ensure_ascii=False
+            )
+        cuerpo["messages"] = [
+            {"role": "system", "content": sistema},
+            {"role": "user", "content": usuario},
+        ]
+        return cuerpo
 
     def llamar(sistema, usuario, esquema=None):
-        with _tracer.start_as_current_span(f"llamacpp {esquema.__name__ if esquema else 'texto'}"):
-            r = modelo.create_chat_completion(
-                messages=[
-                    {"role": "system", "content": sistema},
-                    {"role": "user", "content": usuario},
-                ],
-                response_format=(
-                    {"type": "json_object", "schema": esquema.model_json_schema()}
-                    if esquema
-                    else None
-                ),
-                temperature=0,
-                max_tokens=MAX_TOKENS,
+        with _tracer.start_as_current_span(f"api {esquema.__name__ if esquema else 'texto'}") as sp:
+            sp.set_attributes({"openinference.span.kind": "LLM", "llm.model_name": modelo})
+            for _ in range(5):
+                r = http.post(f"{base}/chat/completions", json=_cuerpo(sistema, usuario, esquema))
+                if r.status_code == 429:  # capa gratis: límite de tokens por minuto
+                    time.sleep(float(r.headers.get("retry-after", 10)))
+                elif r.status_code == 400 and esquema and modo["json"] == "json_schema":
+                    modo["json"] = "json_object"
+                else:
+                    break
+            if (
+                r.is_error
+            ):  # con el cuerpo: "model not found", límites... (raise_for_status no lo da)
+                raise RuntimeError(f"{r.status_code} de {base}: {r.text[:500]}")
+            datos = r.json()
+            texto = re.sub(
+                r"<think>.*?</think>",
+                "",
+                datos["choices"][0]["message"]["content"] or "",
+                flags=re.DOTALL,
             )
-        texto = r["choices"][0]["message"]["content"]
-        return esquema.model_validate_json(texto) if esquema else texto
+            uso = datos.get("usage") or {}
+            sp.set_attributes(
+                {
+                    "llm.token_count.prompt": uso.get("prompt_tokens", 0),
+                    "llm.token_count.completion": uso.get("completion_tokens", 0),
+                }
+            )
+        return esquema.model_validate_json(_solo_json(texto)) if esquema else texto
 
-    llamar.nombre = f"llamacpp:{fichero}"
+    llamar.nombre = f"api:{modelo}"
     return llamar
 
 
+def _solo_json(texto):
+    """Algunos proveedores ignoran el esquema y envuelven el JSON en ```json ... ```."""
+    i, j = texto.find("{"), texto.rfind("}")
+    return texto[i : j + 1] if i >= 0 and j > i else texto
+
+
 def desde_entorno():
-    """TRAFICO_LLM=ollama (por defecto, con TRAFICO_MODELO) o llamacpp (demo)."""
-    return llamacpp() if os.environ.get("TRAFICO_LLM") == "llamacpp" else ollama()
+    """TRAFICO_LLM=ollama (por defecto, con TRAFICO_MODELO) o api (demo publicada)."""
+    return api() if os.environ.get("TRAFICO_LLM") == "api" else ollama()
 
 
 class Pendiente(Exception):

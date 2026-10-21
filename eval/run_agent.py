@@ -19,7 +19,7 @@ from pathlib import Path
 import yaml
 
 from trafico_agent.agent import ELECCION, construir
-from trafico_agent.llm import cola, ollama
+from trafico_agent.llm import api, cola, ollama
 from trafico_agent.trazas import activar_si_procede
 
 RAIZ = Path(__file__).parents[1]
@@ -84,6 +84,8 @@ def main():
     # --modelo cola:haiku -> respuestas a mano desde eval/cola/haiku.json (ver llm.cola)
     if args.modelo and args.modelo.startswith("cola:"):
         llm = cola(args.modelo.split(":", 1)[1])
+    elif args.modelo and args.modelo.startswith("api:"):  # api:openai/gpt-oss-120b (Groq)
+        llm = api(args.modelo.split(":", 1)[1])
     else:
         llm = ollama(args.modelo)
     grafo = construir(llm)

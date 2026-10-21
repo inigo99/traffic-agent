@@ -1,0 +1,28 @@
+# Demo ligera en Render (plan gratis, 512 MB): BM25 en vez de bge-m3 y el LLM por la API de
+# Groq (capa gratis, gpt-oss-120b; API compatible con OpenAI). La base se genera en el build desde el PDF ARCI y el BOE.
+services:
+  - type: web
+    name: trafico-agent
+    runtime: python
+    plan: free
+    buildCommand: >-
+      pip install uv &&
+      uv sync --frozen --no-dev --extra demo &&
+      uv run --no-sync python -m trafico_agent.ingest.arci &&
+      uv run --no-sync python -m trafico_agent.ingest.boe &&
+      uv run --no-sync python -m trafico_agent.ingest.postproceso
+    startCommand: .venv/bin/uvicorn trafico_agent.web:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /salud
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.8"
+      - key: TRAFICO_LLM
+        value: api
+      - key: TRAFICO_API_URL
+        value: https://api.groq.com/openai/v1
+      - key: TRAFICO_API_MODELO
+        value: openai/gpt-oss-120b
+      - key: TRAFICO_BUSQUEDA
+        value: bm25
+      - key: TRAFICO_API_KEY
+        sync: false

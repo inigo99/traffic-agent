@@ -1,0 +1,180 @@
+{
+ "resumen": {
+  "n": 10,
+  "comportamiento": "0/10 (0%)",
+  "sancion": "0/9 (0%)",
+  "codigo": "0/8 (0%)",
+  "candidato": "0/8 (0%)",
+  "cita": "0/9 (0%)",
+  "segundos_media": 0.1
+ },
+ "preguntas": [
+  {
+   "id": "S01",
+   "comportamiento": null,
+   "segundos": 0.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "HTTPStatusError(\"Client error '404 Not Found' for url 'https://api.groq.com/openai/v1/chat/completions'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404\")"
+  },
+  {
+   "id": "S02",
+   "comportamiento": null,
+   "segundos": 0.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "HTTPStatusError(\"Client error '404 Not Found' for url 'https://api.groq.com/openai/v1/chat/completions'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404\")"
+  },
+  {
+   "id": "S03",
+   "comportamiento": null,
+   "segundos": 0.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "HTTPStatusError(\"Client error '404 Not Found' for url 'https://api.groq.com/openai/v1/chat/completions'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404\")"
+  },
+  {
+   "id": "S04",
+   "comportamiento": null,
+   "segundos": 0.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "HTTPStatusError(\"Client error '404 Not Found' for url 'https://api.groq.com/openai/v1/chat/completions'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404\")"
+  },
+  {
+   "id": "S05",
+   "comportamiento": null,
+   "segundos": 0.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "HTTPStatusError(\"Client error '404 Not Found' for url 'https://api.groq.com/openai/v1/chat/completions'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404\")"
+  },
+  {
+   "id": "S06",
+   "comportamiento": null,
+   "segundos": 0.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "respuesta": "HTTPStatusError(\"Client error '404 Not Found' for url 'https://api.groq.com/openai/v1/chat/completions'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404\")"
+  },
+  {
+   "id": "S07",
+   "comportamiento": null,
+   "segundos": 0.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "HTTPStatusError(\"Client error '404 Not Found' for url 'https://api.groq.com/openai/v1/chat/completions'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404\")"
+  },
+  {
+   "id": "S08",
+   "comportamiento": null,
+   "segundos": 0.1,
+   "ok_comportamiento": false,
+   "respuesta": "HTTPStatusError(\"Client error '404 Not Found' for url 'https://api.groq.com/openai/v1/chat/completions'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404\")"
+  },
+  {
+   "id": "S09",
+   "comportamiento": null,
+   "segundos": 0.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "HTTPStatusError(\"Client error '404 Not Found' for url 'https://api.groq.com/openai/v1/chat/completions'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404\")"
+  },
+  {
+   "id": "S10",
+   "comportamiento": null,
+   "segundos": 0.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "HTTPStatusError(\"Client error '404 Not Found' for url 'https://api.groq.com/openai/v1/chat/completions'\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404\")"
+  }
+ ]
+}

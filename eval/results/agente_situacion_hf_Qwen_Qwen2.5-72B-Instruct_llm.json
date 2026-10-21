@@ -1,0 +1,180 @@
+{
+ "resumen": {
+  "n": 10,
+  "comportamiento": "0/10 (0%)",
+  "sancion": "0/9 (0%)",
+  "codigo": "0/8 (0%)",
+  "candidato": "0/8 (0%)",
+  "cita": "0/9 (0%)",
+  "segundos_media": 0.1
+ },
+ "preguntas": [
+  {
+   "id": "S01",
+   "comportamiento": null,
+   "segundos": 0.3,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "HfHubHTTPError(\"Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6ad8a37e-39b059713c0ac537452f05a5;38843638-cff1-493b-958f-2505f3ec4360)\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402\\n\\nYou have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits.\")"
+  },
+  {
+   "id": "S02",
+   "comportamiento": null,
+   "segundos": 0.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "HfHubHTTPError(\"Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6ad8a37e-57d4dcce64d7f7ae5a8e1909;cece0dee-05e1-45cc-b56c-a0b881b9dfee)\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402\\n\\nYou have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits.\")"
+  },
+  {
+   "id": "S03",
+   "comportamiento": null,
+   "segundos": 0.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "HfHubHTTPError(\"Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6ad8a37e-7c352a191b48126e39f0140d;bc3942f9-1e8f-41b3-8892-b199c7414feb)\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402\\n\\nYou have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits.\")"
+  },
+  {
+   "id": "S04",
+   "comportamiento": null,
+   "segundos": 0.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "HfHubHTTPError(\"Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6ad8a37e-1bb7d9226022221f6f2df409;69691753-9763-41fe-bce3-0023676ed49d)\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402\\n\\nYou have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits.\")"
+  },
+  {
+   "id": "S05",
+   "comportamiento": null,
+   "segundos": 0.2,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "HfHubHTTPError(\"Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6ad8a37e-1143750233bbb8db4ab0bd55;6368d745-d020-4ee8-8b67-25c885bb897f)\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402\\n\\nYou have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits.\")"
+  },
+  {
+   "id": "S06",
+   "comportamiento": null,
+   "segundos": 0.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "respuesta": "HfHubHTTPError(\"Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6ad8a37e-51cfebe22023ec2a64d90d84;b65ad1be-5d35-45aa-b08a-af6e0105939a)\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402\\n\\nYou have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits.\")"
+  },
+  {
+   "id": "S07",
+   "comportamiento": null,
+   "segundos": 0.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "HfHubHTTPError(\"Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6ad8a37e-03ad6d9d76becd6874bf3584;2716d2aa-9941-4bf7-a3cc-6388189d31a3)\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402\\n\\nYou have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits.\")"
+  },
+  {
+   "id": "S08",
+   "comportamiento": null,
+   "segundos": 0.2,
+   "ok_comportamiento": false,
+   "respuesta": "HfHubHTTPError(\"Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6ad8a37f-72fa2ac205cacbb44dedfd36;eb6f348c-62ff-4c8c-a3a7-14dcc5faef9a)\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402\\n\\nYou have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits.\")"
+  },
+  {
+   "id": "S09",
+   "comportamiento": null,
+   "segundos": 0.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "HfHubHTTPError(\"Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6ad8a37f-118432a72e8f9355599ca986;3af96e00-e5ec-49cf-8da3-733e9d4f2d8e)\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402\\n\\nYou have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits.\")"
+  },
+  {
+   "id": "S10",
+   "comportamiento": null,
+   "segundos": 0.1,
+   "ok_comportamiento": false,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "HfHubHTTPError(\"Client error '402 Payment Required' for url 'https://router.huggingface.co/v1/chat/completions' (Request ID: Root=1-6ad8a37f-07a7645948adee6836d7411b;e222904d-fe0f-4b6f-b114-5c16b5a1900f)\\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402\\n\\nYou have no remaining credits. Purchase pre-paid credits to continue using Inference Providers. Alternatively, subscribe to PRO to get monthly included credits.\")"
+  }
+ ]
+}

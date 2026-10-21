@@ -1,0 +1,178 @@
+{
+ "resumen": {
+  "n": 10,
+  "comportamiento": "10/10 (100%)",
+  "sancion": "6/9 (67%)",
+  "codigo": "4/7 (57%)",
+  "candidato": "4/7 (57%)",
+  "cita": "8/9 (89%)",
+  "segundos_media": 20.2
+ },
+ "preguntas": [
+  {
+   "id": "S01",
+   "comportamiento": "responder",
+   "segundos": 3.2,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 020 1 5E",
+    "gravedad": "muy_grave",
+    "importe_eur": 500.0,
+    "pronto_pago_eur": 250.0,
+    "puntos": 4
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": false,
+   "respuesta": "Una tasa de 0,30 mg/l en aire espirado supera el límite para conductores en general (0,25 mg/l), fijado en el artículo 20 del Reglamento General de Circulación.\n\nSanción: infracción muy grave, multa de 500 € (250 € con pronto pago), 4 puntos. Fuente: guía ARCI de la DGT, CIR 020 1 5E.\n\nFuentes:\n[1] CIR Artículo 20. Tasas de alcohol en sangre y aire espirado. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a20\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S02",
+   "comportamiento": "responder",
+   "segundos": 3.4,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "LSV 076 - 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 6
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "Utilizar el móvil sujetándolo con la mano mientras se conduce está tipificado como infracción en el Anexo II de la LSV [1].\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 6 puntos. Fuente: guía ARCI de la DGT, LSV 076 - 5A.\n\nFuentes:\n[1] LSV ANEXO II — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#anii\n[2] LSV Artículo 76. Infracciones graves. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a76\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S03",
+   "comportamiento": "responder",
+   "segundos": 19.1,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 117 1 5E",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 4
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "Las infracciones graves conllevan una sanción económica y la pérdida de puntos, cuyo importe exacto se determina en la tabla oficial de sanciones [2]. Por tanto, el importe y los puntos que te corresponderán dependen de esa tabla, que el sistema añadirá automáticamente.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 4 puntos. Fuente: guía ARCI de la DGT, CIR 117 1 5E.\n\nFuentes:\n[1] CIR Artículo 116. Obligatoriedad de su uso y excepciones. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a116\n[2] LSV Artículo 76. Infracciones graves. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a76\n[3] CIR Artículo 117. Cinturones de seguridad y sistemas de retención infantil homologados. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a117\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S04",
+   "comportamiento": "responder",
+   "segundos": 43.2,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "Una luz roja no intermitente prohíbe el paso y obliga a detenerse antes de la línea de detención [1]. Los fragmentos citados confirman que pasar con el coche bajo esa señal constituye una infracción [2], pero no indican la cuantía de la multa ni los puntos del carnet. Por lo tanto, con la información disponible no es posible especificar la sanción exacta.\n\nFuentes:\n[1] CIR 4. Semáforos. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#A4\n[2] LSV ANEXO II — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#anii\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S05",
+   "comportamiento": "responder",
+   "segundos": 9.6,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": "grave",
+    "importe_eur": 300.0,
+    "pronto_pago_eur": 150.0,
+    "puntos": 2
+   },
+   "ok_sancion": true,
+   "respuesta": "Circular a 71 km/h donde el límite es 50 km/h supera la velocidad máxima permitida; la sanción sale de la tabla de excesos de velocidad del Anexo IV de la Ley de Tráfico.\n\nSanción: infracción grave, multa de 300 € (150 € con pronto pago), 2 puntos. Fuente: Anexo IV de la LSV.\n\nFuentes:\n[1] LSV ANEXO IV — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#aniv\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S06",
+   "comportamiento": "responder",
+   "segundos": 11.9,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": "grave",
+    "importe_eur": 100.0,
+    "pronto_pago_eur": 50.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "respuesta": "Circular a 140 km/h donde el límite es 120 km/h supera la velocidad máxima permitida; la sanción sale de la tabla de excesos de velocidad del Anexo IV de la Ley de Tráfico.\n\nSanción: infracción grave, multa de 100 € (50 € con pronto pago), 0 puntos. Fuente: Anexo IV de la LSV.\n\nFuentes:\n[1] LSV ANEXO IV — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#aniv\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S07",
+   "comportamiento": "responder",
+   "segundos": 41.3,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 091 2 5H",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 0
+   },
+   "ok_sancion": true,
+   "ok_codigo": true,
+   "ok_candidato": true,
+   "respuesta": "Sí, es una infracción. El estacionamiento debe efectuarse sin obstaculizar la circulación ni sin conductor, según el artículo 91 [1]. Dejar el vehículo en doble fila, que impide el paso de otros vehículos, constituye una parada o estacionamiento prohibido por los artículos 40 y 94 [2][3]. Por tanto, la conducta es sancionable con multa.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 091 2 5H.\n\nFuentes:\n[1] CIR Artículo 91. Modo y forma de ejecución. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a91\n[2] LSV Artículo 40. Prohibiciones. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a40\n[3] CIR Artículo 94. Lugares prohibidos. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a94\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S08",
+   "comportamiento": "aclarar",
+   "segundos": 10.6,
+   "ok_comportamiento": true,
+   "respuesta": "Para decirte qué sanción corresponde necesito un dato más: ¿cuál era el límite de velocidad de la vía (o qué tipo de vía era)?"
+  },
+  {
+   "id": "S09",
+   "comportamiento": "responder",
+   "segundos": 34.7,
+   "ok_comportamiento": true,
+   "ok_cita": true,
+   "obtenido": {
+    "codigo": "CIR 066 1 5A",
+    "gravedad": "grave",
+    "importe_eur": 200.0,
+    "pronto_pago_eur": 100.0,
+    "puntos": 4
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": true,
+   "respuesta": "El conductor de un vehículo tiene preferencia de paso respecto de los animales, salvo cuando se trate de cañadas señalizadas, al girar para entrar en otra vía con animales cruzándola, o al cruzar un arcén donde circulen animales sin cañada [1]. Por lo tanto, si el rebaño cruzaba la calzada en un punto que no es una cañada señalizada y no estabas girando ni circulabas por un arcén, no estabas obligado a detenerte y la infracción de “no respetar la prioridad de paso de los animales” no sería aplicable.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 4 puntos. Fuente: guía ARCI de la DGT, CIR 066 1 5A.\n\nFuentes:\n[1] LSV Artículo 25. Conductores, peatones y animales. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a25\n[2] CIR Artículo 66. Prioridad de paso de los conductores sobre los animales. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a66\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  },
+  {
+   "id": "S10",
+   "comportamiento": "responder",
+   "segundos": 25.2,
+   "ok_comportamiento": true,
+   "ok_cita": false,
+   "obtenido": {
+    "codigo": null,
+    "gravedad": null,
+    "importe_eur": null,
+    "pronto_pago_eur": null,
+    "puntos": null
+   },
+   "ok_sancion": false,
+   "ok_codigo": false,
+   "ok_candidato": false,
+   "respuesta": "El agente puede emitir una denuncia en el acto, indicando la infracción, la sanción que le corresponde y los puntos que conlleva [2].  \nLa denuncia se notifica al denunciado en el acto, salvo que la detención del vehículo implique un riesgo para la circulación u otra causa prevista [3].  \nUna vez notificada, dispones de veinte días naturales para pagar la multa con la reducción prevista o para formular alegaciones y aportar pruebas [4].  \nSi efectúas el pago dentro de ese plazo, la sanción se reduce en un 50 % según lo establecido para el depósito provisional de la multa [1].\n\nFuentes:\n[1] LSV Artículo 87. Denuncias. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a87\n[2] LSV Artículo 87. Denuncias. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a87\n[3] LSV Artículo 89. Notificación de la denuncia. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a89\n[4] LSV Artículo 93. Clases de procedimientos sancionadores. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a93\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+  }
+ ]
+}
