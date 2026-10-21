@@ -57,6 +57,44 @@ def ollama(modelo=None, host=None):
     return llamar
 
 
+def llamacpp(repo=None, fichero=None):
+    """qwen2.5:3b en GGUF dentro del propio proceso (demo en HF Spaces, CPU). Necesita
+    `llama-cpp-python` y `huggingface-hub` (se instalan en el Dockerfile del Space)."""
+    from llama_cpp import Llama
+
+    repo = repo or os.environ.get("TRAFICO_GGUF_REPO", "Qwen/Qwen2.5-3B-Instruct-GGUF")
+    fichero = fichero or os.environ.get("TRAFICO_GGUF", "qwen2.5-3b-instruct-q4_k_m.gguf")
+    modelo = Llama.from_pretrained(
+        repo_id=repo, filename=fichero, n_ctx=8192, n_threads=os.cpu_count(), verbose=False
+    )
+
+    def llamar(sistema, usuario, esquema=None):
+        with _tracer.start_as_current_span(f"llamacpp {esquema.__name__ if esquema else 'texto'}"):
+            r = modelo.create_chat_completion(
+                messages=[
+                    {"role": "system", "content": sistema},
+                    {"role": "user", "content": usuario},
+                ],
+                response_format=(
+                    {"type": "json_object", "schema": esquema.model_json_schema()}
+                    if esquema
+                    else None
+                ),
+                temperature=0,
+                max_tokens=MAX_TOKENS,
+            )
+        texto = r["choices"][0]["message"]["content"]
+        return esquema.model_validate_json(texto) if esquema else texto
+
+    llamar.nombre = f"llamacpp:{fichero}"
+    return llamar
+
+
+def desde_entorno():
+    """TRAFICO_LLM=ollama (por defecto, con TRAFICO_MODELO) o llamacpp (demo)."""
+    return llamacpp() if os.environ.get("TRAFICO_LLM") == "llamacpp" else ollama()
+
+
 class Pendiente(Exception):
     """La llamada no tiene respuesta todavía en el fichero de `cola`."""
 

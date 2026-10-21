@@ -4276,6 +4276,11 @@ dependencies = [
 ]
 
 [package.optional-dependencies]
+demo = [
+    { name = "fastapi" },
+    { name = "python-multipart" },
+    { name = "uvicorn" },
+]
 ml = [
     { name = "sentence-transformers" },
 ]
@@ -4287,7 +4292,9 @@ obs = [
 
 [package.dev-dependencies]
 dev = [
+    { name = "fastapi" },
     { name = "pytest" },
+    { name = "python-multipart" },
     { name = "pyyaml" },
     { name = "ruff" },
 ]
@@ -4296,21 +4303,26 @@ dev = [
 requires-dist = [
     { name = "arize-phoenix", marker = "extra == 'obs'", specifier = ">=20.23.0" },
     { name = "arize-phoenix-otel", marker = "extra == 'obs'", specifier = ">=0.17.2" },
+    { name = "fastapi", marker = "extra == 'demo'", specifier = ">=0.156.8" },
     { name = "langgraph", specifier = ">=1.2.15" },
     { name = "mcp", specifier = ">=2.3.0" },
     { name = "ollama", specifier = ">=0.6.3" },
     { name = "openinference-instrumentation-langchain", marker = "extra == 'obs'", specifier = ">=0.1.79" },
     { name = "pdfplumber", specifier = ">=0.11" },
     { name = "pydantic", specifier = ">=2.14.1" },
+    { name = "python-multipart", marker = "extra == 'demo'", specifier = ">=0.0.32" },
     { name = "rank-bm25", specifier = ">=0.2.2" },
     { name = "sentence-transformers", marker = "extra == 'ml'", specifier = ">=3" },
     { name = "snowballstemmer", specifier = ">=3.1.1" },
+    { name = "uvicorn", marker = "extra == 'demo'", specifier = ">=0.54.0" },
 ]
-provides-extras = ["ml", "obs"]
+provides-extras = ["ml", "obs", "demo"]
 
 [package.metadata.requires-dev]
 dev = [
+    { name = "fastapi", specifier = ">=0.156.8" },
     { name = "pytest", specifier = ">=8" },
+    { name = "python-multipart", specifier = ">=0.0.32" },
     { name = "pyyaml", specifier = ">=6.0.3" },
     { name = "ruff", specifier = ">=0.6" },
 ]

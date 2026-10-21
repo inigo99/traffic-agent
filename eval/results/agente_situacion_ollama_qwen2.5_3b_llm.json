@@ -6,13 +6,13 @@
   "codigo": "16/54 (30%)",
   "candidato": "36/54 (67%)",
   "cita": "39/56 (70%)",
-  "segundos_media": 3.4
+  "segundos_media": 3.0
  },
  "preguntas": [
   {
    "id": "S01",
    "comportamiento": "responder",
-   "segundos": 42.4,
+   "segundos": 24.8,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -25,12 +25,12 @@
    "ok_sancion": true,
    "ok_codigo": true,
    "ok_candidato": false,
-   "respuesta": "Conducir con una tasa de alcohol superior a la reglamentariamente establecida: | \nValores mg/l aire espirado, más de 0,50 (profesionales y titulares de permisos de conducción con menos de dos años de antigüedad más de 0,30 mg/l). | 6\n\n[2] Los conductores de cualquier vehículo no podrán superar la tasa de alcohol en sangre de 0,3 gramos por litro ni de alcohol en aire espirado de 0,15 miligramos por litro durante los dos años siguientes a la obtención del permiso o licencia que les habilita para conducir.\n\nSanción: infracción muy grave, multa de 500 € (250 € con pronto pago), 4 puntos. Fuente: guía ARCI de la DGT, CIR 020 1 5E.\n\nFuentes:\n[1] LSV ANEXO II — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#anii\n[2] CIR Artículo 20. Tasas de alcohol en sangre y aire espirado. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a20\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+   "respuesta": "Una tasa de 0,30 mg/l en aire espirado supera el límite para conductores en general (0,25 mg/l), fijado en el artículo 20 del Reglamento General de Circulación.\n\nSanción: infracción muy grave, multa de 500 € (250 € con pronto pago), 4 puntos. Fuente: guía ARCI de la DGT, CIR 020 1 5E.\n\nFuentes:\n[1] CIR Artículo 20. Tasas de alcohol en sangre y aire espirado. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a20\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
   },
   {
    "id": "S02",
    "comportamiento": "responder",
-   "segundos": 4.8,
+   "segundos": 5.2,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -43,12 +43,12 @@
    "ok_sancion": false,
    "ok_codigo": false,
    "ok_candidato": true,
-   "respuesta": "Según el Artículo 18.2 de CIR, queda prohibido conducir utilizando cualquier tipo de casco de audio, auriculares o instrumentos similares conectados a aparatos receptores o reproductores de sonido u otros dispositivos que disminuyan la atención permanente a la conducción, excepto durante la correspondiente enseñanza y la realización de las pruebas de aptitud en circuito abierto para la obtención del permiso de conducción cuando así lo exija el Reglamento General de Conductores.\n\n[3] Artículo 80.La infracción por conducir utilizando dispositivos de telefonía móvil y otros medios de comunicación durante la conducción es considerada una infracción leve.\n\n[4] El Artículo 13.3 de LSV prohíbe la utilización de dispositivos de telefonía móvil durante la conducción, excepto cuando el desarrollo de la comunicación tenga lugar sin emplear las manos ni usar cascos, auriculares o instrumentos similares.\n\n1 de LSV.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 3 puntos. Fuente: guía ARCI de la DGT, CIR 018 2 5B.\n\nFuentes:\n[1] LSV ANEXO II — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#anii\n[2] CIR Artículo 18. Otras obligaciones del conductor. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a18\n[3] LSV Artículo 80. Tipos. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a80\n[4] LSV Artículo 13. Normas generales de conducción. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a13\n[5] LSV Artículo 104. Inmovilización del vehículo. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a104\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+   "respuesta": "Según el Artículo 18.2 de CIR, queda prohibido conducir utilizando cualquier tipo de casco de audio, auriculares o instrumentos similares conectados a aparatos receptores o reproductores de sonido u otros dispositivos que disminuyan la atención permanente a la conducción, excepto durante la correspondiente enseñanza y la realización de las pruebas de aptitud en circuito abierto para la obtención del permiso de conducción cuando así lo exija el Reglamento General de Conductores.\n\n[3] Artículo 80.[4] El Artículo 13.3 de LSV prohíbe la utilización de dispositivos de telefonía móvil durante la conducción, excepto cuando el desarrollo de la comunicación tenga lugar sin emplear las manos ni usar cascos, auriculares o instrumentos similares.\n\n1 de LSV.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 3 puntos. Fuente: guía ARCI de la DGT, CIR 018 2 5B.\n\nFuentes:\n[1] LSV ANEXO II — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#anii\n[2] CIR Artículo 18. Otras obligaciones del conductor. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a18\n[3] LSV Artículo 80. Tipos. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a80\n[4] LSV Artículo 13. Normas generales de conducción. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a13\n[5] LSV Artículo 104. Inmovilización del vehículo. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a104\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
   },
   {
    "id": "S03",
    "comportamiento": "responder",
-   "segundos": 2.8,
+   "segundos": 2.7,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -66,7 +66,7 @@
   {
    "id": "S04",
    "comportamiento": "responder",
-   "segundos": 5.5,
+   "segundos": 5.3,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -84,7 +84,7 @@
   {
    "id": "S05",
    "comportamiento": "responder",
-   "segundos": 2.3,
+   "segundos": 1.1,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -95,12 +95,12 @@
     "puntos": 2
    },
    "ok_sancion": true,
-   "respuesta": "La infracción de circular a 71 km/h en una calle de ciudad limitada a 50 km/h se caería como [1].\n\nSanción: infracción grave, multa de 300 € (150 € con pronto pago), 2 puntos. Fuente: Anexo IV de la LSV.\n\nFuentes:\n[1] CIR Artículo 50. Límites de velocidad en vías urbanas y travesías. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a50\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+   "respuesta": "Circular a 71 km/h donde el límite es 50 km/h supera la velocidad máxima permitida; la sanción sale de la tabla de excesos de velocidad del Anexo IV de la Ley de Tráfico.\n\nSanción: infracción grave, multa de 300 € (150 € con pronto pago), 2 puntos. Fuente: Anexo IV de la LSV.\n\nFuentes:\n[1] LSV ANEXO IV — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#aniv\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
   },
   {
    "id": "S06",
    "comportamiento": "responder",
-   "segundos": 1.7,
+   "segundos": 1.0,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -111,12 +111,12 @@
     "puntos": 0
    },
    "ok_sancion": true,
-   "respuesta": "La infracción de circular a 140 km/h en una autovía limitada a 120 km/h se considera muy grave, correspondiendo 500 puntos.\n\nSanción: infracción grave, multa de 100 € (50 € con pronto pago), 0 puntos. Fuente: Anexo IV de la LSV.\n\nFuentes:\n[1] LSV ANEXO IV — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#aniv\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+   "respuesta": "Circular a 140 km/h donde el límite es 120 km/h supera la velocidad máxima permitida; la sanción sale de la tabla de excesos de velocidad del Anexo IV de la Ley de Tráfico.\n\nSanción: infracción grave, multa de 100 € (50 € con pronto pago), 0 puntos. Fuente: Anexo IV de la LSV.\n\nFuentes:\n[1] LSV ANEXO IV — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#aniv\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
   },
   {
    "id": "S07",
    "comportamiento": "responder",
-   "segundos": 3.4,
+   "segundos": 3.3,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -141,7 +141,7 @@
   {
    "id": "S09",
    "comportamiento": "responder",
-   "segundos": 2.5,
+   "segundos": 2.4,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -159,7 +159,7 @@
   {
    "id": "S10",
    "comportamiento": "avisar",
-   "segundos": 2.8,
+   "segundos": 2.6,
    "ok_comportamiento": false,
    "ok_cita": false,
    "obtenido": {
@@ -177,7 +177,7 @@
   {
    "id": "S11",
    "comportamiento": "responder",
-   "segundos": 2.3,
+   "segundos": 2.2,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -195,7 +195,7 @@
   {
    "id": "S12",
    "comportamiento": "responder",
-   "segundos": 4.3,
+   "segundos": 4.2,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -213,7 +213,7 @@
   {
    "id": "S13",
    "comportamiento": "responder",
-   "segundos": 2.7,
+   "segundos": 2.6,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -231,7 +231,7 @@
   {
    "id": "S14",
    "comportamiento": "responder",
-   "segundos": 3.4,
+   "segundos": 3.2,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -249,7 +249,7 @@
   {
    "id": "S15",
    "comportamiento": "responder",
-   "segundos": 2.7,
+   "segundos": 2.6,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -285,7 +285,7 @@
   {
    "id": "S17",
    "comportamiento": "responder",
-   "segundos": 2.4,
+   "segundos": 2.6,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -334,7 +334,7 @@
    "ok_sancion": true,
    "ok_codigo": false,
    "ok_candidato": true,
-   "respuesta": "La infracción identificada corresponde a la obligación de llevar encendidas las luces de posición entre el ocaso y la salida del sol, incluyendo túneles y tramos de vía afectados por la señal \"Túnel\". Como no se llevaban encendidas las luces de gálibo, se considera infracción grave.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 099 1 5C.\n\nFuentes:\n[1] LSV Artículo 80. Tipos. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a80\n[2] CIR Artículo 99. Alumbrados de posición y de gálibo. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a99\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+   "respuesta": "La infracción identificada corresponde a la obligación de llevar encendidas las luces de posición entre el ocaso y la salida del sol, incluyendo túneles y tramos de vía afectados por la señal \"Túnel\".\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 099 1 5C.\n\nFuentes:\n[1] LSV Artículo 80. Tipos. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a80\n[2] CIR Artículo 99. Alumbrados de posición y de gálibo. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a99\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
   },
   {
    "id": "S20",
@@ -357,7 +357,7 @@
   {
    "id": "S21",
    "comportamiento": "responder",
-   "segundos": 2.3,
+   "segundos": 2.2,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -375,7 +375,7 @@
   {
    "id": "S22",
    "comportamiento": "responder",
-   "segundos": 2.1,
+   "segundos": 1.9,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -388,12 +388,12 @@
    "ok_sancion": false,
    "ok_codigo": false,
    "ok_candidato": false,
-   "respuesta": "La colocación de lunas tintadas no homologadas es una infracción grave, por lo que podrían sancionarte con una multa de 200 euros.\n\nFuentes:\n[1] CIR Artículo 19. Visibilidad en el vehículo. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a19\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+   "respuesta": "Consulta los artículos citados abajo.\n\nFuentes:\n[1] CIR Artículo 19. Visibilidad en el vehículo. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a19\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
   },
   {
    "id": "S23",
    "comportamiento": "responder",
-   "segundos": 2.9,
+   "segundos": 2.6,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -411,7 +411,7 @@
   {
    "id": "S24",
    "comportamiento": "responder",
-   "segundos": 3.4,
+   "segundos": 3.3,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -429,7 +429,7 @@
   {
    "id": "S25",
    "comportamiento": "responder",
-   "segundos": 2.2,
+   "segundos": 2.1,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -447,7 +447,7 @@
   {
    "id": "S26",
    "comportamiento": "responder",
-   "segundos": 3.4,
+   "segundos": 3.3,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -483,7 +483,7 @@
   {
    "id": "S28",
    "comportamiento": "responder",
-   "segundos": 2.8,
+   "segundos": 2.9,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -501,7 +501,7 @@
   {
    "id": "S29",
    "comportamiento": "responder",
-   "segundos": 2.7,
+   "segundos": 2.6,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -519,7 +519,7 @@
   {
    "id": "S30",
    "comportamiento": "avisar",
-   "segundos": 2.5,
+   "segundos": 2.4,
    "ok_comportamiento": false,
    "ok_cita": true,
    "obtenido": {
@@ -537,7 +537,7 @@
   {
    "id": "S31",
    "comportamiento": "responder",
-   "segundos": 3.0,
+   "segundos": 2.9,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -555,7 +555,7 @@
   {
    "id": "S32",
    "comportamiento": "responder",
-   "segundos": 3.0,
+   "segundos": 2.9,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -573,7 +573,7 @@
   {
    "id": "S33",
    "comportamiento": "responder",
-   "segundos": 3.0,
+   "segundos": 2.6,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -591,7 +591,7 @@
   {
    "id": "S34",
    "comportamiento": "responder",
-   "segundos": 1.9,
+   "segundos": 2.1,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -609,7 +609,7 @@
   {
    "id": "S35",
    "comportamiento": "responder",
-   "segundos": 3.8,
+   "segundos": 3.6,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -627,7 +627,7 @@
   {
    "id": "S36",
    "comportamiento": "responder",
-   "segundos": 2.4,
+   "segundos": 2.3,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -645,7 +645,7 @@
   {
    "id": "S37",
    "comportamiento": "responder",
-   "segundos": 3.0,
+   "segundos": 2.9,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -663,7 +663,7 @@
   {
    "id": "S38",
    "comportamiento": "responder",
-   "segundos": 2.3,
+   "segundos": 2.4,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -681,7 +681,7 @@
   {
    "id": "S39",
    "comportamiento": "responder",
-   "segundos": 2.9,
+   "segundos": 2.8,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -699,7 +699,7 @@
   {
    "id": "S40",
    "comportamiento": "responder",
-   "segundos": 2.6,
+   "segundos": 2.4,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -712,12 +712,12 @@
    "ok_sancion": false,
    "ok_codigo": false,
    "ok_candidato": true,
-   "respuesta": "La infracción se clasifica como una infracción leve, según el artículo 75. Son infracciones leves las conductas tipificadas en esta ley referidas a: b) no hacer uso de los elementos y prendas reflectantes por parte de los usuarios de bicicletas.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 4 puntos. Fuente: guía ARCI de la DGT, CIR 118 3 5C.\n\nFuentes:\n[1] LSV Artículo 75. Infracciones leves. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a75\n[2] CIR Artículo 118. Cascos y otros elementos de protección. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a118\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+   "respuesta": "Son infracciones leves las conductas tipificadas en esta ley referidas a: b) no hacer uso de los elementos y prendas reflectantes por parte de los usuarios de bicicletas.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 4 puntos. Fuente: guía ARCI de la DGT, CIR 118 3 5C.\n\nFuentes:\n[1] LSV Artículo 75. Infracciones leves. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a75\n[2] CIR Artículo 118. Cascos y otros elementos de protección. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a118\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
   },
   {
    "id": "S41",
    "comportamiento": "responder",
-   "segundos": 2.8,
+   "segundos": 2.7,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -735,7 +735,7 @@
   {
    "id": "S42",
    "comportamiento": "responder",
-   "segundos": 2.3,
+   "segundos": 2.1,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -753,7 +753,7 @@
   {
    "id": "S43",
    "comportamiento": "responder",
-   "segundos": 3.7,
+   "segundos": 3.1,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -771,7 +771,7 @@
   {
    "id": "S44",
    "comportamiento": "responder",
-   "segundos": 2.3,
+   "segundos": 2.1,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -789,7 +789,7 @@
   {
    "id": "S45",
    "comportamiento": "responder",
-   "segundos": 2.3,
+   "segundos": 2.1,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -807,7 +807,7 @@
   {
    "id": "S46",
    "comportamiento": "responder",
-   "segundos": 3.5,
+   "segundos": 3.2,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -825,7 +825,7 @@
   {
    "id": "S47",
    "comportamiento": "responder",
-   "segundos": 2.4,
+   "segundos": 2.3,
    "ok_comportamiento": true,
    "ok_cita": false,
    "obtenido": {
@@ -843,7 +843,7 @@
   {
    "id": "S48",
    "comportamiento": "responder",
-   "segundos": 2.3,
+   "segundos": 2.4,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -861,7 +861,7 @@
   {
    "id": "S49",
    "comportamiento": "responder",
-   "segundos": 2.5,
+   "segundos": 3.1,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -879,7 +879,7 @@
   {
    "id": "S50",
    "comportamiento": "responder",
-   "segundos": 4.0,
+   "segundos": 4.4,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -910,7 +910,7 @@
    "ok_sancion": false,
    "ok_codigo": false,
    "ok_candidato": false,
-   "respuesta": "La infracción identificada es la de Estacionar en Zona Reservada para Carga y Descarga, por lo que la multa correspondiente es de 200 euros.\n\nSanción: infracción leve, multa de 80 € (40 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 094 2-C 5U.\n\nFuentes:\n[1] CIR Artículo 156. Régimen de parada y estacionamiento. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a1-9\n[2] CIR Artículo 94. Lugares prohibidos. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a94\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción leve, multa de 80 € (40 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 094 2-C 5U.\n\nFuentes:\n[1] CIR Artículo 156. Régimen de parada y estacionamiento. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a1-9\n[2] CIR Artículo 94. Lugares prohibidos. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a94\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
   },
   {
    "id": "S52",
@@ -933,7 +933,7 @@
   {
    "id": "S53",
    "comportamiento": "avisar",
-   "segundos": 10.3,
+   "segundos": 9.7,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -951,7 +951,7 @@
   {
    "id": "S54",
    "comportamiento": "avisar",
-   "segundos": 3.2,
+   "segundos": 3.1,
    "ok_comportamiento": true,
    "ok_cita": true,
    "obtenido": {
@@ -969,7 +969,7 @@
   {
    "id": "S55",
    "comportamiento": "responder",
-   "segundos": 2.3,
+   "segundos": 2.2,
    "ok_comportamiento": false,
    "ok_cita": false,
    "obtenido": {
@@ -987,7 +987,7 @@
   {
    "id": "S56",
    "comportamiento": "responder",
-   "segundos": 2.5,
+   "segundos": 2.4,
    "ok_comportamiento": false,
    "ok_cita": true,
    "obtenido": {
@@ -1000,7 +1000,7 @@
    "ok_sancion": true,
    "ok_codigo": false,
    "ok_candidato": true,
-   "respuesta": "Multa de 60 euros.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 094 1-F 5N.\n\nFuentes:\n[1] LSV Artículo 40. Prohibiciones. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a40\n[2] CIR Artículo 94. Lugares prohibidos. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a94\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 094 1-F 5N.\n\nFuentes:\n[1] LSV Artículo 40. Prohibiciones. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a40\n[2] CIR Artículo 94. Lugares prohibidos. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a94\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
   },
   {
    "id": "S57",
@@ -1037,7 +1037,7 @@
   {
    "id": "S60",
    "comportamiento": "aclarar",
-   "segundos": 0.8,
+   "segundos": 0.7,
    "ok_comportamiento": true,
    "respuesta": "Para decirte qué sanción corresponde necesito un dato más: ¿en qué vehículo ibas (bicicleta, moto, ciclomotor, patinete…)?"
   }

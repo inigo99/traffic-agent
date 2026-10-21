@@ -25,10 +25,17 @@ obs = [
     "arize-phoenix-otel>=0.17.2",
     "openinference-instrumentation-langchain>=0.1.79",
 ]
+demo = [
+    "fastapi>=0.156.8",
+    "python-multipart>=0.0.32",
+    "uvicorn>=0.54.0",
+]
 
 [dependency-groups]
 dev = [
+    "fastapi>=0.156.8",
     "pytest>=8",
+    "python-multipart>=0.0.32",
     "pyyaml>=6.0.3",
     "ruff>=0.6",
 ]

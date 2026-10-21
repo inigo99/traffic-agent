@@ -221,3 +221,67 @@ def test_trazas_un_span_por_nodo():
         LangChainInstrumentor().uninstrument()
     nombres = {s.name for s in exportador.get_finished_spans()}
     assert {"analizar", "buscar", "sancion", "redactar"} <= nombres
+
+
+@pytest.mark.parametrize(
+    "pregunta, ordenanza",
+    [
+        ("Aparqué en zona azul sin ticket en Pamplona. ¿Qué multa es?", True),
+        ("¿Cuánto es la multa de la ORA en Madrid?", True),
+        ("¿Puedo entrar con mi diésel en la zona de bajas emisiones de Barcelona?", True),
+        ("¿Quién puede restringir la entrada en las zonas de bajas emisiones?", False),
+        ("¿Cuándo se puede llevar la grúa mi coche?", False),
+    ],
+)
+def test_ordenanza_por_reglas(pregunta, ordenanza):
+    r = agent.analizar({"pregunta": pregunta}, lambda *_: situacion())
+    assert (r["analisis"].motivo == "ordenanza") is ordenanza
+
+
+def test_sin_cifras_quita_gravedad_inventada():
+    t = "Es obligatorio el cinturón [1]. Es una infracción leve. Multa de 500 euros."
+    assert agent._sin_cifras(t) == "Es obligatorio el cinturón [1]."
+
+
+def test_velocidad_y_alcohol_con_plantilla_sin_redaccion_del_llm():
+    texto_llm = "Se sancionará con multa de 500 euros [1]."
+    r = agent.preguntar(
+        "Iba a 140 km/h en autovía limitada a 120", llm_falso(situacion(), texto=texto_llm)
+    )
+    assert "500" not in r["respuesta"] and r["fuentes"][0]["id_bloque"] == "aniv"
+    r = agent.preguntar("He dado 0,30 mg/l. Carné desde hace diez años", llm_falso(situacion()))
+    assert "0,30 mg/l" in r["respuesta"] and "0,25 mg/l" in r["respuesta"]
+    assert r["fuentes"][0]["id_bloque"] == "a20"
+
+
+@pytest.mark.parametrize(
+    "pregunta, motivo",
+    [
+        ("Atropellé a un ciclista y me fui sin parar. ¿Qué multa me puede caer?", "penal"),
+        ("Me negué a soplar en un control de alcoholemia. ¿Cuánto es la multa?", "penal"),
+        ("Conducía sin haberme sacado nunca el carné. ¿Cuánto es la multa?", "penal"),
+        ("Estaba en un atasco y me puse a pitar sin parar. ¿Me pueden multar?", "ninguno"),
+        ("Redáctame un recurso contra mi multa de velocidad.", "fuera_ambito"),
+        ("¿En Valencia puedo ir con el patinete eléctrico por el carril bici?", "ordenanza"),
+        ("Iba con el patinete eléctrico por la acera y me han multado. ¿Qué me cae?", "ninguno"),
+    ],
+)
+def test_motivo_por_reglas(pregunta, motivo):
+    r = agent.analizar({"pregunta": pregunta}, lambda *_: situacion())
+    assert r["analisis"].motivo == motivo
+
+
+def test_penal_por_tasa_no_pide_tipo_de_conductor():
+    r = agent.analizar(
+        {"pregunta": "Me han parado con 0,70 mg/l en aire espirado"}, lambda *_: situacion()
+    )
+    assert r["analisis"].motivo == "penal" and r["faltan"] == []
+
+
+def test_aviso_de_competencia_con_articulo_84():
+    a = Analisis(intencion="fuera_ambito", motivo="fuera_ambito", consulta="x")
+    r = agent.preguntar(
+        "Me ha multado la Policía Municipal de Pamplona. ¿Quién me sanciona?", llm_falso(a)
+    )
+    assert r["comportamiento"] == "avisar" and "Alcaldes" in r["respuesta"]
+    assert any(f["id_bloque"] == "a84" for f in r["fuentes"])

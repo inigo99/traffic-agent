@@ -43,6 +43,49 @@ AVISO_PENAL = (
     "Atención: esta conducta puede constituir un delito contra la seguridad vial (Código Penal), "
     "además de una infracción administrativa. Consulta con un abogado."
 )
+# Quién denuncia y sanciona (S5: el 3b no lo detectaba nunca). Regla + aviso fijo + art. 84 LSV.
+COMPETENCIA = [
+    (
+        re.compile(r"Navarra|Polic[ií]a Foral"),
+        (
+            "En Navarra, en vías interurbanas, denuncia la Policía Foral y tramita la sanción el Gobierno "
+            "de Navarra; las infracciones y cuantías de esta respuesta son las de la Ley de Tráfico estatal."
+        ),
+    ),
+    (
+        re.compile(r"Catalu|Mossos?\b"),
+        (
+            "En Cataluña el tráfico interurbano lo vigilan los Mossos d'Esquadra y sanciona el Servei "
+            "Català de Trànsit; las infracciones y cuantías de esta respuesta son las de la Ley estatal."
+        ),
+    ),
+    (
+        re.compile(r"Pa[ií]s Vasco|Euskadi|Ertzain"),
+        (
+            "En el País Vasco el tráfico interurbano lo vigila la Ertzaintza y sanciona el Gobierno Vasco; "
+            "las infracciones y cuantías de esta respuesta son las de la Ley estatal."
+        ),
+    ),
+    (
+        re.compile(r"(?i:polic[ií]a (?:municipal|local)|guardia urbana)"),
+        (
+            "En vías urbanas la sanción corresponde a los Alcaldes (art. 84.4 de la Ley de Tráfico), "
+            "no a la DGT."
+        ),
+    ),
+]
+# Conductas que pueden ser delito y el 3b no marcaba como "penal" (T11–T16).
+_PENAL_TEXTO = re.compile(
+    r"me (?:fui|march[eé]) sin (?:parar|detenerme)|me di a la fuga|neg(?:u[eé]|arme) a (?:soplar|hacer)"
+    r"|no (?:quise|quiero) soplar|sin (?:haberme sacado|tener) (?:nunca )?(?:el )?(?:carn[eé]|permiso)"
+    r"|carn[eé] retirado|perdido todos los puntos|\bcarreras?\b|temerari",
+    re.IGNORECASE,
+)
+# Fuera de ámbito que el 3b intentaba contestar (T26, T27).
+_FUERA_TEXTO = re.compile(
+    r"red[aá]ct\w* (?:un |el |mi )?(?:recurso|alegaci)|\bseguro (?:m[ií]nimo|obligatorio)|p[oó]liza",
+    re.IGNORECASE,
+)
 RESPUESTA_FUERA = {
     "ordenanza": (
         "Esto depende de la ordenanza municipal de cada ayuntamiento (zonas de estacionamiento "
@@ -94,6 +137,7 @@ class Estado(TypedDict, total=False):
     fragmentos: list[dict]
     sancion: dict | None
     candidatos: list[str]
+    texto_fijo: str  # velocidad y alcohol: respuesta por plantilla, sin LLM
     respuesta: str
     comportamiento: str
     fuentes: list[dict]
@@ -116,6 +160,14 @@ SISTEMA_REDACCION = """Eres un asistente de normativa de tráfico española. Res
 - Si la pregunta parte de un dato falso, corrígelo citando el fragmento."""
 
 
+# Depende de la ordenanza municipal (el 3b lo clasificaba como situación y buscaba en la ARCI).
+# "bajas emisiones"/"carga y descarga" solo si nombran una ciudad: en general sí son ley estatal.
+_ORDENANZA = re.compile(
+    r"(?i:zona (?:azul|verde|naranja)|gr[uú]a municipal)|\b(?:ORA|OTA)\b"
+    r"|(?i:bajas emisiones|carga y descarga)[^.?]*\b(?:de|en)\s+(?:el centro de\s+)?[A-ZÁÉÍÓÚ]\w+"
+)
+_MUNICIPAL = re.compile(r"patinete|residentes", re.IGNORECASE)  # T08, T10: solo con ciudad
+_CIUDAD = re.compile(r"\b(?i:en|de)\s+[A-ZÁÉÍÓÚ][a-záéíóúñ]+")
 _VEHICULOS = r"bici(?:cleta)?|moto(?:cicleta)?|ciclomotor|patinete|quad|coche|turismo|furgoneta|cami[oó]n|autob[uú]s"
 _NO_VELOCIDAD = r"(?!\s*(?:años|plazas|toneladas|kg|kilos|metros|minutos|euros|€|puntos|mg|g/))"
 
@@ -161,7 +213,16 @@ def analizar(estado, llm):
     hechos = a.hechos.model_dump() | dict.fromkeys(por_reglas) | d
     a.hechos = Hechos(**{k: v for k, v in hechos.items() if k in Hechos.model_fields})
     a.tema = d.get("tema", "otro")
-    if _penal(a.hechos):
+    p = estado["pregunta"]
+    if d.get("velocidad_kmh") or d.get("tasa_aire_mg_l") or d.get("tasa_sangre_g_l"):
+        a.intencion = "situacion"  # da su velocidad o su tasa: es su caso (T13 salía "factual")
+    if _aviso_competencia(p) and a.intencion == "fuera_ambito":
+        a.intencion, a.motivo = "factual", "ninguno"  # T29: "¿quién me sanciona?" sí es de la ley
+    if _FUERA_TEXTO.search(p):
+        a.intencion, a.motivo = "fuera_ambito", "fuera_ambito"
+    if _ORDENANZA.search(p) or (_MUNICIPAL.search(p) and _CIUDAD.search(p)):
+        a.intencion, a.motivo = "fuera_ambito", "ordenanza"
+    if a.intencion != "fuera_ambito" and (_penal(a.hechos) or _PENAL_TEXTO.search(p)):
         a.motivo = "penal"
     h = a.hechos
     datos = {
@@ -173,10 +234,14 @@ def analizar(estado, llm):
     }
     faltan = (
         [c for c in REQUISITOS.get(a.tema, []) if datos[c] is None]
-        if a.intencion == "situacion"
+        if a.intencion == "situacion" and a.motivo != "penal"  # T02: 0,70 es delito para todos
         else []
     )
     return {"analisis": a, "faltan": faltan}
+
+
+def _aviso_competencia(pregunta):
+    return next((aviso for patron, aviso in COMPETENCIA if patron.search(pregunta)), None)
 
 
 def _penal(h):
@@ -230,10 +295,17 @@ def sancion(estado, llm):
                 "hecho_denunciado": f"Circular a {h.velocidad_kmh} km/h con límite de {h.limite_kmh} km/h",
                 "aviso": None,
                 "fuente": "Anexo IV de la LSV",
-            }
+                "norma": "LSV",
+                "id_bloque": "aniv",
+            },
+            "texto_fijo": (
+                f"Circular a {h.velocidad_kmh} km/h donde el límite es {h.limite_kmh} km/h supera "
+                "la velocidad máxima permitida; la sanción sale de la tabla de excesos de velocidad "
+                "del Anexo IV de la Ley de Tráfico."
+            ),
         }
     if a.tema == "alcohol" and (codigo := _codigo_alcohol(h)):  # tramos del art. 20 RGC: sin LLM
-        return {"sancion": tools.consultar_sancion(codigo)}
+        return {"sancion": tools.consultar_sancion(codigo), "texto_fijo": _texto_alcohol(h)}
     bloques = [(f["norma"], f["id_bloque"]) for f in estado["fragmentos"]]
     candidatos = _candidatos(estado["pregunta"], a.consulta, bloques)
     if not candidatos:
@@ -248,6 +320,22 @@ def sancion(estado, llm):
         codigo = llm(SISTEMA_ELECCION, usuario, esquema).codigo
     elegida = next((c for c in candidatos if c["codigo"] == codigo), None)
     return {"sancion": elegida, "candidatos": [c["codigo"] for c in candidatos]}
+
+
+def _texto_alcohol(h):
+    estricto = h.conductor in ("novel", "profesional")
+    quien = "conductores noveles y profesionales" if estricto else "conductores en general"
+    if h.tasa_aire_mg_l is not None:
+        tasa, limite = f"{h.tasa_aire_mg_l:.2f} mg/l en aire espirado", 0.15 if estricto else 0.25
+        unidad = "mg/l"
+    else:
+        tasa, limite, unidad = f"{h.tasa_sangre_g_l:.2f} g/l en sangre", 0.5, "g/l"
+    tasa = tasa.replace(".", ",")
+    return (
+        f"Una tasa de {tasa} supera el límite para {quien} ({limite:.2f} {unidad}".replace(".", ",")
+        + "), fijado en el "
+        "artículo 20 del Reglamento General de Circulación."
+    )
 
 
 def _codigo_alcohol(h):
@@ -275,6 +363,8 @@ def _candidatos(pregunta, consulta, bloques):
 
 
 def redactar(estado, llm):
+    if estado.get("texto_fijo"):  # velocidad / alcohol: todo determinista, cita = su precepto
+        return _responder(estado, estado["texto_fijo"], [])
     frags = estado["fragmentos"]
     contexto = "\n\n".join(
         f"[{i}] {f['titulo']} ({f['norma']})\n{f['fragmento'][:MAX_CHARS_FRAGMENTO]}"
@@ -300,13 +390,27 @@ def redactar(estado, llm):
     orden = sorted(usados)
     texto = re.sub(r"\[(\d+)\]", lambda m: _renumerar(m, orden), _sin_cifras(texto))
     texto = re.sub(r"^(?:\s*\[\d+\])+\s*(?:\d+\.\s+)?", "", texto)  # citas sueltas al inicio
-    if s and not re.search(r"[a-záéíóúñ]{3}", texto, re.IGNORECASE):  # solo quedaban cifras
-        texto = "La situación que describes corresponde a la infracción indicada abajo."
-    fuentes = [frags[i - 1] for i in orden]
+    if not re.search(r"[a-záéíóúñ]{3}", texto, re.IGNORECASE):  # solo quedaban cifras
+        texto = (
+            "La situación que describes corresponde a la infracción indicada abajo."
+            if s
+            else "Consulta los artículos citados abajo."
+        )
+    return _responder({**estado, "sancion": s}, texto, [frags[i - 1] for i in orden])
+
+
+def _responder(estado, texto, fuentes):
+    """Añade el precepto de la sanción a las fuentes, los avisos y compone la respuesta."""
+    s = estado.get("sancion")
     if s and (p := _precepto(s)) and all(f["id_bloque"] != p["id_bloque"] for f in fuentes):
         fuentes.append(p)
     a = estado["analisis"]
-    avisos = [x for x in (AVISO_PENAL if a.motivo == "penal" else None, s and s.get("aviso")) if x]
+    competencia = _aviso_competencia(estado["pregunta"])
+    art = competencia and tools.leer_articulo("LSV", "a84")
+    if art and all(f["id_bloque"] != "a84" for f in fuentes):
+        fuentes.append(art)
+    avisos = [AVISO_PENAL if a.motivo == "penal" else None, s and s.get("aviso"), competencia]
+    avisos = [x for x in avisos if x]
     comportamiento = "avisar" if avisos else "responder"
     return {
         "respuesta": _componer(texto, s, avisos, fuentes),
@@ -316,12 +420,17 @@ def redactar(estado, llm):
     }
 
 
-_CIFRAS = re.compile(r"[^.\n]*(?:€|\beuros?\b|\d+\s*puntos?\b)[^.\n]*\.?\s*", re.IGNORECASE)
+# Frases con importes, puntos o gravedad: las pone `_componer` desde la tabla (el 3b escribía
+# "infracción leve" para una grave y "500 euros" para un tramo de 100).
+_CIFRAS = re.compile(
+    r"[^.\n]*(?:€|\beuros?\b|\d+\s*puntos?\b|infracci[oó]n\s+(?:muy\s+)?(?:leve|grave))[^.\n]*\.?\s*",
+    re.IGNORECASE,
+)
 
 
 def _sin_cifras(texto):
     """Quita las frases del LLM con importes o puntos: esas cifras solo las pone `_componer`."""
-    return _CIFRAS.sub("", texto).strip() or texto
+    return _CIFRAS.sub("", texto).strip()
 
 
 def _renumerar(m, orden):
