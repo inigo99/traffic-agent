@@ -5,12 +5,16 @@ description = "Asistente de normativa de tráfico (DGT/BOE) con citas"
 requires-python = ">=3.12"
 dependencies = [
     "langgraph>=1.2.15",
+    "mcp>=2.3.0",
     "ollama>=0.6.3",
     "pdfplumber>=0.11",
     "pydantic>=2.14.1",
     "rank-bm25>=0.2.2",
     "snowballstemmer>=3.1.1",
 ]
+
+[project.scripts]
+trafico-mcp = "trafico_agent.mcp_server:main"
 
 [project.optional-dependencies]
 ml = [

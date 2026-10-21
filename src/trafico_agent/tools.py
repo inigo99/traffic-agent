@@ -31,8 +31,12 @@ def _indice():
     return Indice(DB)
 
 
-def buscar_normativa(consulta, k=5, modo="vectores"):
-    """Fragmentos más relevantes, con su artículo y url del BOE."""
+def buscar_normativa(consulta, k=5, modo=None):
+    """Fragmentos más relevantes, con su artículo y url del BOE.
+
+    Por defecto vectores; BM25 si no están generados (`data/embeddings.npy`) para que el MCP
+    funcione sin el extra `ml`."""
+    modo = modo or ("vectores" if _indice().emb is not None else "bm25")
     return [
         {
             "norma": f["norma"],
