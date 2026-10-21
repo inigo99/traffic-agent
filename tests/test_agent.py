@@ -201,3 +201,23 @@ def test_llm_cola_apunta_pendientes_y_lee_respuestas(tmp_path):
     respuesta = '{"intencion": "factual", "consulta": "c"}'
     (tmp_path / "x.json").write_text(json.dumps({fila["clave"]: respuesta}), encoding="utf-8")
     assert cola("x", tmp_path)("s", "u", Analisis).consulta == "c"
+
+
+def test_trazas_un_span_por_nodo():
+    """Con el extra `obs`, LangGraph deja un span por nodo (lo que se ve en Phoenix)."""
+    pytest.importorskip("phoenix.otel")
+    from openinference.instrumentation.langchain import LangChainInstrumentor
+    from opentelemetry.sdk.trace import TracerProvider
+    from opentelemetry.sdk.trace.export import SimpleSpanProcessor
+    from opentelemetry.sdk.trace.export.in_memory_span_exporter import InMemorySpanExporter
+
+    exportador = InMemorySpanExporter()
+    proveedor = TracerProvider()
+    proveedor.add_span_processor(SimpleSpanProcessor(exportador))
+    LangChainInstrumentor().instrument(tracer_provider=proveedor)
+    try:
+        agent.preguntar("iba sin cinturón", llm_falso(situacion(), codigo="CIR 117 1 5E"))
+    finally:
+        LangChainInstrumentor().uninstrument()
+    nombres = {s.name for s in exportador.get_finished_spans()}
+    assert {"analizar", "buscar", "sancion", "redactar"} <= nombres

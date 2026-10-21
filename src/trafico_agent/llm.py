@@ -8,8 +8,11 @@ import json
 import os
 from pathlib import Path
 
+from opentelemetry import trace
+
 TIMEOUT_S = 180
 MAX_TOKENS = 1024  # corta la generación si el modelo se embucla
+_tracer = trace.get_tracer("trafico_agent.llm")
 
 
 def ollama(modelo=None, host=None):
@@ -20,13 +23,34 @@ def ollama(modelo=None, host=None):
     cliente = _ollama.Client(host=host or os.environ.get("OLLAMA_HOST"), timeout=TIMEOUT_S)
 
     def llamar(sistema, usuario, esquema=None):
-        r = cliente.chat(
-            model=modelo,
-            messages=[{"role": "system", "content": sistema}, {"role": "user", "content": usuario}],
-            format=esquema.model_json_schema() if esquema else None,
-            options={"temperature": 0, "num_predict": MAX_TOKENS},
-        )
-        texto = r.message.content
+        # Span con atributos OpenInference: Phoenix lo muestra como llamada LLM (no-op sin trazas)
+        with _tracer.start_as_current_span(
+            f"ollama {esquema.__name__ if esquema else 'texto'}"
+        ) as sp:
+            sp.set_attributes(
+                {
+                    "openinference.span.kind": "LLM",
+                    "llm.model_name": modelo,
+                    "input.value": f"{sistema}\n\n{usuario}",
+                }
+            )
+            r = cliente.chat(
+                model=modelo,
+                messages=[
+                    {"role": "system", "content": sistema},
+                    {"role": "user", "content": usuario},
+                ],
+                format=esquema.model_json_schema() if esquema else None,
+                options={"temperature": 0, "num_predict": MAX_TOKENS},
+            )
+            texto = r.message.content
+            sp.set_attributes(
+                {
+                    "output.value": texto,
+                    "llm.token_count.prompt": r.prompt_eval_count or 0,
+                    "llm.token_count.completion": r.eval_count or 0,
+                }
+            )
         return esquema.model_validate_json(texto) if esquema else texto
 
     llamar.nombre = f"ollama:{modelo}"

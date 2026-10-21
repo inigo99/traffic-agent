@@ -20,6 +20,11 @@ trafico-mcp = "trafico_agent.mcp_server:main"
 ml = [
     "sentence-transformers>=3",
 ]
+obs = [
+    "arize-phoenix>=20.23.0",
+    "arize-phoenix-otel>=0.17.2",
+    "openinference-instrumentation-langchain>=0.1.79",
+]
 
 [dependency-groups]
 dev = [

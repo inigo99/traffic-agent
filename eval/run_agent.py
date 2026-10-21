@@ -20,6 +20,7 @@ import yaml
 
 from trafico_agent.agent import ELECCION, construir
 from trafico_agent.llm import cola, ollama
+from trafico_agent.trazas import activar_si_procede
 
 RAIZ = Path(__file__).parents[1]
 CAMPOS = ("gravedad", "importe_eur", "pronto_pago_eur", "puntos")
@@ -77,6 +78,7 @@ def main():
     p.add_argument("--modelo", default=None)
     p.add_argument("--n", type=int, default=None, help="solo las n primeras (prueba rápida)")
     args = p.parse_args()
+    activar_si_procede()  # TRAFICO_TRAZAS=1 -> Phoenix
     preguntas = yaml.safe_load((RAIZ / "eval" / "questions.yaml").read_text(encoding="utf-8"))
     preguntas = [q for q in preguntas if args.tipo == "todos" or q["tipo"] == args.tipo][: args.n]
     # --modelo cola:haiku -> respuestas a mano desde eval/cola/haiku.json (ver llm.cola)
