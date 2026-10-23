@@ -18,6 +18,22 @@ def test_version_vigente_ignora_futuras():
     assert boe.version_vigente(xml, date(2026, 1, 1))[0] == "20220321"
 
 
+def test_tablas_con_texto_directo_en_celda():
+    # Anexo II LSV: celdas con el texto directo (sin <p>) y filas como una línea
+    xml = (
+        b'<response><data><bloque id="anii"><version fecha_vigencia="20160131">'
+        b'<p class="anexo_num">ANEXO II</p><table><tr><th> </th><th>Puntos</th></tr>'
+        b"<tr><td>Valores mg/l aire espirado, superior a 0,25 hasta 0,50.</td><td>4</td></tr>"
+        b"</table></version></bloque></data></response>"
+    )
+    _, v = boe.version_vigente(xml)
+    assert list(boe._textos(v)) == [
+        "ANEXO II",
+        " | Puntos",  # celda vacía: se conserva para no descolocar columnas
+        "Valores mg/l aire espirado, superior a 0,25 hasta 0,50. | 4",
+    ]
+
+
 def test_build(tmp_path):
     db_path = tmp_path / "t.db"
     boe.build(db_path, fetch=fake_fetch, pausa=0)

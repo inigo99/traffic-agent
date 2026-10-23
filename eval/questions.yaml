@@ -285,11 +285,12 @@
 
 - id: F34
   tipo: factual
+  # La respuesta debe distinguir el caso general (12) del novel (8). Revisión manual del 16-10-2026.
   pregunta: ¿Con cuántos puntos empieza un conductor?
   comportamiento: responder
   citas:
   - {norma: LSV, id_bloque: a63, apartado: '1'}
-  claves: [doce puntos]
+  claves: [doce puntos, ocho puntos]
 
 - id: F35
   tipo: factual
@@ -784,12 +785,14 @@
 
 - id: S34
   tipo: situacion
-  pregunta: En un semáforo con flecha verde a la derecha giré a la izquierda. ¿Es multa?
+  # Sustituye a "flecha verde a la derecha y giré a la izquierda": era ambigua con saltarse
+  # el rojo (CIR 143 1-B 5A, 4 puntos). Revisión manual del 16-10-2026.
+  pregunta: Estaba en un atasco en la ciudad y me puse a pitar sin parar porque no avanzábamos. ¿Me pueden multar?
   comportamiento: responder
   citas:
-  - - {norma: CIR, id_bloque: a143, apartado: null}
-    - {norma: LSV, id_bloque: a53, apartado: null}
-  sancion: {codigo: CIR 143 1-B 5B, gravedad: grave, importe_eur: 200, pronto_pago_eur: 100, puntos: 0}
+  - - {norma: CIR, id_bloque: a110, apartado: null}
+    - {norma: LSV, id_bloque: a44, apartado: null}
+  sancion: {codigo: CIR 110 2 5A, gravedad: leve, importe_eur: 80, pronto_pago_eur: 40, puntos: 0}
 
 - id: S35
   tipo: situacion
@@ -1119,7 +1122,8 @@
 
 - id: T13
   tipo: trampa
-  pregunta: Me han cazado a 200 km/h en una autovía limitada a 120. ¿Cuántos puntos me quitan?
+  # 210 y no 200: el art. 379 CP exige superar el límite en más de 80 km/h (200 en 120 es justo 80).
+  pregunta: Me han cazado a 210 km/h en una autovía limitada a 120. ¿Cuántos puntos me quitan?
   comportamiento: avisar
   motivo: penal
   citas:
