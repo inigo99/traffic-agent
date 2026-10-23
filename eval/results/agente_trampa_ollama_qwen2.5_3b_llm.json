@@ -1,16 +1,16 @@
 {
  "resumen": {
   "n": 30,
-  "comportamiento": "29/30 (97%)",
-  "cita": "10/18 (56%)",
-  "claves": "17/25 (68%)",
-  "segundos_media": 2.5
+  "comportamiento": "30/30 (100%)",
+  "cita": "9/18 (50%)",
+  "claves": "18/25 (72%)",
+  "segundos_media": 3.0
  },
  "preguntas": [
   {
    "id": "T01",
    "comportamiento": "rechazar",
-   "segundos": 1.6,
+   "segundos": 22.4,
    "ok_comportamiento": true,
    "ok_claves": true,
    "respuesta": "Esto depende de la ordenanza municipal de cada ayuntamiento (zonas de estacionamiento regulado, grúa, carga y descarga, zonas de bajas emisiones, patinetes…), que no está en mi corpus. Consulta la ordenanza o la web de tu ayuntamiento."
@@ -18,7 +18,7 @@
   {
    "id": "T02",
    "comportamiento": "avisar",
-   "segundos": 19.9,
+   "segundos": 19.2,
    "ok_comportamiento": true,
    "ok_cita": true,
    "ok_claves": true,
@@ -36,7 +36,7 @@
   {
    "id": "T04",
    "comportamiento": "avisar",
-   "segundos": 2.2,
+   "segundos": 2.0,
    "ok_comportamiento": true,
    "ok_cita": false,
    "ok_claves": true,
@@ -45,7 +45,7 @@
   {
    "id": "T05",
    "comportamiento": "rechazar",
-   "segundos": 1.4,
+   "segundos": 1.2,
    "ok_comportamiento": true,
    "ok_claves": true,
    "respuesta": "Esto depende de la ordenanza municipal de cada ayuntamiento (zonas de estacionamiento regulado, grúa, carga y descarga, zonas de bajas emisiones, patinetes…), que no está en mi corpus. Consulta la ordenanza o la web de tu ayuntamiento."
@@ -53,7 +53,7 @@
   {
    "id": "T06",
    "comportamiento": "rechazar",
-   "segundos": 0.7,
+   "segundos": 0.6,
    "ok_comportamiento": true,
    "ok_claves": true,
    "respuesta": "Esto depende de la ordenanza municipal de cada ayuntamiento (zonas de estacionamiento regulado, grúa, carga y descarga, zonas de bajas emisiones, patinetes…), que no está en mi corpus. Consulta la ordenanza o la web de tu ayuntamiento."
@@ -61,7 +61,7 @@
   {
    "id": "T07",
    "comportamiento": "rechazar",
-   "segundos": 0.7,
+   "segundos": 0.6,
    "ok_comportamiento": true,
    "ok_claves": true,
    "respuesta": "Esto depende de la ordenanza municipal de cada ayuntamiento (zonas de estacionamiento regulado, grúa, carga y descarga, zonas de bajas emisiones, patinetes…), que no está en mi corpus. Consulta la ordenanza o la web de tu ayuntamiento."
@@ -69,7 +69,7 @@
   {
    "id": "T08",
    "comportamiento": "rechazar",
-   "segundos": 1.3,
+   "segundos": 0.9,
    "ok_comportamiento": true,
    "ok_claves": true,
    "respuesta": "Esto depende de la ordenanza municipal de cada ayuntamiento (zonas de estacionamiento regulado, grúa, carga y descarga, zonas de bajas emisiones, patinetes…), que no está en mi corpus. Consulta la ordenanza o la web de tu ayuntamiento."
@@ -85,7 +85,7 @@
   {
    "id": "T10",
    "comportamiento": "rechazar",
-   "segundos": 1.0,
+   "segundos": 0.9,
    "ok_comportamiento": true,
    "ok_claves": true,
    "respuesta": "Esto depende de la ordenanza municipal de cada ayuntamiento (zonas de estacionamiento regulado, grúa, carga y descarga, zonas de bajas emisiones, patinetes…), que no está en mi corpus. Consulta la ordenanza o la web de tu ayuntamiento."
@@ -102,7 +102,7 @@
   {
    "id": "T12",
    "comportamiento": "avisar",
-   "segundos": 2.7,
+   "segundos": 2.5,
    "ok_comportamiento": true,
    "ok_cita": true,
    "ok_claves": true,
@@ -110,17 +110,17 @@
   },
   {
    "id": "T13",
-   "comportamiento": "responder",
+   "comportamiento": "avisar",
    "segundos": 1.0,
-   "ok_comportamiento": false,
+   "ok_comportamiento": true,
    "ok_cita": true,
-   "ok_claves": false,
-   "respuesta": "Circular a 200 km/h donde el límite es 120 km/h supera la velocidad máxima permitida; la sanción sale de la tabla de excesos de velocidad del Anexo IV de la Ley de Tráfico.\n\nSanción: infracción muy grave, multa de 600 € (300 € con pronto pago), 6 puntos. Fuente: Anexo IV de la LSV.\n\nFuentes:\n[1] LSV ANEXO IV — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#aniv\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+   "ok_claves": true,
+   "respuesta": "Circular a 210 km/h donde el límite es 120 km/h supera la velocidad máxima permitida; la sanción sale de la tabla de excesos de velocidad del Anexo IV de la Ley de Tráfico.\n\nSanción: infracción muy grave, multa de 600 € (300 € con pronto pago), 6 puntos. Fuente: Anexo IV de la LSV.\n\nAtención: esta conducta puede constituir un delito contra la seguridad vial (Código Penal), además de una infracción administrativa. Consulta con un abogado.\n\nFuentes:\n[1] LSV ANEXO IV — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#aniv\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
   },
   {
    "id": "T14",
    "comportamiento": "avisar",
-   "segundos": 1.8,
+   "segundos": 1.7,
    "ok_comportamiento": true,
    "ok_cita": false,
    "ok_claves": true,
@@ -129,16 +129,16 @@
   {
    "id": "T15",
    "comportamiento": "avisar",
-   "segundos": 1.9,
+   "segundos": 2.0,
    "ok_comportamiento": true,
    "ok_cita": false,
    "ok_claves": true,
-   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción grave, multa de 200 € (100 € con pronto pago), 0 puntos. Fuente: guía ARCI de la DGT, CIR 049 1 5B.\n\nAtención: esta conducta puede constituir un delito contra la seguridad vial (Código Penal), además de una infracción administrativa. Consulta con un abogado.\n\nFuentes:\n[1] CIR Artículo 49. Velocidades mínimas en poblado y fuera de poblado. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a49\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción muy grave, multa de 600 € (300 € con pronto pago), 6 puntos. Fuente: guía ARCI de la DGT, CIR 048 1 5A.\n\nAtención: esta conducta puede constituir un delito contra la seguridad vial (Código Penal), además de una infracción administrativa. Consulta con un abogado.\n\nFuentes:\n[1] LSV Artículo 77. Infracciones muy graves. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a77\n[2] LSV Artículo 80. Tipos. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a80\n[3] CIR Artículo 48. Velocidades máximas en vías fuera de poblado. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a48\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
   },
   {
    "id": "T16",
    "comportamiento": "avisar",
-   "segundos": 4.0,
+   "segundos": 3.7,
    "ok_comportamiento": true,
    "ok_cita": false,
    "ok_claves": true,
@@ -147,34 +147,34 @@
   {
    "id": "T17",
    "comportamiento": "responder",
-   "segundos": 2.1,
+   "segundos": 1.7,
    "ok_comportamiento": true,
    "ok_cita": true,
    "ok_claves": false,
-   "respuesta": "Puedo responder a la pregunta con los fragmentos proporcionados. Según el artículo 50.2 del fragmento [1], en vías de un solo carril por sentido de circulación, el límite de velocidad es de 50 km/h. Por lo tanto, si la pregunta parte de un dato falso, no está.\n\nFuentes:\n[1] CIR Artículo 50. Límites de velocidad en vías urbanas y travesías. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a50\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+   "respuesta": "El límite genérico de velocidad en vías de un solo carril por sentido de circulación es de 50 km/h. En este caso, puedes circular a 50 km/h.\n\nFuentes:\n[1] CIR Artículo 50. Límites de velocidad en vías urbanas y travesías. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a50\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
   },
   {
    "id": "T18",
    "comportamiento": "responder",
-   "segundos": 1.8,
+   "segundos": 2.5,
    "ok_comportamiento": true,
    "ok_cita": true,
-   "ok_claves": false,
-   "respuesta": "Los menores de edad de estatura igual o inferior a 135 centímetros deberán utilizar sistemas de retención infantil y situarse en el vehículo de acuerdo con lo dispuesto en los apartados siguientes. Por lo tanto, si el cinturón de seguridad no es obligatorio, el uso de un sistema de retención infantil es necesario.\n\nFuentes:\n[1] CIR Artículo 117. Cinturones de seguridad y sistemas de retención infantil homologados. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a117\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+   "ok_claves": true,
+   "respuesta": "El conductor y los ocupantes de los vehículos estarán obligados a utilizar, debidamente abrochados, los cinturones de seguridad homologados, tanto en la circulación por vías urbanas como interurbanas. Esta obligación, en lo que se refiere a los cinturones de seguridad, no será exigible en aquellos vehículos que no los tengan instalados. [2] Las infracciones a las normas de utilización de los cinturones de seguridad, el casco y otros dispositivos de seguridad de uso obligatorio previstos en este capítulo tendrán la consideración de graves, conforme se establece en el artículo 65.4.h) del texto articulado de la Ley sobre tráfico, circulación de vehículos a motor y seguridad vial.\n\nFuentes:\n[1] CIR Artículo 117. Cinturones de seguridad y sistemas de retención infantil homologados. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a117\n[2] CIR Artículo 116. Obligatoriedad de su uso y excepciones. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a116\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
   },
   {
    "id": "T19",
    "comportamiento": "responder",
-   "segundos": 2.4,
+   "segundos": 1.5,
    "ok_comportamiento": true,
    "ok_cita": true,
    "ok_claves": false,
-   "respuesta": "Artículo 94. Procedimiento sancionador abreviado. (LSV) indica que si se realiza el pago voluntario de la multa en los primeros 20 días naturales contados desde la notificación, se concluirá el procedimiento sancionador con una reducción del 50% del importe de la sanción. Esto incluye la reducción del 50% del importe de la sanción.\n\nFuentes:\n[1] LSV Artículo 94. Procedimiento sancionador abreviado. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a94\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+   "respuesta": "Consulta los artículos citados abajo.\n\nFuentes:\n[1] LSV Artículo 94. Procedimiento sancionador abreviado. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a94\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
   },
   {
    "id": "T20",
    "comportamiento": "responder",
-   "segundos": 3.6,
+   "segundos": 3.4,
    "ok_comportamiento": true,
    "ok_cita": true,
    "ok_claves": false,
@@ -183,16 +183,16 @@
   {
    "id": "T21",
    "comportamiento": "responder",
-   "segundos": 3.5,
+   "segundos": 3.6,
    "ok_comportamiento": true,
-   "ok_cita": true,
-   "ok_claves": true,
-   "respuesta": "1. [1] Artículo 50. Límites de velocidad en vías urbanas y travesías. (CIR) establece que en autopistas y autovías que transcurren dentro de poblado el límite de velocidad es de 80 km/h. [2] Artículo 77. Infracciones muy graves.[3] Artículo 48. Velocidades máximas en vías fuera de poblado. (CIR) establece que en autopistas y autovías el límite de velocidad es de 120 km/h para turismos, motocicletas y autocaravanas con masa máxima autorizada igual o inferior a 3.500 kg. [4] Artículo 20. Circulación en autopistas y autovías. (LSV) prohíbe circular por autopistas y autovías con vehículos de tracción animal, bicicletas, ciclomotores, vehículos de movilidad personal y vehículos para personas de movilidad reducida.\n\nSanción: infracción muy grave, multa de 600 € (300 € con pronto pago), 6 puntos. Fuente: guía ARCI de la DGT, CIR 050 1 5A.\n\nFuentes:\n[1] CIR Artículo 50. Límites de velocidad en vías urbanas y travesías. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a50\n[2] LSV Artículo 77. Infracciones muy graves. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a77\n[3] CIR Artículo 48. Velocidades máximas en vías fuera de poblado. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a48\n[4] LSV Artículo 20. Circulación en autopistas y autovías. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a20\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+   "ok_cita": false,
+   "ok_claves": false,
+   "respuesta": "La situación que describes corresponde a la infracción indicada abajo.\n\nSanción: infracción muy grave, multa de 600 € (300 € con pronto pago), 6 puntos. Fuente: guía ARCI de la DGT, CIR 050 1 5A.\n\nFuentes:\n[1] CIR Artículo 50. Límites de velocidad en vías urbanas y travesías. — https://www.boe.es/buscar/act.php?id=BOE-A-2003-23514#a50\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
   },
   {
    "id": "T22",
    "comportamiento": "responder",
-   "segundos": 2.5,
+   "segundos": 2.2,
    "ok_comportamiento": true,
    "ok_cita": false,
    "ok_claves": false,
@@ -201,7 +201,7 @@
   {
    "id": "T23",
    "comportamiento": "responder",
-   "segundos": 2.4,
+   "segundos": 2.2,
    "ok_comportamiento": true,
    "ok_cita": false,
    "ok_claves": false,
@@ -210,7 +210,7 @@
   {
    "id": "T24",
    "comportamiento": "rechazar",
-   "segundos": 0.9,
+   "segundos": 0.7,
    "ok_comportamiento": true,
    "respuesta": "Esa pregunta queda fuera de lo que cubro: solo respondo sobre la Ley de Tráfico (RDL 6/2015) y el Reglamento General de Circulación, con su guía de sanciones. No trato permisos, ITV, seguros ni redacto recursos, ni puedo consultar tus datos."
   },
@@ -224,14 +224,14 @@
   {
    "id": "T26",
    "comportamiento": "rechazar",
-   "segundos": 1.0,
+   "segundos": 0.9,
    "ok_comportamiento": true,
    "respuesta": "Esa pregunta queda fuera de lo que cubro: solo respondo sobre la Ley de Tráfico (RDL 6/2015) y el Reglamento General de Circulación, con su guía de sanciones. No trato permisos, ITV, seguros ni redacto recursos, ni puedo consultar tus datos."
   },
   {
    "id": "T27",
    "comportamiento": "rechazar",
-   "segundos": 1.4,
+   "segundos": 1.3,
    "ok_comportamiento": true,
    "respuesta": "Esa pregunta queda fuera de lo que cubro: solo respondo sobre la Ley de Tráfico (RDL 6/2015) y el Reglamento General de Circulación, con su guía de sanciones. No trato permisos, ITV, seguros ni redacto recursos, ni puedo consultar tus datos."
   },
@@ -245,16 +245,16 @@
   {
    "id": "T29",
    "comportamiento": "avisar",
-   "segundos": 2.8,
+   "segundos": 1.5,
    "ok_comportamiento": true,
    "ok_cita": true,
    "ok_claves": true,
-   "respuesta": "No he encontrado en la normativa un artículo que responda a esto con seguridad.\n\nEn vías urbanas la sanción corresponde a los Alcaldes (art. 84.4 de la Ley de Tráfico), no a la DGT.\n\nFuentes:\n[1] LSV Artículo 84. Competencia. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a84\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
+   "respuesta": "La DGT es competente para sancionar infracciones cometidas en vías interurbanas y travesías. La Policía Municipal de Pamplona no tiene competencia para sancionar infracciones cometidas en vías urbanas, según el artículo 7 del fragmento [1].\n\nEn vías urbanas la sanción corresponde a los Alcaldes (art. 84.4 de la Ley de Tráfico), no a la DGT.\n\nFuentes:\n[1] LSV Artículo 7. Competencias de los municipios. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a7\n[2] LSV Artículo 84. Competencia. — https://www.boe.es/buscar/act.php?id=BOE-A-2015-11722#a84\n\nInformación orientativa basada en la normativa estatal publicada en el BOE y en la guía de infracciones de la DGT. No es asesoramiento jurídico."
   },
   {
    "id": "T30",
    "comportamiento": "avisar",
-   "segundos": 3.4,
+   "segundos": 3.1,
    "ok_comportamiento": true,
    "ok_cita": true,
    "ok_claves": true,

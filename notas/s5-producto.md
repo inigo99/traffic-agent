@@ -15,8 +15,8 @@ Con el modelo pequeño, el texto redactado contradecía la sanción calculada: "
 | qwen2.5:3b | Antes | Después |
 |---|---|---|
 | Situaciones: sanción exacta | 37/56 | 37/56 |
-| Trampas: comportamiento | 18/30 (60 %) | 29/30 (97 %) |
-| Trampas: claves | 8/25 | 17/25 |
+| Trampas: comportamiento | 18/30 (60 %) | 29/30 (97 %); 30/30 con T13 corregida |
+| Trampas: claves | 8/25 | 17/25; 18/25 con T13 corregida |
 
 La cifra de trampas es optimista: las reglas se escribieron mirando esas 30 preguntas. Lo que no mejora es corregir premisas falsas (T03, T17–T23).
 
@@ -54,5 +54,5 @@ Descripción, arquitectura, informe de evaluación (recuperación, cinco modelos
 
 - Evaluación completa de la demo (`gpt-oss-120b` + BM25) y de las factuales (`--tipo factual`).
 - Trampas nuevas que no se usaron para escribir las reglas, para medir sin sesgo.
-- Gold de T13 (200 km/h en vía de 120 está justo en el límite del art. 379 CP).
+- ~~Gold de T13~~: cambiada a 210 km/h (23-10-2026). Además, F34 y S34 corregidas en la revisión manual no estaban en el fichero; ya están.
 - Publicar el post (`notas/post-rag-legal.md`).

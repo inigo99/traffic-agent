@@ -20,12 +20,12 @@ El LLM solo interviene en tres sitios: analizar la pregunta, elegir la fila ARCI
 
 | Modelo | Comportamiento | Sanción exacta | Código ARCI | Gold entre candidatas | Cita | s/pregunta |
 |---|---|---|---|---|---|---|
-| **qwen2.5:7b** | 58/60 (97 %) | 43/56 (77 %) | 28/54 | 43/54 | 41/56 (73 %) | 6,1 |
+| **qwen2.5:7b** | 57/60 (95 %) | 43/56 (77 %) | 28/54 | 43/54 | 40/56 (71 %) | 5,8 |
 | **qwen2.5:3b** | 56/60 (93 %) | 37/56 (66 %) | 16/54 | 36/54 | 39/56 (70 %) | 3,4 |
 | qwen2.5:1.5b | 54/60 (90 %) | 35/56 (62 %) | 14/54 | 43/54 | 27/56 (48 %) | 3,2 |
 | **Claude Haiku** (a mano, ver abajo) | 57/60 (95 %) | 48/56 (86 %) | 37/54 | 41/54 | 47/56 (84 %) | — |
 
-"Sanción exacta" compara gravedad, importe, pronto pago y puntos. "Código" es más estricto: la ARCI tiene filas casi idénticas con códigos distintos y la misma cuantía.
+Fila del 7b repetida el 23-10-2026 con el test corregido (S34 y F34 no habían llegado al fichero; antes: 58/60 y 41/56 en cita). "Sanción exacta" compara gravedad, importe, pronto pago y puntos. "Código" es más estricto: la ARCI tiene filas casi idénticas con códigos distintos y la misma cuantía.
 
 ### Cómo se llegó ahí (qwen2.5:7b, sanción exacta)
 

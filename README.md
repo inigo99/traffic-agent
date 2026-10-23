@@ -63,16 +63,16 @@ El reranker es el mejor por poco, pero inviable en CPU; la fusión RRF con pesos
 | Modelo | Comportamiento | Sanción exacta | Cita correcta | s/pregunta |
 |---|---|---|---|---|
 | Claude Haiku¹ | 95 % | **86 %** | **84 %** | — |
-| qwen2.5:7b (Ollama, local) | 97 % | 77 % | 73 % | 6 |
+| qwen2.5:7b (Ollama, local) | 95 % | 77 % | 71 % | 6 |
 | qwen2.5:3b (Ollama, local) | 93 % | 66 % | 70 % | 3 |
 | qwen2.5:1.5b (Ollama, local) | 90 % | 62 % | 48 % | 3 |
 | gpt-oss-120b (Groq) + BM25² | 100 % | 67 % | 89 % | 20 |
 
-«Sanción exacta» exige gravedad, importe, pronto pago y puntos idénticos al gold.
+«Sanción exacta» exige gravedad, importe, pronto pago y puntos idénticos al gold. La fila del 7b es la del test con las correcciones de la revisión manual (23-10-2026); las demás se midieron antes de corregir una situación (S34), así que pueden variar en una pregunta de 60.
 ¹ Sin clave de API: las llamadas se contestaron con Haiku desde un chat con el proveedor `cola` (`llm.py`), sin JSON forzado por esquema. Respuestas versionadas en `eval/cola/`.
 ² Configuración de la demo publicada, medida con solo 10 situaciones.
 
-**Trampas** (30; qwen2.5:3b): comportamiento correcto en 97 %. Ojo, la cifra es optimista: las reglas de ordenanza, delito y competencia se escribieron mirando estas trampas. Donde falla de verdad es al corregir premisas falsas: el modelo no corrige el dato.
+**Trampas** (30; qwen2.5:3b): comportamiento correcto en 30 de 30 (100 %). Ojo, la cifra es optimista: las reglas de ordenanza, delito y competencia se escribieron mirando estas trampas. Donde falla de verdad es al corregir premisas falsas: el modelo no corrige el dato.
 
 ### Lo que más pesó
 

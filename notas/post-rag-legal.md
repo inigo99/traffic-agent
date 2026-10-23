@@ -36,7 +36,7 @@ Comparando modelos en las 60 situaciones, la sanción exacta quedó así: Claude
 
 ## Lo que todavía no mido bien
 
-Las trampas pasaron del 60 % al 97 % al añadir reglas para ordenanzas, delitos y competencias. Pero escribí esas reglas mirando las mismas 30 trampas, así que la cifra es optimista. El siguiente paso es un lote de trampas nuevas que el sistema no haya visto.
+Las trampas pasaron del 60 % al 100 % al añadir reglas para ordenanzas, delitos y competencias. Pero escribí esas reglas mirando las mismas 30 trampas, así que la cifra es optimista. El siguiente paso es un lote de trampas nuevas que el sistema no haya visto.
 
 Y corregir premisas falsas («como el móvil quita 8 puntos…») sigue fallando con modelos pequeños. Eso no lo arregla una regla.
 
