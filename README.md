@@ -84,6 +84,8 @@ El reranker es el mejor por poco, pero inviable en CPU; la fusión RRF con pesos
 
 Requisitos: Python 3.12 y [uv](https://docs.astral.sh/uv/).
 
+Las dependencias van por capas: el núcleo (servidor MCP con BM25) y los extras `ml` (vectores bge-m3), `agente` (LangGraph y Ollama), `ingesta` (pdfplumber), `demo` (web; incluye `agente` e `ingesta`) y `obs`. `uv sync` y `uv run` instalan además el grupo `dev`, que trae `agente` e `ingesta` para desarrollar y para la CI; con `--no-dev` la instalación es ligera.
+
 ```bash
 uv sync --extra ml                                  # + bge-m3 (opcional: sin él, BM25)
 uv run python -m trafico_agent.ingest.arci          # PDF ARCI -> sanciones
@@ -104,12 +106,12 @@ uv run --extra ml --extra demo uvicorn trafico_agent.web:app        # web en loc
 ```json
 "trafico": {
   "command": "uv",
-  "args": ["--directory", "/ruta/trafico-agent", "run", "--extra", "ml", "trafico-mcp"],
+  "args": ["--directory", "/ruta/trafico-agent", "run", "--no-dev", "--extra", "ml", "trafico-mcp"],
   "env": {"TRAFICO_DB": "/ruta/trafico-agent/data/trafico.db"}
 }
 ```
 
-Herramientas: `buscar_normativa`, `leer_articulo`, `consultar_sancion`, `sanciones_parecidas`, `consultar_velocidad` y `version_normativa`.
+Herramientas: `buscar_normativa`, `leer_articulo`, `consultar_sancion`, `sanciones_parecidas`, `consultar_velocidad` y `version_normativa`. Sin `ml` el servidor funciona con BM25; solo `sanciones_parecidas` necesita `ml` y los vectores de los hechos (`data/embeddings_sanciones.npz`). Al arrancar, el índice y el modelo se cargan en segundo plano.
 
 **Evaluación:**
 

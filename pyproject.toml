@@ -3,11 +3,9 @@ name = "trafico-agent"
 version = "0.1.0"
 description = "Asistente de normativa de tráfico (DGT/BOE) con citas"
 requires-python = ">=3.12"
+# Mínimo para el servidor MCP (BM25). El agente y la ingesta son extras.
 dependencies = [
-    "langgraph>=1.2.15",
     "mcp>=2.3.0",
-    "ollama>=0.6.3",
-    "pdfplumber>=0.11",
     "pydantic>=2.14.1",
     "rank-bm25>=0.2.2",
     "snowballstemmer>=3.1.1",
@@ -20,20 +18,33 @@ trafico-mcp = "trafico_agent.mcp_server:main"
 ml = [
     "sentence-transformers>=3",
 ]
+agente = [
+    "langgraph>=1.2.15",
+    "ollama>=0.6.3",
+]
+ingesta = [
+    "pdfplumber>=0.11",
+]
 obs = [
     "arize-phoenix>=20.23.0",
     "arize-phoenix-otel>=0.17.2",
     "openinference-instrumentation-langchain>=0.1.79",
 ]
 demo = [
+    "trafico-agent[agente,ingesta]",
     "fastapi>=0.156.8",
     "python-multipart>=0.0.32",
     "uvicorn>=0.54.0",
 ]
 
+# `uv sync` y `uv run` instalan este grupo: desarrollo y CI lo tienen todo.
+# El servidor MCP ligero: `uv run --no-dev trafico-mcp`.
 [dependency-groups]
 dev = [
     "fastapi>=0.156.8",
+    "langgraph>=1.2.15",
+    "ollama>=0.6.3",
+    "pdfplumber>=0.11",
     "pytest>=8",
     "python-multipart>=0.0.32",
     "pyyaml>=6.0.3",

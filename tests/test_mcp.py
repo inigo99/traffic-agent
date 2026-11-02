@@ -42,6 +42,19 @@ def test_lista_de_herramientas_y_aviso():
     assert r["sancion"]["puntos"] == 4 and r["aviso"] == tools.AVISO
 
 
+def test_errores_accionables():
+    async def go():
+        async with Client(servidor) as c:
+            return (
+                await c.call_tool("leer_articulo", {"norma": "CIR", "id_bloque": "zzz"}),
+                await c.call_tool("consultar_velocidad", {"limite_kmh": 55, "velocidad_kmh": 99}),
+            )
+
+    art, vel = anyio.run(go)
+    assert art.is_error and "buscar_normativa" in art.content[0].text
+    assert vel.is_error and "Límites válidos" in vel.content[0].text
+
+
 def test_velocidad_y_articulo():
     _, r = llamar("consultar_velocidad", {"limite_kmh": 120, "velocidad_kmh": 151})
     assert r["tramo"]["multa_eur"] == 300 and r["tramo"]["puntos"] == 2

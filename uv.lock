@@ -4266,20 +4266,27 @@ name = "trafico-agent"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
-    { name = "langgraph" },
     { name = "mcp" },
-    { name = "ollama" },
-    { name = "pdfplumber" },
     { name = "pydantic" },
     { name = "rank-bm25" },
     { name = "snowballstemmer" },
 ]
 
 [package.optional-dependencies]
+agente = [
+    { name = "langgraph" },
+    { name = "ollama" },
+]
 demo = [
     { name = "fastapi" },
+    { name = "langgraph" },
+    { name = "ollama" },
+    { name = "pdfplumber" },
     { name = "python-multipart" },
     { name = "uvicorn" },
+]
+ingesta = [
+    { name = "pdfplumber" },
 ]
 ml = [
     { name = "sentence-transformers" },
@@ -4293,6 +4300,9 @@ obs = [
 [package.dev-dependencies]
 dev = [
     { name = "fastapi" },
+    { name = "langgraph" },
+    { name = "ollama" },
+    { name = "pdfplumber" },
     { name = "pytest" },
     { name = "python-multipart" },
     { name = "pyyaml" },
@@ -4304,23 +4314,27 @@ requires-dist = [
     { name = "arize-phoenix", marker = "extra == 'obs'", specifier = ">=20.23.0" },
     { name = "arize-phoenix-otel", marker = "extra == 'obs'", specifier = ">=0.17.2" },
     { name = "fastapi", marker = "extra == 'demo'", specifier = ">=0.156.8" },
-    { name = "langgraph", specifier = ">=1.2.15" },
+    { name = "langgraph", marker = "extra == 'agente'", specifier = ">=1.2.15" },
     { name = "mcp", specifier = ">=2.3.0" },
-    { name = "ollama", specifier = ">=0.6.3" },
+    { name = "ollama", marker = "extra == 'agente'", specifier = ">=0.6.3" },
     { name = "openinference-instrumentation-langchain", marker = "extra == 'obs'", specifier = ">=0.1.79" },
-    { name = "pdfplumber", specifier = ">=0.11" },
+    { name = "pdfplumber", marker = "extra == 'ingesta'", specifier = ">=0.11" },
     { name = "pydantic", specifier = ">=2.14.1" },
     { name = "python-multipart", marker = "extra == 'demo'", specifier = ">=0.0.32" },
     { name = "rank-bm25", specifier = ">=0.2.2" },
     { name = "sentence-transformers", marker = "extra == 'ml'", specifier = ">=3" },
     { name = "snowballstemmer", specifier = ">=3.1.1" },
+    { name = "trafico-agent", extras = ["agente", "ingesta"], marker = "extra == 'demo'" },
     { name = "uvicorn", marker = "extra == 'demo'", specifier = ">=0.54.0" },
 ]
-provides-extras = ["ml", "obs", "demo"]
+provides-extras = ["ml", "agente", "ingesta", "obs", "demo"]
 
 [package.metadata.requires-dev]
 dev = [
     { name = "fastapi", specifier = ">=0.156.8" },
+    { name = "langgraph", specifier = ">=1.2.15" },
+    { name = "ollama", specifier = ">=0.6.3" },
+    { name = "pdfplumber", specifier = ">=0.11" },
     { name = "pytest", specifier = ">=8" },
     { name = "python-multipart", specifier = ">=0.0.32" },
     { name = "pyyaml", specifier = ">=6.0.3" },

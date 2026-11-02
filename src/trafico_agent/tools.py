@@ -6,6 +6,8 @@ Ningún importe ni punto sale de un LLM: todo sale de aquí (tabla ARCI y Anexo 
 import os
 import sqlite3
 from functools import cache
+from importlib.util import find_spec
+from pathlib import Path
 
 DB = os.environ.get("TRAFICO_DB", "data/trafico.db")
 # bm25 = demo ligera (sin bge-m3): sin vectores tampoco para los hechos ARCI
@@ -33,12 +35,38 @@ def _indice():
     return Indice(DB)
 
 
+def _hay_ml():
+    return find_spec("sentence_transformers") is not None
+
+
+def hechos_disponibles():
+    """¿Se puede buscar por hechos ARCI? Necesita sus vectores y el extra `ml`."""
+    return (
+        BUSQUEDA != "bm25" and _hay_ml() and Path(DB).with_name("embeddings_sanciones.npz").exists()
+    )
+
+
+def limites_velocidad():
+    """Límites (km/h) que recoge el Anexo IV."""
+    filas = _db().execute("SELECT DISTINCT limite FROM velocidades ORDER BY limite")
+    return [f[0] for f in filas]
+
+
+def calentar():
+    """Carga el índice y, si se usan vectores, el modelo, para que la 1.ª consulta no espere."""
+    indice = _indice()
+    if BUSQUEDA != "bm25" and _hay_ml() and indice.emb is not None:
+        from trafico_agent.index import _vector_consulta
+
+        _vector_consulta("calentamiento")
+
+
 def buscar_normativa(consulta, k=5, modo=None):
     """Fragmentos más relevantes, con su artículo y url del BOE.
 
-    Por defecto vectores; BM25 si no están generados (`data/embeddings.npy`) para que el MCP
-    funcione sin el extra `ml`."""
-    modo = modo or BUSQUEDA or ("vectores" if _indice().emb is not None else "bm25")
+    Por defecto vectores; BM25 si no están generados (`data/embeddings.npy`) o falta el extra
+    `ml`, para que el MCP funcione sin él."""
+    modo = modo or BUSQUEDA or ("vectores" if _hay_ml() and _indice().emb is not None else "bm25")
     return [
         {
             "norma": f["norma"],
